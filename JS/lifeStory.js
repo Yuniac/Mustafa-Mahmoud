@@ -1,3 +1,5 @@
+// Copyright Yusuf Sabbag. Distributed under the MIT License respectively CC-BY NC License. 
+
 // enable poppers
 var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
 var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
