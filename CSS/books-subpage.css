@@ -1,0 +1,664 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+body {
+    box-sizing: border-box;
+    color: black;
+    font-family: 'Cairo', sans-serif;
+    background-color: #bda7a3;
+}
+
+
+/* Typography */
+
+h1 {
+    text-align: right;
+    font-size: 3rem;
+    font-family: 'Aref Ruqaa', serif;
+    font-weight: 700;
+    margin: 2rem 2rem;
+    padding-bottom: 0.6rem;
+    position: relative;
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    background-color: #b0635d;
+    width: 300px;
+    height: 1px;
+    right: 0;
+    bottom: 0;
+}
+
+h2:first-of-type {
+    margin-top: 4rem;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 8rem;
+}
+
+h2::before {
+    content: '{';
+    padding: 0 0.4rem;
+    color: #b0635d;
+}
+
+h2::after {
+    content: '}';
+    padding: 0 0.4rem;
+    color: #b0635d;
+}
+
+a,
+button {
+    outline: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: #b0635d;
+}
+
+h5 {
+    font-size: 1.1em;
+    margin: 0 0 0.8rem;
+    padding: 5px;
+}
+
+p {
+    padding: 1rem;
+}
+
+
+/* Typography END*/
+
+
+/* header */
+
+.languages {
+    cursor: help;
+    margin-right: 0.7rem;
+}
+
+.popover-body {
+    background-color: #f2f2f2;
+}
+
+.desktop-banner-image {
+    background-color: transparent;
+    mix-blend-mode: multiply;
+}
+
+
+/* the banner images */
+
+.desktop-banner-image {
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* nav */
+
+.desktop-nav-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+}
+
+.desktop-nav-items li {
+    padding: 5px 15px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    cursor: pointer;
+    box-shadow: -5px -5px #b0635d;
+}
+
+.desktop-nav-items a:hover,
+.desktop-nav-items li:hover {
+    cursor: pointer;
+    background-color: #b0635d;
+    color: white;
+    box-shadow: none;
+}
+
+
+/* class for active */
+
+.desktop-nav-items li.active {
+    padding: 5px 15px;
+    background-color: #b0635d;
+    box-shadow: -7px -7px black;
+    color: white;
+}
+
+.desktop-nav-items li.active:hover,
+li.active:hover>a {
+    background-color: #ab8d87;
+    color: black;
+}
+
+.desktop-nav-items li.active:hover {
+    box-shadow: -7px -7px #b0635d;
+}
+
+
+/* second nav */
+
+
+/* nav bottom border */
+
+.secondary-nav::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    margin-right: 5%;
+    height: 2px;
+    background-color: #b0635d;
+}
+
+.secondary-nav {
+    border-top-right-radius: 5rem;
+    border-top-left-radius: 5rem;
+    margin-top: 2rem;
+    position: relative;
+}
+
+.secondary-nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 40%;
+    margin: 0 auto;
+}
+
+.second-nav-items li {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    padding: 4px 14px;
+    box-shadow: -5px -5px #b0635d;
+}
+
+.secondary-nav a:hover,
+.secondary-nav li:hover {
+    cursor: pointer;
+    background-color: #b0635d;
+    color: white;
+    box-shadow: none;
+}
+
+
+/* second nav active class */
+
+.second-nav-items li.active {
+    background-color: #b0635d;
+    box-shadow: -7px -7px black;
+    color: white;
+}
+
+.second-nav-items li.active:hover,
+.second-nav-items li.active:hover>a {
+    background-color: #ab8d87;
+    color: black;
+}
+
+.second-nav-items li.active:hover {
+    box-shadow: -5px -5px #b0635d;
+}
+
+
+/* nav on mobile */
+
+.mobile-nav-list {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-nav-items {
+    border-bottom: 1px solid #b0635d
+}
+
+.mobile-banner nav {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 1rem auto 0;
+}
+
+.mobile-banner nav button {
+    height: 3rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.mobile-banner h5 {
+    align-self: center;
+}
+
+.mobile-nav-items {
+    display: none;
+}
+
+
+/* main */
+
+.intro {
+    margin: 2rem auto 3rem;
+    width: 90%;
+}
+
+.gallery {
+    width: 90%;
+    margin: 4rem auto 5rem;
+    display: grid;
+    row-gap: 3.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    justify-items: center;
+}
+
+.book-card {
+    text-align: center;
+    width: 60%;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.book-card img {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.book-card h4 {
+    margin: 0.8rem 0;
+}
+
+.book-bio {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0 0;
+}
+
+.book-bio p:first-of-type {
+    border-left: 1px solid black;
+    padding: 0 0.5rem;
+}
+
+.book-bio p:last-of-type {
+    padding: 0 0.5rem;
+}
+
+.book-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    margin: 0 auto;
+}
+
+.book-links img {
+    width: 16px;
+    height: 16px;
+}
+
+.book-links a:visited {
+    color: royalblue;
+}
+
+.book-links a {
+    color: #b0635d;
+}
+
+.book-links a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: royalblue;
+}
+
+.book-links a:last-of-type {
+    display: block;
+}
+
+
+/* no wiki page class */
+
+a.missing-wiki-source {
+    color: #ccc;
+}
+
+a.missing-wiki-source:hover {
+    cursor: help;
+    text-decoration: none;
+    color: #ccc;
+}
+
+
+/* main END */
+
+
+/* footer */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    width: 100%;
+    background-color: #bda7a3;
+    border-top: 1px solid #b0635d
+}
+
+footer li {
+    margin-right: 5rem;
+    padding: 0.4rem 0;
+}
+
+footer ul li.special-li,
+li.special-li>a,
+li.special-li a:hover {
+    cursor: not-allowed;
+    color: #918a89;
+}
+
+footer ul a:hover {
+    color: #b0635d;
+    cursor: pointer;
+}
+
+footer img {
+    width: 245px;
+    background-color: transparent;
+}
+
+footer figure {
+    margin: 0;
+    z-index: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-items {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    padding: 1rem 0.5rem 0rem;
+}
+
+.footer-items>div {
+    margin-left: auto;
+}
+
+
+/* language */
+
+footer a.language {
+    color: #918a89;
+}
+
+footer a.language:hover {
+    cursor: help;
+    text-decoration: none;
+    color: #918a89;
+}
+
+.popover-body {
+    color: black;
+    background-color: #ab8d87;
+    padding: 2px 8px;
+    max-width: 150px;
+    direction: ltr;
+}
+
+
+/* footer END */
+
+
+/* =============
+        media qs
+       ============ */
+
+
+/* anything but mobile screens */
+
+@media (min-width: 573px) {
+    .mobile-banner {
+        display: none;
+    }
+}
+
+
+/* fix for the aside, requires a break point on 1400px */
+
+@media (max-width: 1400px) {
+    aside {
+        max-height: 900px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .nav-items {
+        font-size: 1.1rem;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0px 5px;
+    }
+    aside img {
+        width: 200px
+    }
+}
+
+
+/* mobile and small screens */
+
+@media (max-width: 900px) {
+    /* nav */
+    .desktop-nav-items li {
+        padding: 0;
+        font-size: 0.9rem;
+    }
+    /* main */
+    aside {
+        /* hide the aside section due to sizing problems, solution for now */
+        display: none;
+    }
+    .book-card {
+        width: 90%;
+    }
+    .book-card p {
+        font-size: 0.9rem;
+    }
+    .book-bio {
+        flex-direction: column;
+    }
+    .book-bio p:first-of-type {
+        border-bottom: 1px solid black;
+        border-left: none;
+    }
+    /* footer */
+    .figure img {
+        width: 175px;
+        height: 190px;
+    }
+    .footer-items {
+        line-height: 1rem;
+        width: 100%;
+    }
+    footer img {
+        display: none;
+    }
+    .intro-image {
+        width: 60%;
+    }
+    h5 {
+        padding: 0;
+        margin: 0 0 0.5rem;
+    }
+}
+
+@media (max-width: 572px) {
+    /* header and nav */
+    .desktop-nav-items {
+        display: none;
+    }
+    .mobile-nav-items {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        font-size: 1.3rem;
+        font-weight: 500;
+        line-height: 3.5rem;
+        width: 98%;
+    }
+    .mobile-nav-items li {
+        padding: 2px 5px;
+        border-radius: 20px;
+    }
+    .mobile-banner-image {
+        width: 320px;
+        outline: 1px solid white;
+        outline-offset: -1px;
+    }
+    /* second nav */
+    .secondary-nav ul {
+        border-radius: 0;
+        justify-content: space-around;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .second-nav-items li {
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        padding: 4px 14px;
+        box-shadow: -5px -5px #b0635d;
+    }
+    .secondary-nav a:hover,
+    .secondary-nav li:hover {
+        cursor: pointer;
+        background-color: #b0635d;
+        color: white;
+        box-shadow: none;
+    }
+    /* typography */
+    h1 {
+        font-size: 2rem;
+    }
+    h1::after {
+        width: 200px;
+    }
+    p {
+        font-size: 1rem;
+    }
+    .margin-fixer {
+        margin-top: 0;
+    }
+    /* layout */
+    .intro {
+        flex-direction: column-reverse;
+    }
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .book-card {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .book-card img {
+        height: 300px;
+    }
+    .book-links img {
+        width: 16px;
+        height: 16px;
+    }
+    /* footer */
+    h5 {
+        font-size: 1rem;
+    }
+    .footer-items>div {
+        margin: 0;
+    }
+    footer li {
+        margin: 0;
+    }
+    footer ul {
+        margin: 0;
+        padding: 0;
+    }
+    footer {
+        font-size: 1.1rem;
+        flex-direction: column-reverse;
+    }
+    .footer-items {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0px 5px;
+        margin: 0;
+        line-height: 2.5rem;
+    }
+    .footer-items div {
+        margin: 1rem;
+    }
+    footer figure img {
+        width: 50%;
+        height: auto;
+        margin: 0 auto;
+        padding: 0 1rem;
+        display: block;
+    }
+}
+
+
+/* on mobile to fix an improper positioning of one of the lists in the footer */
+
+@media (min-width: 395px) and (max-width: 572px) {
+    .footer-items div:last-of-type {
+        margin: 0;
+    }
+}
+
+
+/* re-adujusting the header on certain sizes*/
+
+@media (min-width: 573px) and (max-width: 621px) {
+    .desktop-nav-items {
+        justify-content: space-evenly;
+        font-size: 1.1rem;
+    }
+}
+
+
+/* one book card per row on smallest smart phones */
+
+@media (max-width: 413px) and (min-width: 360px) {
+    .gallery {
+        flex-direction: column;
+        align-content: center;
+    }
+    .book-card {
+        width: 90%;
+    }
+}
