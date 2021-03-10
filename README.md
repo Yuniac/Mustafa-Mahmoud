@@ -36,7 +36,7 @@ The code is distributed under the [MIT License](https://opensource.org/licenses/
 
 ## Contributors
 
-- [Yusef](https://github.com/Yuniac) (main contributor and project lead)
+- [Yusuf](https://github.com/Yuniac) (main contributor and project lead)
 - [Harry](https://github.com/Haariz) (design)
 - Smily (image editing) 
 
