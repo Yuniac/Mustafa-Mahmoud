@@ -21,7 +21,7 @@ This website contains information in the Arabic language about the Doctor. The i
 
 ## The purpose of this website
 
-The purpose of this website is to give some popularity about this philosopher which I admire a lot and share his values, and to spread his word both in the Arabic language reading world and (in the future) in the English language to cover worldwide. If you know the author or like his work and you think that his message carries a value that should be brought to the western world or given more light in the eastern world even, then see `How to contribute`.
+The purpose of this website is to give some popularity about this philosopher which I admire a lot and share his values, and to spread his word both in the Arabic language reading world and (in the future) in the English language to cover worldwide. If you know the author or like his work and you think that his message carries a value that should be brought to the western world or given more light in the eastern world even, then see `Contributors`.
 
 ## The future of the website
 - Be hosted properly on the internet and have its own domain name.
