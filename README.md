@@ -25,7 +25,7 @@ The purpose of this website is to give some popularity about this philosopher wh
 
 ## The future of the website
 - Be hosted properly on the internet and have its own domain name.
--Have an English version of the website and perhaps other languages if I find contributors to help me translate, I only speak Arabic/English.
+- Have an English version of the website and perhaps other languages if I find contributors to help me translate, I only speak Arabic/English.
 - I don't plan on having any commercial use for this website.
 
 ## License
