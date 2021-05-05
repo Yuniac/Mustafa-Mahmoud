@@ -423,12 +423,33 @@ footer a.language:hover {
     color: #918a89;
 }
 
-.popover-body {
+.language-description {
     color: black;
     background-color: #ab8d87;
+    border-radius: 5px;
     padding: 2px 8px;
-    max-width: 150px;
-    direction: ltr;
+    max-width: 120px;
+    margin-top: 0.3rem;
+    direction: rtl;
+    position: relative;
+    opacity: 1;
+}
+
+.language-description::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -12px;
+    right: 15px;
+    border-style: solid;
+    border-width: 0px 10px 20px 10px;
+    border-color: transparent transparent #ab8d87 transparent;
+}
+
+.lginfo-visibility {
+    opacity: 0;
+    transition: opacity 1s;
 }
 
 

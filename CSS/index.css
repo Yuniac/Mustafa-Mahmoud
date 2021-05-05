@@ -376,7 +376,7 @@ footer a.language:hover {
 
 .lginfo-visibility {
     opacity: 0;
-    transition: opacity ease-in-out 500ms;
+    transition: opacity 1s;
 }
 
 
