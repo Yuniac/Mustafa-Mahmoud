@@ -260,7 +260,7 @@ li.active:hover>a {
     margin: 4rem auto 1rem;
     display: grid;
     row-gap: 1.5rem;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
     grid-template-rows: auto;
     justify-items: center;
 }
@@ -305,6 +305,7 @@ li.active:hover>a {
     align-items: center;
     width: 40%;
     margin: 0 auto;
+    position: relative;
 }
 
 .book-links img {
@@ -327,7 +328,7 @@ li.active:hover>a {
 }
 
 
-/* no wiki page class */
+/* no wiki pages class */
 
 a.missing-wiki-source {
     color: #ccc;
@@ -339,13 +340,34 @@ a.missing-wiki-source:hover {
     color: #ccc;
 }
 
-
-/* popovers  */
-
-.popover-body {
-    color: black;
+.missing-wiki-source-notice {
     background-color: #ab8d87;
-    padding: 2px 8px;
+    max-width: 120px;
+    margin: 0 auto;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    border-bottom-right-radius: 0;
+    padding: 1px;
+    position: absolute;
+    top: -110px;
+    transition: opacity 1s;
+}
+
+.wiki-notice-hide {
+    /* opacity: 0;
+    visibility: hidden; */
+}
+
+.missing-wiki-source-notice::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: -11px;
+    right: 0;
+    border-style: solid;
+    border-width: 11px 11px 0 11px;
+    border-color: #ab8d87 transparent transparent transparent;
 }
 
 
@@ -444,6 +466,20 @@ footer a.language:hover {
 
 /* starting from thhe widest screen size */
 
+
+/* @media (max-width: 1600px) {
+    .missing-wiki-source-notice {
+        font-size: 0.7rem;
+    }
+} */
+
+@media (max-width: 1400px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        width: 96%;
+    }
+}
+
 @media (max-width: 1100px) {
     .nav-items {
         font-size: 1.1rem;
@@ -463,6 +499,9 @@ footer a.language:hover {
         font-size: 0.9rem;
     }
     /* main */
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
     .book-card {
         width: 90%;
     }
@@ -488,6 +527,7 @@ footer a.language:hover {
     footer img {
         display: none;
     }
+    /* main / typo */
     h1 {
         font-size: 2rem;
     }
@@ -552,11 +592,7 @@ footer a.language:hover {
         flex-direction: column-reverse;
     }
     .gallery {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
+        width: 80%;
     }
     .book-card {
         width: 98%;
