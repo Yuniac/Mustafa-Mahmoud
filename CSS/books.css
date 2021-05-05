@@ -344,9 +344,8 @@ a.missing-wiki-source:hover {
     background-color: #ab8d87;
     max-width: 120px;
     margin: 0 auto;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     border-radius: 5px;
-    /* border-bottom-right-radius: 0; */
     padding: 1px;
     position: absolute;
     right: -110px;
@@ -355,22 +354,15 @@ a.missing-wiki-source:hover {
 }
 
 .wiki-notice-hide {
-    /* opacity: 0;
-    visibility: hidden; */
+    opacity: 0;
 }
 
 
-/* .missing-wiki-source-notice::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    bottom: -11px;
-    right: 0;
-    border-style: solid;
-    border-width: 11px 11px 0 11px;
-    border-color: #ab8d87 transparent transparent transparent;
-} */
+/* we are removing the vsibility to prevent the user from being able to copy the hidden text content by mistake, etc., its a work around. */
+
+.wiki-visibility {
+    visibility: hidden;
+}
 
 
 /* main END */
