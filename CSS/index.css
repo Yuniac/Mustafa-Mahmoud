@@ -31,6 +31,10 @@ h2 {
     position: relative;
 }
 
+.accordion-heading {
+    font-size: 1.1rem;
+}
+
 h3 {
     margin: 0;
     font-size: 1rem;
@@ -181,7 +185,6 @@ li.active:hover>a {
 }
 
 .main-content {
-    /* background-color: #bda7a3; */
     background-color: white;
     display: flex;
     justify-content: space-between;
@@ -201,7 +204,17 @@ li.active:hover>a {
     border: none;
 }
 
-.quotes blockquote {
+.section-2 .interests,
+.section-1 .about-him {
+    margin-bottom: 5rem;
+}
+
+.section-1 .about-life,
+.section-2 .quotes {
+    margin-top: 5rem
+}
+
+.section3 .quotes blockquote {
     padding: 1rem 0;
     font-style: oblique;
 }
@@ -212,32 +225,56 @@ li.active:hover>a {
 }
 
 
-/* the collapse interviews sections */
+/* the accordion interviews sections */
+
+.interview-title {
+    display: flex;
+}
+
+.interview-body {
+    border: 2px solid #b0635d;
+    border-top: none;
+    background-color: #ab8d87;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 700ms ease-in;
+    text-align: right;
+}
+
+.interview-img {
+    position: relative;
+    border: 2px solid #b0635d;
+}
+
+.interview-img::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 50%;
+    background-color: #b0635d;
+    top: 0;
+    right: 0;
+}
 
 .interview-section {
     margin-bottom: 2rem;
 }
 
+.interviews-accordion .expand-icon {
+    width: 52px;
+    max-width: 52px;
+    align-self: center;
+}
 
-/* .interview-section h2 {
-    position: relative;
-} */
-
-
-/* .interview-section h2::after {
-    content: "";
-    position: absolute;
-    width: 50%;
-    height: 1px;
-    background-color: #b0635d;
-    bottom: 0;
-    right: 0;
-} */
+.interviews-accordion .expand-icon:hover {
+    cursor: pointer;
+}
 
 .interviews-accordion img {
     width: 90%;
     display: block;
-    margin: 1rem auto 0;
+    margin: 1rem auto 0.5rem;
     max-width: 300px;
     align-self: center;
     transition: all ease-in-out 200ms;
@@ -406,7 +443,7 @@ footer a.language:hover {
         font-size: 4rem;
     }
     .intro-image {
-        width: 50%;
+        width: 60%;
     }
     /* main  */
     .main-content {
@@ -435,9 +472,6 @@ footer a.language:hover {
 
 @media (max-width: 900px) {
     /* main */
-    .intro-image {
-        width: 60%;
-    }
     .main-content {
         flex-direction: column;
         padding: 1rem 0;
