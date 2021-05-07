@@ -33,6 +33,7 @@ h2 {
 
 .accordion-heading {
     font-size: 1.1rem;
+    padding-left: 1rem;
 }
 
 h3 {
@@ -234,7 +235,7 @@ li.active:hover>a {
 .interview-body {
     border: 2px solid #b0635d;
     border-top: none;
-    background-color: #ab8d87;
+    background-color: #bda7a3;
     visibility: hidden;
     max-height: 0;
     overflow: hidden;
