@@ -53,7 +53,6 @@ missingLinks.forEach(link => {
 // the footer language popver 
 const lgLink = document.querySelector(".language"); // the link
 const lgInfo = document.querySelector(".language-description"); // the link's info
-
 lgLink.addEventListener("click", () => {
     if (lgInfo.classList.contains("lginfo-visibility")) {
         lgInfo.classList.remove("lginfo-visibility");
