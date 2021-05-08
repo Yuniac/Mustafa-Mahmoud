@@ -160,14 +160,14 @@ function highlight(book, url) {
 // highlight(number7Book, number7URL);
 // highlight(number7Book, number7URL);
 // highlight(number7Book, number7URL);
-// highlight(number7Book, number7URL);
-// if (window.location.href === number7URL) {
-//     number7Book.classList.add("highlight");
-//     console.log("#")
-//     setTimeout(() => {
-//         number7Book.classList.remove("highlight");
-//     }, 2500);
-// };
+highlight(number7Book, number7URL);
+if (window.location.href === number7URL) {
+    number7Book.classList.add("highlight");
+    console.log("#")
+    setTimeout(() => {
+        number7Book.classList.remove("highlight");
+    }, 2500);
+};
 // the footer language link
 const lgLink = document.querySelector(".language"); // the link
 const lgInfo = document.querySelector(".language-description"); // the link's info

@@ -236,11 +236,11 @@ li.active:hover>a {
 .interview-body {
     border: 2px solid #b0635d;
     border-top: none;
-    background-color: #bda7a3;
+    border-bottom: none;
     visibility: hidden;
     max-height: 0;
     overflow: hidden;
-    transition: all 700ms ease-in;
+    transition: all 650ms ease-in;
     text-align: right;
 }
 
