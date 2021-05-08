@@ -314,8 +314,9 @@ li.active:hover>a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 40%;
+    width: 50%;
     margin: 0 auto;
+    position: relative;
 }
 
 .book-links img {
@@ -352,6 +353,27 @@ a.missing-wiki-source:hover {
     cursor: help;
     text-decoration: none;
     color: #ccc;
+}
+
+.missing-wiki-source-notice {
+    background-color: #ab8d87;
+    max-width: 120px;
+    margin: 0 auto;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    padding: 1px;
+    position: absolute;
+    right: -110px;
+    top: -120px;
+    transition: opacity 1s;
+}
+
+.wiki-visibility {
+    visibility: hidden;
+}
+
+.wiki-notice-hide {
+    opacity: 0;
 }
 
 
