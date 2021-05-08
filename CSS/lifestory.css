@@ -33,7 +33,7 @@ h3 {
 }
 
 p {
-    line-height: 1.8;
+    line-height: 2;
     font-size: 1.1rem;
     padding: 1.5rem 0;
 }
@@ -198,7 +198,7 @@ main {
 }
 
 main img {
-    border: 1px solid black;
+    border: 2px solid #b0635d;
 }
 
 .no-border {
@@ -263,7 +263,7 @@ aside p:first-of-type {
 
 /* notice div */
 
-main .notice-div {
+.notice-div {
     width: 350px;
     margin: 0 auto 1rem;
     display: flex;
@@ -272,6 +272,7 @@ main .notice-div {
     border-top: none;
     padding: 0.4rem;
     background-color: #f2f2f2;
+    visibility: visible;
 }
 
 .notice-div img {
@@ -286,6 +287,8 @@ main button {
     border: none;
     background-color: transparent;
     cursor: pointer;
+    font-size: 1.1rem;
+    margin-top: 1.3rem
 }
 
 .flex-container {
