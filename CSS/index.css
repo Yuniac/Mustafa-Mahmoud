@@ -181,6 +181,7 @@ li.active:hover>a {
     display: block;
     width: 45%;
     max-width: 900px;
+    min-width: 275px;
     margin: 0 auto 1rem;
     border: solid 1px #b0635d;
 }
@@ -484,7 +485,21 @@ footer a.language:hover {
     .main-content section:first-of-type {
         border-right: 2px solid #b0635d;
     }
+    .interview-title {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .interview-title img {
+        margin: 0;
+    }
+    .interview-body {
+        padding: 0.5rem 0;
+    }
     /* footer */
+    footer li {
+        margin: 0;
+        padding: 0.7rem;
+    }
     .figure img {
         width: 175px;
         height: 190px;
@@ -503,7 +518,7 @@ footer a.language:hover {
     }
     h5 {
         padding: 0;
-        margin: 0 0 0.5rem;
+        margin: 0 0 1.5rem;
     }
 }
 
@@ -531,24 +546,31 @@ footer a.language:hover {
     .mobile-banner-image {
         width: 240px;
     }
-    /* header and nav END */
     /* main */
     .intro-image {
         width: 75%;
     }
+    .main-content section {
+        padding: 1.05rem;
+    }
+    .interview-section {
+        margin: 0 auto 2rem;
+    }
     /* footer */
     h5 {
         font-size: 1rem;
+        border-bottom: 1px ridge #ab8d87;
+        width: 50%;
     }
     .footer-items>div {
-        margin: 0;
-    }
-    footer li {
         margin: 0;
     }
     footer ul {
         margin: 0;
         padding: 0;
+    }
+    footer li {
+        margin: 0;
     }
     footer {
         font-size: 1.1rem;
