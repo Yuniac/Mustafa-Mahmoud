@@ -31,22 +31,10 @@ h2 {
     position: relative;
 }
 
-
-/* h2::before {
-    content: " | ";
-    color: inherit;
+.accordion-heading {
+    font-size: 1.1rem;
+    padding-left: 1rem;
 }
-
-h2::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: #b0635d;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-} */
 
 h3 {
     margin: 0;
@@ -193,12 +181,12 @@ li.active:hover>a {
     display: block;
     width: 45%;
     max-width: 900px;
+    min-width: 275px;
     margin: 0 auto 1rem;
     border: solid 1px #b0635d;
 }
 
 .main-content {
-    /* background-color: #bda7a3; */
     background-color: white;
     display: flex;
     justify-content: space-between;
@@ -218,7 +206,17 @@ li.active:hover>a {
     border: none;
 }
 
-.quotes blockquote {
+.section-2 .interests,
+.section-1 .about-him {
+    margin-bottom: 5rem;
+}
+
+.section-1 .about-life,
+.section-2 .quotes {
+    margin-top: 5rem
+}
+
+.section3 .quotes blockquote {
     padding: 1rem 0;
     font-style: oblique;
 }
@@ -229,32 +227,56 @@ li.active:hover>a {
 }
 
 
-/* the collapse interviews sections */
+/* the accordion interviews sections */
+
+.interview-title {
+    display: flex;
+}
+
+.interview-body {
+    border: 2px solid #b0635d;
+    border-top: none;
+    background-color: #bda7a3;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 700ms ease-in;
+    text-align: right;
+}
+
+.interview-img {
+    position: relative;
+    border: 2px solid #b0635d;
+}
+
+.interview-img::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 50%;
+    background-color: #b0635d;
+    top: 0;
+    right: 0;
+}
 
 .interview-section {
     margin-bottom: 2rem;
 }
 
+.interviews-accordion .expand-icon {
+    width: 52px;
+    max-width: 52px;
+    align-self: center;
+}
 
-/* .interview-section h2 {
-    position: relative;
-} */
-
-
-/* .interview-section h2::after {
-    content: "";
-    position: absolute;
-    width: 50%;
-    height: 1px;
-    background-color: #b0635d;
-    bottom: 0;
-    right: 0;
-} */
+.interviews-accordion .expand-icon:hover {
+    cursor: pointer;
+}
 
 .interviews-accordion img {
     width: 90%;
     display: block;
-    margin: 1rem auto 0;
+    margin: 1rem auto 0.5rem;
     max-width: 300px;
     align-self: center;
     transition: all ease-in-out 200ms;
@@ -355,7 +377,7 @@ footer figure {
 }
 
 
-/* language */
+/* language icon in the footer */
 
 footer a.language {
     color: #918a89;
@@ -367,12 +389,33 @@ footer a.language:hover {
     color: #918a89;
 }
 
-.popover-body {
+.language-description {
     color: black;
     background-color: #ab8d87;
+    border-radius: 5px;
     padding: 2px 8px;
-    max-width: 150px;
-    direction: ltr;
+    max-width: 120px;
+    margin-top: 0.3rem;
+    direction: rtl;
+    position: relative;
+    opacity: 1;
+}
+
+.language-description::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -10px;
+    right: 15px;
+    border-style: solid;
+    border-width: 0px 10px 20px 10px;
+    border-color: transparent transparent #ab8d87 transparent;
+}
+
+.lginfo-visibility {
+    opacity: 0;
+    transition: opacity 1s;
 }
 
 
@@ -402,7 +445,7 @@ footer a.language:hover {
         font-size: 4rem;
     }
     .intro-image {
-        width: 50%;
+        width: 60%;
     }
     /* main  */
     .main-content {
@@ -431,9 +474,6 @@ footer a.language:hover {
 
 @media (max-width: 900px) {
     /* main */
-    .intro-image {
-        width: 60%;
-    }
     .main-content {
         flex-direction: column;
         padding: 1rem 0;
@@ -445,7 +485,21 @@ footer a.language:hover {
     .main-content section:first-of-type {
         border-right: 2px solid #b0635d;
     }
+    .interview-title {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .interview-title img {
+        margin: 0;
+    }
+    .interview-body {
+        padding: 0.5rem 0;
+    }
     /* footer */
+    footer li {
+        margin: 0;
+        padding: 0.7rem;
+    }
     .figure img {
         width: 175px;
         height: 190px;
@@ -464,7 +518,7 @@ footer a.language:hover {
     }
     h5 {
         padding: 0;
-        margin: 0 0 0.5rem;
+        margin: 0 0 1.5rem;
     }
 }
 
@@ -492,24 +546,31 @@ footer a.language:hover {
     .mobile-banner-image {
         width: 240px;
     }
-    /* header and nav END */
     /* main */
     .intro-image {
         width: 75%;
     }
+    .main-content section {
+        padding: 1.05rem;
+    }
+    .interview-section {
+        margin: 0 auto 2rem;
+    }
     /* footer */
     h5 {
         font-size: 1rem;
+        border-bottom: 1px ridge #ab8d87;
+        width: 50%;
     }
     .footer-items>div {
-        margin: 0;
-    }
-    footer li {
         margin: 0;
     }
     footer ul {
         margin: 0;
         padding: 0;
+    }
+    footer li {
+        margin: 0;
     }
     footer {
         font-size: 1.1rem;

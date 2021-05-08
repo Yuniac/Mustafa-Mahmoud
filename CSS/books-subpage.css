@@ -283,6 +283,7 @@ li.active:hover>a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: box-shadow 1500ms ease-in-out;
 }
 
 .book-card img {
@@ -314,8 +315,9 @@ li.active:hover>a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 40%;
+    width: 50%;
     margin: 0 auto;
+    position: relative;
 }
 
 .book-links img {
@@ -341,6 +343,10 @@ li.active:hover>a {
     display: block;
 }
 
+.highlight {
+    box-shadow: 5px 5px 25px 21.5px #b0635d;
+}
+
 
 /* no wiki page class */
 
@@ -352,6 +358,27 @@ a.missing-wiki-source:hover {
     cursor: help;
     text-decoration: none;
     color: #ccc;
+}
+
+.missing-wiki-source-notice {
+    background-color: #ab8d87;
+    max-width: 120px;
+    margin: 0 auto;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    padding: 1px;
+    position: absolute;
+    right: -110px;
+    top: -120px;
+    transition: opacity 1s;
+}
+
+.wiki-visibility {
+    visibility: hidden;
+}
+
+.wiki-notice-hide {
+    opacity: 0;
 }
 
 
@@ -423,12 +450,33 @@ footer a.language:hover {
     color: #918a89;
 }
 
-.popover-body {
+.language-description {
     color: black;
     background-color: #ab8d87;
+    border-radius: 5px;
     padding: 2px 8px;
-    max-width: 150px;
-    direction: ltr;
+    max-width: 120px;
+    margin-top: 0.3rem;
+    direction: rtl;
+    position: relative;
+    opacity: 1;
+}
+
+.language-description::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -12px;
+    right: 15px;
+    border-style: solid;
+    border-width: 0px 10px 20px 10px;
+    border-color: transparent transparent #ab8d87 transparent;
+}
+
+.lginfo-visibility {
+    opacity: 0;
+    transition: opacity 1s;
 }
 
 
