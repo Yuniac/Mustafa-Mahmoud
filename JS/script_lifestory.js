@@ -1,17 +1,11 @@
 // Copyright Yusuf Sabbag. Distributed under the MIT License respectively CC-BY NC License. 
 
-// // enable poppers
-// var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-// var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
-//     return new bootstrap.Popover(popoverTriggerEl)
-// })
-
-// // hide show the notice div on top of the page
-// $(document).ready(function() {
-//     $("#hideButton").click(function() {
-//         $("#noticeDiv").slideUp()
-//     })
-// })
+// the notice div
+const noticeButton = document.querySelector("#hideButton");
+const noticeDiv = document.querySelector("#noticeDiv");
+noticeButton.addEventListener("click", () => {
+    noticeDiv.style.visibility = "hidden";
+});
 
 // // changing the duration between the sliders
 // $(document).ready(function() {
