@@ -11,6 +11,9 @@ body {
     color: black;
     font-family: 'Cairo', sans-serif;
     background-color: #bda7a3;
+    width: 100vw;
+    height: 100%;
+    overflow: auto;
 }
 
 
@@ -461,9 +464,6 @@ footer a.language:hover {
         padding: 0px 5px;
     }
     /* main */
-    .main-content {
-        width: 95%;
-    }
     .main-content section:last-child {
         margin: 0 auto;
     }
@@ -575,6 +575,7 @@ footer a.language:hover {
     footer {
         font-size: 1.1rem;
         flex-direction: column-reverse;
+        width: 95%;
     }
     .footer-items {
         display: flex;
