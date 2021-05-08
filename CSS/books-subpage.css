@@ -283,6 +283,7 @@ li.active:hover>a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: box-shadow 1500ms ease-in-out;
 }
 
 .book-card img {
@@ -340,6 +341,10 @@ li.active:hover>a {
 
 .book-links a:last-of-type {
     display: block;
+}
+
+.highlight {
+    box-shadow: 5px 5px 25px 21.5px #b0635d;
 }
 
 

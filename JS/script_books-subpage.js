@@ -139,6 +139,35 @@ missingDlLink.addEventListener("click", () => {
         }, 4600)
     }
 });
+
+// highlight book cards when needed e.g: (when user clicks on a book title from another page to bring him here, highlight this book upon loading);
+
+// setting up variables for desired books to be highlighted;
+const number7Book = document.querySelector("#number7");
+const number7URL = "https://yuniac.github.io/Mustafa-Mahmoud.github.io/books-subpage.html#number7";
+
+
+function highlight(book, url) {
+    if (window.location.href === url) {
+        book.classList.add("highlight");
+        console.log("#")
+        setTimeout(() => {
+            book.classList.remove("highlight");
+        }, 2500);
+    };
+}
+// highlight(number7Book, number7URL);
+// highlight(number7Book, number7URL);
+// highlight(number7Book, number7URL);
+// highlight(number7Book, number7URL);
+// highlight(number7Book, number7URL);
+// if (window.location.href === number7URL) {
+//     number7Book.classList.add("highlight");
+//     console.log("#")
+//     setTimeout(() => {
+//         number7Book.classList.remove("highlight");
+//     }, 2500);
+// };
 // the footer language link
 const lgLink = document.querySelector(".language"); // the link
 const lgInfo = document.querySelector(".language-description"); // the link's info
