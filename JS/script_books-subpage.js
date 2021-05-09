@@ -164,13 +164,11 @@ function highlight(book, url) {
         }, 2500);
     };
 }
-// highlight(number7Book, number7URL);
-// highlight(number7Book, number7URL);
+
 highlight(theImpossible, theImpossibleURL);
 highlight(number7Book, number7URL);
 highlight(earthQuake, earthQuakeURL);
 highlight(greatIsk, greatIskURL);
-
 
 // the footer links
 const lgLink = document.querySelector(".language"); // the language link
