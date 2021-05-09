@@ -97,7 +97,7 @@ h5 {
     background-color: transparent;
     mix-blend-mode: multiply;
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 1rem;
 }
 
 
@@ -574,8 +574,12 @@ media qs
     main .notice-div {
         width: 50%;
     }
-    aside {
-        display: none;
+    .section-1 {
+        flex-direction: column;
+    }
+    main aside {
+        align-self: center;
+        min-width: 250px;
     }
     /* re-adujsting the main content */
     .flex-container {
@@ -710,7 +714,6 @@ media qs
         width: 90%;
     }
     /* footer */
-    /* footer */
     h5 {
         font-size: 1rem;
     }
@@ -732,7 +735,7 @@ media qs
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 100%;
+        width: 95%;
         padding: 0px 5px;
         margin: 0;
         line-height: 2.5rem;

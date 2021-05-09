@@ -70,7 +70,7 @@ p {
     background-color: transparent;
     mix-blend-mode: multiply;
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 1rem;
 }
 
 
