@@ -159,8 +159,6 @@ function highlight(book, url) {
 // highlight(number7Book, number7URL);
 // highlight(number7Book, number7URL);
 highlight(number7Book, number7URL);
-highlight(islamAndMarxism, islamAndMarxismURL);
-
 
 // the footer links
 const lgLink = document.querySelector(".language"); // the language link
