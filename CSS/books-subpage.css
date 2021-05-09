@@ -87,15 +87,6 @@ p {
 
 /* header */
 
-.languages {
-    cursor: help;
-    margin-right: 0.7rem;
-}
-
-.popover-body {
-    background-color: #f2f2f2;
-}
-
 .desktop-banner-image {
     background-color: transparent;
     mix-blend-mode: multiply;
@@ -268,10 +259,10 @@ li.active:hover>a {
 
 .gallery {
     width: 90%;
-    margin: 4rem auto 5rem;
+    margin: 4rem auto 1rem;
     display: grid;
-    row-gap: 3.5rem;
-    grid-template-columns: repeat(4, 1fr);
+    row-gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
     grid-template-rows: auto;
     justify-items: center;
 }
@@ -284,6 +275,7 @@ li.active:hover>a {
     flex-direction: column;
     justify-content: space-between;
     transition: box-shadow 1500ms ease-in-out;
+    border: 1px solid #b0635d;
 }
 
 .book-card img {
@@ -404,7 +396,7 @@ footer li {
 footer ul li.special-li,
 li.special-li>a,
 li.special-li a:hover {
-    cursor: not-allowed;
+    cursor: copy;
     color: #918a89;
 }
 
@@ -437,11 +429,21 @@ footer figure {
     margin-left: auto;
 }
 
+.footer-items div:nth-of-type(2) ul {
+    position: relative;
+}
 
-/* language */
+.footer-text {
+    margin: 0;
+    display: none;
+}
+
+
+/* footer special links */
 
 footer a.language {
     color: #918a89;
+    margin-right: 15px;
 }
 
 footer a.language:hover {
@@ -474,7 +476,25 @@ footer a.language:hover {
     border-color: transparent transparent #ab8d87 transparent;
 }
 
-.lginfo-visibility {
+.copy-notice {
+    background-color: #ab8d87;
+    border-radius: 5px;
+    padding: 8px;
+    margin-top: 0.3rem;
+    direction: rtl;
+    opacity: 1;
+    text-align: center;
+    position: absolute;
+    bottom: 41px;
+    left: -25px;
+}
+
+#link {
+    display: none;
+}
+
+.lginfo-visibility,
+.copy-notice-visibility {
     opacity: 0;
     transition: opacity 1s;
 }
@@ -496,12 +516,10 @@ footer a.language:hover {
     }
 }
 
-
-/* fix for the aside, requires a break point on 1400px */
-
 @media (max-width: 1400px) {
-    aside {
-        max-height: 900px;
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        width: 96%;
     }
 }
 
@@ -511,9 +529,6 @@ footer a.language:hover {
         justify-content: space-between;
         width: 100%;
         padding: 0px 5px;
-    }
-    aside img {
-        width: 200px
     }
 }
 
@@ -527,9 +542,8 @@ footer a.language:hover {
         font-size: 0.9rem;
     }
     /* main */
-    aside {
-        /* hide the aside section due to sizing problems, solution for now */
-        display: none;
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     }
     .book-card {
         width: 90%;
@@ -629,6 +643,9 @@ footer a.language:hover {
         display: flex;
         flex-wrap: wrap;
     }
+    .gallery {
+        width: 80%;
+    }
     .book-card {
         width: 50%;
         display: flex;
@@ -659,6 +676,22 @@ footer a.language:hover {
     footer {
         font-size: 1.1rem;
         flex-direction: column-reverse;
+        width: 95%;
+    }
+    .figure {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex-flow: row-reverse nowrap;
+    }
+    .footer-text {
+        display: block;
+        align-self: flex-end;
+        margin-right: 1.5rem;
+        margin-top: 1rem;
+        font-size: 11vw;
+        font-family: 'Aref Ruqaa', serif;
+        color: #b0635d;
     }
     .footer-items {
         display: flex;
@@ -678,6 +711,12 @@ footer a.language:hover {
         margin: 0 auto;
         padding: 0 1rem;
         display: block;
+    }
+    .copy-notice {
+        left: 105px;
+    }
+    .language-description {
+        font-size: 0.9rem;
     }
 }
 

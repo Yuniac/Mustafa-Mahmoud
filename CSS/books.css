@@ -11,6 +11,8 @@ body {
     color: black;
     font-family: 'Cairo', sans-serif;
     background-color: #bda7a3;
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -273,6 +275,7 @@ li.active:hover>a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border: 1px solid #b0635d;
 }
 
 .book-card img {
@@ -388,7 +391,7 @@ footer li {
 footer ul li.special-li,
 li.special-li>a,
 li.special-li a:hover {
-    cursor: not-allowed;
+    cursor: copy;
     color: #918a89;
 }
 
@@ -420,11 +423,21 @@ footer figure {
     margin-left: auto;
 }
 
+.footer-items div:nth-of-type(2) ul {
+    position: relative;
+}
 
-/* language */
+.footer-text {
+    margin: 0;
+    display: none;
+}
+
+
+/* footer special links */
 
 footer a.language {
     color: #918a89;
+    margin-right: 15px;
 }
 
 footer a.language:hover {
@@ -457,7 +470,25 @@ footer a.language:hover {
     border-color: transparent transparent #ab8d87 transparent;
 }
 
-.lginfo-visibility {
+.copy-notice {
+    background-color: #ab8d87;
+    border-radius: 5px;
+    padding: 8px;
+    margin-top: 0.3rem;
+    direction: rtl;
+    opacity: 1;
+    text-align: center;
+    position: absolute;
+    bottom: 41px;
+    left: -25px;
+}
+
+#link {
+    display: none;
+}
+
+.lginfo-visibility,
+.copy-notice-visibility {
     opacity: 0;
     transition: opacity 1s;
 }
@@ -646,18 +677,30 @@ footer a.language:hover {
     footer {
         font-size: 1.1rem;
         flex-direction: column-reverse;
+        width: 95%;
+    }
+    .figure {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex-flow: row-reverse nowrap;
+    }
+    .footer-text {
+        display: block;
+        align-self: flex-end;
+        margin-right: 1.5rem;
+        margin-top: 1rem;
+        font-size: 11vw;
+        font-family: 'Aref Ruqaa', serif;
+        color: #b0635d;
     }
     .footer-items {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 100%;
         padding: 0px 5px;
         margin: 0;
         line-height: 2.5rem;
-    }
-    .footer-items div {
-        margin: 1rem;
     }
     footer figure img {
         width: 50%;
@@ -665,6 +708,12 @@ footer a.language:hover {
         margin: 0 auto;
         padding: 0 1rem;
         display: block;
+    }
+    .copy-notice {
+        left: 105px;
+    }
+    .language-description {
+        font-size: 0.9rem;
     }
 }
 
