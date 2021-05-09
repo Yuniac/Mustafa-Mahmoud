@@ -222,7 +222,7 @@ footer ul a:hover {
 }
 
 footer img {
-    width: 262px;
+    width: 266px;
     background-color: transparent;
 }
 
@@ -278,6 +278,7 @@ footer a.language:hover {
     position: relative;
     opacity: 1;
     text-align: center;
+    font-size: 1rem;
 }
 
 .copy-notice {

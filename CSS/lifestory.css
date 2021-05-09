@@ -11,7 +11,6 @@ body {
     color: black;
     font-family: 'Cairo', sans-serif;
     background-color: #bda7a3;
-    ;
 }
 
 
@@ -203,6 +202,7 @@ main img {
 
 .no-border {
     border: none;
+    width: 24px;
 }
 
 figure img {
@@ -422,14 +422,12 @@ footer {
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
-    width: 100%;
     background-color: #bda7a3;
-    border-top: 1px solid #b0635d
+    border-top: 1px solid #b0635d;
 }
 
 footer li {
-    margin-right: 5rem;
-    padding: 0.4rem 0;
+    padding: 0.4rem 0.2rem;
 }
 
 footer ul li.special-li,
@@ -445,7 +443,7 @@ footer ul a:hover {
 }
 
 footer img {
-    width: 245px;
+    width: 262px;
     background-color: transparent;
 }
 
@@ -482,6 +480,7 @@ footer figure {
 
 footer a.language {
     color: #918a89;
+    margin-right: 15px;
 }
 
 footer a.language:hover {
@@ -494,24 +493,14 @@ footer a.language:hover {
     color: black;
     background-color: #ab8d87;
     border-radius: 5px;
-    padding: 2px 8px;
-    max-width: 120px;
+    padding: 4px;
+    max-width: 90px;
     margin-top: 0.3rem;
     direction: rtl;
     position: relative;
     opacity: 1;
-}
-
-.language-description::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    top: -10px;
-    right: 15px;
-    border-style: solid;
-    border-width: 0px 10px 20px 10px;
-    border-color: transparent transparent #ab8d87 transparent;
+    text-align: center;
+    font-size: 1rem;
 }
 
 .copy-notice {
@@ -535,6 +524,18 @@ footer a.language:hover {
 .copy-notice-visibility {
     opacity: 0;
     transition: opacity 1s;
+}
+
+.language-description::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -10px;
+    right: 15px;
+    border-style: solid;
+    border-width: 0px 10px 20px 10px;
+    border-color: transparent transparent #ab8d87 transparent;
 }
 
 
@@ -676,6 +677,9 @@ media qs
     footer img {
         display: none;
     }
+    footer li {
+        padding: 0.7rem;
+    }
 }
 
 
@@ -745,9 +749,6 @@ media qs
         font-size: 1rem;
     }
     .footer-items>div {
-        margin: 0;
-    }
-    footer li {
         margin: 0;
     }
     footer ul {

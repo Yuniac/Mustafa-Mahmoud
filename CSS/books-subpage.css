@@ -443,6 +443,7 @@ footer figure {
 
 footer a.language {
     color: #918a89;
+    margin-right: 15px;
 }
 
 footer a.language:hover {

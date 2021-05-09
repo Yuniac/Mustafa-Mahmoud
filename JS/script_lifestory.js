@@ -7,26 +7,17 @@ noticeButton.addEventListener("click", () => {
     noticeDiv.style.visibility = "hidden";
 });
 
-// // changing the duration between the sliders
-// $(document).ready(function() {
-//     $('.carousel').carousel({
-//         interval: 2500
-//     })
-// })
+// scroll to top button 
+let goTopButton = document.getElementById("scrollToTopButton");
+let root = document.documentElement;
 
-// // scroll to top button 
-// let goTopButton = document.getElementById("scrollToTopButton");
-// let root = document.documentElement;
 
-// function goTop() {
-//     root.scrollTo({
-//         top: 0,
-//         behavior: "smooth"
-//     })
-// };
-
-// goTopButton.addEventListener("click", goTop);
-
+goTopButton.addEventListener("click", function goTop() {
+    root.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    })
+});
 
 // the footer links
 const lgLink = document.querySelector(".language"); // the language link
