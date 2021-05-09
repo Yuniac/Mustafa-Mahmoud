@@ -51,19 +51,47 @@ missingLinks.forEach(link => {
 })
 
 // highlight function
+const islamAndMarxism = document.querySelector("#islamAndMarxism");
+const islamAndMarxismURL = "https://yuniac.github.io/Mustafa-Mahmoud.github.io/books.html#islamAndMarxism";
+
+const whyIRefusedMarxism = document.querySelector("#whyIRefusedMarxism");
+const whyIRefusedMarxismURL = "https://yuniac.github.io/Mustafa-Mahmoud.github.io/books.html#whyIRefusedMarxism";
+
+const dialogue = document.querySelector("#dialogue");
+const dialogueURL = "https://yuniac.github.io/Mustafa-Mahmoud.github.io/books.html#dialogue";
+
+const modernUnderstanding = document.querySelector("#modernUnderstanding");
+const modernUnderstandingURL = "https://yuniac.github.io/Mustafa-Mahmoud.github.io/books.html#modernUnderstanding";
+
+const intercession = document.querySelector("#Intercession");
+const intercessionURL = "https://yuniac.github.io/Mustafa-Mahmoud.github.io/books.html#Intercession";
+
+const trip = document.querySelector("#trip");
+const tripURL = "http://127.0.0.1:5501/Mustafa-Mahmoud.github.io/books.html#trip";
+
+const lifePuzzle = document.querySelector("#lifePuzzle");
+const lifePuzzleURL = "https://yuniac.github.io/Mustafa-Mahmoud.github.io/books.html#lifePuzzle";
+
+const deathPuzzle = document.querySelector("#deathPuzzle");
+const deathPuzzleURL = "https://yuniac.github.io/Mustafa-Mahmoud.github.io/books.html#deathPuzzle"
+
 function highlight(book, url) {
     if (window.location.href === url) {
         book.classList.add("highlight");
-        console.log("#")
         setTimeout(() => {
             book.classList.remove("highlight");
         }, 2500);
     };
 };
 
-const islamAndMarxism = document.querySelector("#islamAndMarxism");
-const islamAndMarxismURL = "https://yuniac.github.io/Mustafa-Mahmoud.github.io/books.html#islamAndMarxism";
 highlight(islamAndMarxism, islamAndMarxismURL);
+highlight(whyIRefusedMarxism, whyIRefusedMarxismURL);
+highlight(dialogue, dialogueURL);
+highlight(modernUnderstanding, modernUnderstandingURL);
+highlight(intercession, intercessionURL);
+highlight(trip, tripURL);
+highlight(lifePuzzle, lifePuzzleURL);
+highlight(deathPuzzle, deathPuzzleURL);
 
 // the footer links
 const lgLink = document.querySelector(".language"); // the language link

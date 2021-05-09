@@ -122,6 +122,7 @@ missingLinks.forEach(link => {
         }
     })
 });
+
 // the no download link
 const missingDlLink = document.querySelector("#missingDLLink");
 missingDlLink.addEventListener("click", () => {
@@ -146,10 +147,18 @@ missingDlLink.addEventListener("click", () => {
 const number7Book = document.querySelector("#number7");
 const number7URL = "https://yuniac.github.io/Mustafa-Mahmoud.github.io/books-subpage.html#number7";
 
+const theImpossible = document.querySelector("#theImpossible");
+const theImpossibleURL = "https://yuniac.github.io/Mustafa-Mahmoud.github.io/books-subpage.html#theImpossible";
+
+const earthQuake = document.querySelector("#theEarthQuake");
+const earthQuakeURL = "https://yuniac.github.io/Mustafa-Mahmoud.github.io/books-subpage.html#theEarthQuake";
+
+const greatIsk = document.querySelector("#greatIsk");
+const greatIskURL = "https://yuniac.github.io/Mustafa-Mahmoud.github.io/books-subpage.html#greatIsk"
+
 function highlight(book, url) {
     if (window.location.href === url) {
         book.classList.add("highlight");
-        console.log("#")
         setTimeout(() => {
             book.classList.remove("highlight");
         }, 2500);
@@ -157,9 +166,10 @@ function highlight(book, url) {
 }
 // highlight(number7Book, number7URL);
 // highlight(number7Book, number7URL);
-// highlight(number7Book, number7URL);
+highlight(theImpossible, theImpossibleURL);
 highlight(number7Book, number7URL);
-highlight(islamAndMarxism, islamAndMarxismURL);
+highlight(earthQuake, earthQuakeURL);
+highlight(greatIsk, greatIskURL);
 
 
 // the footer links
