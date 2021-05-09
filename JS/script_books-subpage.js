@@ -146,7 +146,6 @@ missingDlLink.addEventListener("click", () => {
 const number7Book = document.querySelector("#number7");
 const number7URL = "https://yuniac.github.io/Mustafa-Mahmoud.github.io/books-subpage.html#number7";
 
-
 function highlight(book, url) {
     if (window.location.href === url) {
         book.classList.add("highlight");
@@ -159,15 +158,9 @@ function highlight(book, url) {
 // highlight(number7Book, number7URL);
 // highlight(number7Book, number7URL);
 // highlight(number7Book, number7URL);
-// highlight(number7Book, number7URL);
 highlight(number7Book, number7URL);
-if (window.location.href === number7URL) {
-    number7Book.classList.add("highlight");
-    console.log("#")
-    setTimeout(() => {
-        number7Book.classList.remove("highlight");
-    }, 2500);
-};
+highlight(islamAndMarxism, islamAndMarxismURL);
+
 
 // the footer links
 const lgLink = document.querySelector(".language"); // the language link

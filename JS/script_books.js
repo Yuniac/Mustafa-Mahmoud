@@ -50,6 +50,20 @@ missingLinks.forEach(link => {
     })
 })
 
+// highlight function
+function highlight(book, url) {
+    if (window.location.href === url) {
+        book.classList.add("highlight");
+        console.log("#")
+        setTimeout(() => {
+            book.classList.remove("highlight");
+        }, 2500);
+    };
+};
+
+const islamAndMarxism = document.querySelector("#islamAndMarxism");
+const islamAndMarxismURL = "https://yuniac.github.io/Mustafa-Mahmoud.github.io/books.html#islamAndMarxism";
+highlight(islamAndMarxism, islamAndMarxismURL);
 
 // the footer links
 const lgLink = document.querySelector(".language"); // the language link
