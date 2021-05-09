@@ -623,7 +623,7 @@ footer a.language:hover {
         align-self: flex-end;
         margin-right: 1.5rem;
         margin-top: 1rem;
-        font-size: 4.3rem;
+        font-size: 11vw;
         font-family: 'Aref Ruqaa', serif;
         color: #b0635d;
     }
@@ -632,6 +632,12 @@ footer a.language:hover {
         justify-content: space-between;
         align-items: flex-end;
         flex-flow: row-reverse nowrap;
+    }
+    .copy-notice {
+        left: 105px;
+    }
+    .language-description {
+        font-size: 0.9rem;
     }
 }
 
