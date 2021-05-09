@@ -59,17 +59,18 @@ h5 {
 
 /* Typography END*/
 
-.desktop-banner-image {
-    background-color: transparent;
-    mix-blend-mode: multiply;
-}
-
 
 /* the banner images */
 
 .desktop-banner-image {
     display: block;
     margin: 0 auto;
+}
+
+.desktop-banner-image {
+    background-color: transparent;
+    mix-blend-mode: multiply;
+    margin: 0 auto 1rem;
 }
 
 
