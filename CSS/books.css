@@ -331,6 +331,10 @@ li.active:hover>a {
     display: block;
 }
 
+.highlight {
+    box-shadow: 5px 5px 25px 21.5px #b0635d;
+}
+
 
 /* no wiki pages class */
 
