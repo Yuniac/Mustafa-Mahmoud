@@ -133,10 +133,6 @@ li.active:hover>a {
     align-items: center;
 }
 
-.mobile-nav-items {
-    border-bottom: 1px solid #b0635d
-}
-
 .mobile-banner nav {
     display: flex;
     justify-content: space-between;
@@ -410,7 +406,7 @@ footer a.language:hover {
     }
     /* typography */
     h1 {
-        margin-bottom: 1rem;
+        margin-bottom: 3rem;
     }
     h5 {
         font-size: 1rem;
@@ -418,8 +414,6 @@ footer a.language:hover {
     footer h5 {
         text-decoration-skip-ink: all;
     }
-    /* footer */
-    /* footer */
     h5 {
         font-size: 1.2rem;
         border-bottom: 1px ridge #b0635d;

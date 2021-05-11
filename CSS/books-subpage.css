@@ -223,10 +223,6 @@ li.active:hover>a {
     align-items: center;
 }
 
-.mobile-nav-items {
-    border-bottom: 1px solid #b0635d
-}
-
 .mobile-banner nav {
     display: flex;
     justify-content: space-between;
@@ -628,6 +624,11 @@ footer a.language:hover {
     }
     h1::after {
         width: 200px;
+    }
+    h5 {
+        font-size: 1.1rem;
+        border-bottom: 1px ridge #b0635d;
+        width: 50%;
     }
     p {
         font-size: 1rem;
