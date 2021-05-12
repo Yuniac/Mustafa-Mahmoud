@@ -27,7 +27,7 @@ function changeImgF() {
     setTimeout(() => {
         let imgURL = `${tempURL}${i}${imgExtension}`;
         carouselImg.src = imgURL;
-    }, 400)
+    }, 700)
     carouselImg.style.opacity = 0;
     setTimeout(() => {
         carouselImg.style.opacity = 1;
@@ -43,11 +43,11 @@ function changeImgB() {
     setTimeout(() => {
         let imgURL = `${tempURL}${i}${imgExtension}`;
         carouselImg.src = imgURL;
-    }, 600)
+    }, 700)
     carouselImg.style.opacity = 0;
     setTimeout(() => {
         carouselImg.style.opacity = 1;
-    }, 600);
+    }, 650);
 }
 forwardImg.addEventListener("click", changeImgF);
 backwardImg.addEventListener("click", changeImgB);
