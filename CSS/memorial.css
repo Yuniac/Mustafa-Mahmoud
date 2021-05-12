@@ -36,10 +36,10 @@ button {
 
 a {
     text-decoration: none;
-    color: black;
+    color: inherit;
 }
 
-a:hover {
+main a:hover {
     color: #b0635d;
 }
 

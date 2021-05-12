@@ -24,45 +24,32 @@
 
 <body>
     <header>
+        <!-- desktop nav -->
         <div class="banner">
-            <!-- desktop banner/nav -->
             <div>
                 <img class="desktop-banner-image mobile-banner-image" src="img/Banner/banner.png" alt="Picture of the Doctor">
-                <div class="desktop-bottom">
-                    <ul class="desktop-nav-items">
-                        <li><a href="index.html">الرئيسيةَ</a></li>
-                        <li class="active"><a href="">أعمال المَحمود</a></li>
-                        <li><a href="lifestory.html">حياة المَحمود</a></li>
-                        <li><a href="memorial.html">في ذكرى المحَمود</a></li>
+                <div>
+                    <ul class="desktop-nav nav-items">
+                        <li><a href="index.html">الرئيسيةَ</a>
+                        </li>
+                        <li class="active"><a href="#" class="active">أعمال المَحمود</a></li>
+                        <li><a href="lifestory.html ">حياة المَحمود</a></li>
+                        <li><a href="memorial.html ">في ذكرى المحَمود</a></li>
                     </ul>
                 </div>
             </div>
             <!-- mobile nav -->
             <div class="mobile-banner">
-                <nav class="navbar mobile-nav-list">
-                    <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler">
-                            <svg viewBox="0 0 100 80" width="30" height="50">
-                                <rect width="100" height="15"></rect>
-                                <rect y="30" width="100" height="15"></rect>
-                                <rect y="60" width="100" height="15"></rect>
-                            </svg>
-                            </span>
-                      </button>
-                    <h5>تصفح المزيد:</h5>
-                </nav>
-                <div class="collapse" id="navbarToggleExternalContent">
-                    <div>
-                        <ul class="nav mobile-nav-items">
-                            <li><a href="index.html">الرئيسيةَ</a></li>
-                            <li><a href="">أعمال المَحمود</a></li>
-                            <li><a href="lifestory.html">حياة المَحمود</a></li>
-                            <li><a href="memorial.html">في ذكرى المحَمود</a></li>
-                        </ul>
-                    </div>
-                </div>
-
+                <ul class=" nav mobile-nav nav-items">
+                    <li class="active current-page"><a href="#" class="active current-page">أعمال المَحمود</a></li>
+                    <ul class="sub-nav-items" style="height: 0px;">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="lifestory.html">حياة المَحمود</a></li>
+                        <li><a href="memorial.html">في ذكرى المحَمود</a></li>
+                    </ul>
+                </ul>
             </div>
+        </div>
     </header>
     <main>
         <section class="intro">

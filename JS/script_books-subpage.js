@@ -164,13 +164,22 @@ function highlight(book, url) {
         }, 2500);
     };
 }
-// highlight(number7Book, number7URL);
-// highlight(number7Book, number7URL);
+
 highlight(theImpossible, theImpossibleURL);
 highlight(number7Book, number7URL);
 highlight(earthQuake, earthQuakeURL);
 highlight(greatIsk, greatIskURL);
 
+// the navbar
+const menuButton = document.querySelector(".current-page");
+const navBar = document.querySelector(".sub-nav-items");
+menuButton.addEventListener("click", () => {
+    if (navBar.style.height === "0px") {
+        navBar.style.height = "220px";
+    } else {
+        navBar.style.height = "0px";
+    }
+});
 
 // the footer links
 const lgLink = document.querySelector(".language"); // the language link
