@@ -197,10 +197,6 @@ li.active:hover>a {
     align-items: center;
 }
 
-.mobile-nav-items {
-    border-bottom: 1px solid #b0635d
-}
-
 .mobile-banner nav {
     display: flex;
     justify-content: space-between;
@@ -376,131 +372,6 @@ a.missing-wiki-source:hover {
 /* main END */
 
 
-/* footer */
-
-footer {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-    width: 100%;
-    background-color: #bda7a3;
-    border-top: 1px solid #b0635d
-}
-
-footer li {
-    margin-right: 5rem;
-    padding: 0.4rem 0;
-}
-
-footer ul li.special-li,
-li.special-li>a,
-li.special-li a:hover {
-    cursor: copy;
-    color: #918a89;
-}
-
-footer ul a:hover {
-    color: #b0635d;
-    cursor: pointer;
-}
-
-footer img {
-    width: 245px;
-    background-color: transparent;
-}
-
-footer figure {
-    margin: 0;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
-.footer-items {
-    display: flex;
-    justify-content: space-evenly;
-    width: 80%;
-    padding: 1rem 0.5rem 0rem;
-}
-
-.footer-items>div {
-    margin-left: auto;
-}
-
-.footer-items div:nth-of-type(2) ul {
-    position: relative;
-}
-
-.footer-text {
-    margin: 0;
-    display: none;
-}
-
-
-/* footer special links */
-
-footer a.language {
-    color: #918a89;
-    margin-right: 15px;
-}
-
-footer a.language:hover {
-    cursor: help;
-    text-decoration: none;
-    color: #918a89;
-}
-
-.language-description {
-    color: black;
-    background-color: #ab8d87;
-    border-radius: 5px;
-    padding: 2px 8px;
-    max-width: 120px;
-    margin-top: 0.3rem;
-    direction: rtl;
-    position: relative;
-    opacity: 1;
-}
-
-.language-description::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    top: -10px;
-    right: 15px;
-    border-style: solid;
-    border-width: 0px 10px 20px 10px;
-    border-color: transparent transparent #ab8d87 transparent;
-}
-
-.copy-notice {
-    background-color: #ab8d87;
-    border-radius: 5px;
-    padding: 8px;
-    margin-top: 0.3rem;
-    direction: rtl;
-    opacity: 1;
-    text-align: center;
-    position: absolute;
-    bottom: 41px;
-    left: -25px;
-}
-
-#link {
-    display: none;
-}
-
-.lginfo-visibility,
-.copy-notice-visibility {
-    opacity: 0;
-    transition: opacity 1s;
-}
-
-
-/* footer END */
-
-
 /* =============
         media qs
    ============ */
@@ -645,6 +516,11 @@ footer a.language:hover {
     p {
         font-size: 1rem;
     }
+    h5 {
+        font-size: 1.1rem;
+        border-bottom: 1px ridge #b0635d;
+        width: 50%;
+    }
     .intro {
         flex-direction: column-reverse;
     }
@@ -663,70 +539,6 @@ footer a.language:hover {
     .book-links img {
         width: 16px;
         height: 16px;
-    }
-    /* footer */
-    h5 {
-        font-size: 1rem;
-    }
-    .footer-items>div {
-        margin: 0;
-    }
-    footer li {
-        margin: 0;
-    }
-    footer ul {
-        margin: 0;
-        padding: 0;
-    }
-    footer {
-        font-size: 1.1rem;
-        flex-direction: column-reverse;
-        width: 95%;
-    }
-    .figure {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        flex-flow: row-reverse nowrap;
-    }
-    .footer-text {
-        display: block;
-        align-self: flex-end;
-        margin-right: 1.5rem;
-        margin-top: 1rem;
-        font-size: 11vw;
-        font-family: 'Aref Ruqaa', serif;
-        color: #b0635d;
-    }
-    .footer-items {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 0px 5px;
-        margin: 0;
-        line-height: 2.5rem;
-    }
-    footer figure img {
-        width: 50%;
-        height: auto;
-        margin: 0 auto;
-        padding: 0 1rem;
-        display: block;
-    }
-    .copy-notice {
-        left: 105px;
-    }
-    .language-description {
-        font-size: 0.9rem;
-    }
-}
-
-
-/* on mobile to fix an improper positioning of one of the lists in the footer */
-
-@media (min-width: 395px) and (max-width: 572px) {
-    .footer-items div:last-of-type {
-        margin: 0;
     }
 }
 

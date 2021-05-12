@@ -69,6 +69,9 @@ const intercessionURL = "https://yuniac.github.io/Mustafa-Mahmoud.github.io/book
 const trip = document.querySelector("#trip");
 const tripURL = "http://127.0.0.1:5501/Mustafa-Mahmoud.github.io/books.html#trip";
 
+const allahAndTheHuman = document.querySelector("#allahAndTheHuman");
+const allahAndTheHumanURL = "https://yuniac.github.io/Mustafa-Mahmoud.github.io/books.html#allahAndTheHuman";
+
 const lifePuzzle = document.querySelector("#lifePuzzle");
 const lifePuzzleURL = "https://yuniac.github.io/Mustafa-Mahmoud.github.io/books.html#lifePuzzle";
 
@@ -90,8 +93,20 @@ highlight(dialogue, dialogueURL);
 highlight(modernUnderstanding, modernUnderstandingURL);
 highlight(intercession, intercessionURL);
 highlight(trip, tripURL);
+highlight(allahAndTheHuman, allahAndTheHumanURL);
 highlight(lifePuzzle, lifePuzzleURL);
 highlight(deathPuzzle, deathPuzzleURL);
+
+// the navbar
+const menuButton = document.querySelector(".current-page");
+const navBar = document.querySelector(".sub-nav-items");
+menuButton.addEventListener("click", () => {
+    if (navBar.style.height === "0px") {
+        navBar.style.height = "220px";
+    } else {
+        navBar.style.height = "0px";
+    }
+});
 
 // the footer links
 const lgLink = document.querySelector(".language"); // the language link
