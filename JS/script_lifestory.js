@@ -27,7 +27,7 @@ function changeImgF() {
     setTimeout(() => {
         let imgURL = `${tempURL}${i}${imgExtension}`;
         carouselImg.src = imgURL;
-    }, 600)
+    }, 400)
     carouselImg.style.opacity = 0;
     setTimeout(() => {
         carouselImg.style.opacity = 1;
