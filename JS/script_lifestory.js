@@ -31,7 +31,7 @@ function changeImgF() {
     carouselImg.style.opacity = 0;
     setTimeout(() => {
         carouselImg.style.opacity = 1;
-    }, 750);
+    }, 650);
 }
 
 function changeImgB() {
