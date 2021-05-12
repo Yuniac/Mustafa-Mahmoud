@@ -27,11 +27,11 @@ function changeImgF() {
     setTimeout(() => {
         imgURL = `${tempURL}${i}${imgExtension}`;
         carouselImg.src = imgURL;
-    }, 700)
+    }, 650)
     carouselImg.style.opacity = 0;
     setTimeout(() => {
         carouselImg.style.opacity = 1;
-    }, 650);
+    }, 750);
 }
 
 function changeImgB() {
@@ -43,7 +43,7 @@ function changeImgB() {
     setTimeout(() => {
         imgURL = `${tempURL}${i}${imgExtension}`;
         carouselImg.src = imgURL;
-    }, 700)
+    }, 650)
     carouselImg.style.opacity = 0;
     setTimeout(() => {
         carouselImg.style.opacity = 1;
