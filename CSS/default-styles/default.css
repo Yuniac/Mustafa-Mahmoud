@@ -1,3 +1,146 @@
+/* the banner images */
+
+.desktop-banner-image {
+    background-color: transparent;
+    mix-blend-mode: multiply;
+    display: block;
+    margin: 0 auto 1rem;
+}
+
+
+/* nav */
+
+.desktop-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+}
+
+.nav-items li {
+    padding: 5px 15px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    cursor: pointer;
+    box-shadow: -5px -5px #b0635d;
+}
+
+.nav-items li:hover,
+.nav-items a:hover {
+    cursor: pointer;
+    background-color: #b0635d;
+    color: white;
+    box-shadow: none;
+}
+
+.sub-nav-items {
+    height: 0px;
+    overflow: hidden;
+    transition: height 730ms cubic-bezier(.46, .03, .52, .96);
+    padding: 0;
+}
+
+
+/* active page class */
+
+li.active {
+    padding: 5px 15px;
+    background-color: #b0635d;
+    box-shadow: -7px -7px black;
+    color: white;
+}
+
+li.active:hover,
+li.active:hover>a {
+    background-color: #ab8d87;
+    color: black;
+}
+
+li.active:hover {
+    box-shadow: -7px -7px #b0635d;
+}
+
+
+/* nav on mobile */
+
+.mobile-banner {
+    display: none;
+}
+
+.mobile-nav-list {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-banner nav {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 1rem auto 0;
+}
+
+
+/* header END */
+
+@media (max-width: 1000px) {
+    .nav-items {
+        font-size: 1.1rem;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0px 5px;
+    }
+}
+
+@media (max-width: 572px) {
+    /* header and nav */
+    .desktop-nav {
+        display: none;
+    }
+    .mobile-banner {
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+    }
+    .mobile-nav {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        font-size: 1.3rem;
+        font-weight: 500;
+        line-height: 3.5rem;
+        padding: 0;
+    }
+    .mobile-nav li {
+        text-align: center;
+        min-width: 220px;
+        padding: 2px;
+        margin: 10px 0;
+        border-radius: 20px;
+        box-shadow: none;
+    }
+    .mobile-nav a {
+        padding-right: 15px;
+    }
+    .mobile-banner-image {
+        width: 240px;
+    }
+}
+
+
+/* re-adujusting the header on certain sizes*/
+
+@media (min-width: 573px) and (max-width: 621px) {
+    .desktop-nav {
+        justify-content: space-evenly;
+        font-size: 1.1rem;
+    }
+}
+
+
 /* footer */
 
 footer {
