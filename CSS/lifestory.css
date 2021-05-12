@@ -424,23 +424,6 @@ main button {
     bottom: 192px;
 }
 
-
-/* 
-.carousel::after {
-    content: ">";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 24px;
-    height: 24px;
-} */
-
-
-/* .carousel-control-prev,
-.carousel-control-next {
-    filter: invert(100%);
-} */
-
 .section-8 {
     position: relative;
 }

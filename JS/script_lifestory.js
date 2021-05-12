@@ -52,7 +52,7 @@ function changeImgB() {
 forwardImg.addEventListener("click", changeImgF);
 backwardImg.addEventListener("click", changeImgB);
 
-// setInterval(changeImgF, 3300);
+setInterval(changeImgF, 3300);
 
 // scroll to top button 
 let goTopButton = document.getElementById("scrollToTopButton");
