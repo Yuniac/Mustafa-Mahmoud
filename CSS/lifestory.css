@@ -373,7 +373,7 @@ main button {
 }
 
 .carousel-img {
-    transition: opacity 500ms ease-in;
+    transition: opacity 650ms ease-in;
 }
 
 .carousel::after {
