@@ -13,7 +13,7 @@ const imgExtension = ".jpg";
 const carouselImg = document.querySelector("#carouselImg");
 let imgCount = 9;
 let i = 1;
-// let imgURL = `${tempURL}${i}${imgExtension}`;
+let imgURL = `${tempURL}${i}${imgExtension}`;
 
 const backwardImg = document.querySelector(".backward-icon");
 const forwardImg = document.querySelector(".forward-icon");
@@ -25,7 +25,7 @@ function changeImgF() {
         i++
     }
     setTimeout(() => {
-        let imgURL = `${tempURL}${i}${imgExtension}`;
+        imgURL = `${tempURL}${i}${imgExtension}`;
         carouselImg.src = imgURL;
     }, 700)
     carouselImg.style.opacity = 0;
@@ -41,7 +41,7 @@ function changeImgB() {
     };
     i--;
     setTimeout(() => {
-        let imgURL = `${tempURL}${i}${imgExtension}`;
+        imgURL = `${tempURL}${i}${imgExtension}`;
         carouselImg.src = imgURL;
     }, 700)
     carouselImg.style.opacity = 0;
