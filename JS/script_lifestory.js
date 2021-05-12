@@ -31,7 +31,7 @@ function changeImgF() {
     carouselImg.style.opacity = 0;
     setTimeout(() => {
         carouselImg.style.opacity = 1;
-    }, 650);
+    }, 750);
 }
 
 function changeImgB() {
@@ -47,7 +47,7 @@ function changeImgB() {
     carouselImg.style.opacity = 0;
     setTimeout(() => {
         carouselImg.style.opacity = 1;
-    }, 650);
+    }, 750);
 }
 forwardImg.addEventListener("click", changeImgF);
 backwardImg.addEventListener("click", changeImgB);
