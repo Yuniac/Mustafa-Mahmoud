@@ -31,7 +31,7 @@ function changeImgF() {
     carouselImg.style.opacity = 0;
     setTimeout(() => {
         carouselImg.style.opacity = 1;
-    }, 600);
+    }, 650);
 }
 
 function changeImgB() {
@@ -52,7 +52,6 @@ function changeImgB() {
 forwardImg.addEventListener("click", changeImgF);
 backwardImg.addEventListener("click", changeImgB);
 
-setInterval(changeImgF, 3300);
 
 // scroll to top button 
 let goTopButton = document.getElementById("scrollToTopButton");
