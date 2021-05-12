@@ -363,27 +363,65 @@ main button {
 
 /* section 8 / no flex - carousel  */
 
-.carousel,
-.carousel-section {
-    width: 60%;
-    margin: 0 auto;
+.carousel {
+    width: 55%;
+    margin: 1rem auto 4rem;
+    position: relative;
+    background-color: #ab8d87;
+    border: 2px double #b0635d;
+    box-shadow: 5px 5px 65px 5px black, -5px -5px 65px 5px black;
 }
 
-.carousel-section {
-    border-top: 1px ridge #b0635d;
-    border-bottom: 1px ridge #b0635d;
-    padding: 1rem 0;
+.carousel-img {
+    transition: opacity 500ms ease-in;
+}
+
+.carousel::after {
+    content: "";
+    position: absolute;
+    bottom: -3rem;
+    left: 10%;
+    display: block;
+    width: 82%;
+    height: 3px;
+    background-color: #b0635d;
+}
+
+.carousel::before {
+    content: "";
+    position: absolute;
+    top: -3rem;
+    left: 10%;
+    display: block;
+    width: 82%;
+    height: 3px;
+    background-color: #b0635d;
 }
 
 .carousel img {
+    margin: 0 auto;
+    display: block;
     border: 2px ridge #b0635d;
     padding: 1rem;
     background-color: black;
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-    filter: invert(100%);
+.carousel .carousel-icon {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.backward-icon {
+    position: absolute;
+    left: 3px;
+    bottom: 192px;
+}
+
+.forward-icon {
+    position: absolute;
+    right: 3px;
+    bottom: 192px;
 }
 
 .section-8 {
@@ -635,6 +673,9 @@ media qs
         display: block;
         margin: 0 auto;
     }
+    .section-4-images .small-sized-images {
+        width: 350px;
+    }
     .section-5-images {
         display: flex;
         flex-direction: row;
@@ -738,8 +779,7 @@ media qs
     .section-6 figure img {
         width: 80%;
     }
-    .carousel,
-    .carousel-section {
+    .carousel {
         width: 90%;
     }
     /* footer */

@@ -7,6 +7,53 @@ noticeButton.addEventListener("click", () => {
     noticeDiv.style.visibility = "hidden";
 });
 
+// the carousel
+const tempURL = "img/lifestory/social-images/img";
+const imgExtension = ".jpg";
+const carouselImg = document.querySelector("#carouselImg");
+let imgCount = 9;
+let i = 1;
+// let imgURL = `${tempURL}${i}${imgExtension}`;
+
+const backwardImg = document.querySelector(".backward-icon");
+const forwardImg = document.querySelector(".forward-icon");
+
+function changeImgF() {
+    if (i === imgCount) {
+        i = 1;
+    } else if (i >= 1) {
+        i++
+    }
+    setTimeout(() => {
+        let imgURL = `${tempURL}${i}${imgExtension}`;
+        carouselImg.src = imgURL;
+    }, 600)
+    carouselImg.style.opacity = 0;
+    setTimeout(() => {
+        carouselImg.style.opacity = 1;
+    }, 600);
+}
+
+function changeImgB() {
+    if (i === 1) {
+        i = imgCount + 1;
+        // extra 1 on the amount of all images because we have to decrease it by 1
+    };
+    i--;
+    setTimeout(() => {
+        let imgURL = `${tempURL}${i}${imgExtension}`;
+        carouselImg.src = imgURL;
+    }, 600)
+    carouselImg.style.opacity = 0;
+    setTimeout(() => {
+        carouselImg.style.opacity = 1;
+    }, 500);
+}
+forwardImg.addEventListener("click", changeImgF);
+backwardImg.addEventListener("click", changeImgB);
+
+setInterval(changeImgF, 3300);
+
 // scroll to top button 
 let goTopButton = document.getElementById("scrollToTopButton");
 let root = document.documentElement;
