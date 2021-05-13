@@ -5,6 +5,7 @@ const noticeButton = document.querySelector("#hideButton");
 const noticeDiv = document.querySelector("#noticeDiv");
 noticeButton.addEventListener("click", () => {
     noticeDiv.style.visibility = "hidden";
+    noticeDiv.style.display = "none";
 });
 
 // the carousel
