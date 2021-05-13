@@ -685,9 +685,6 @@ media qs
         display: block;
         margin: 0 auto;
     }
-    .section-4-images .small-sized-images {
-        width: 350px;
-    }
     .section-5-images {
         display: flex;
         flex-direction: row;
@@ -698,6 +695,9 @@ media qs
     .section-5-images figure img {
         display: block;
         margin: 0 auto;
+    }
+    .section-4-images figcaption {
+        font-size: 0.6rem;
     }
     /* typography */
     h1,
@@ -755,15 +755,23 @@ media qs
     .mobile-banner-image {
         width: 320px;
     }
-    /* header and nav END */
     /* typography */
     h1 {
         margin: 1rem 0 4rem;
+    }
+    h2 {
+        margin-bottom: 1rem;
+    }
+    h3 {
+        font-size: 2rem;
     }
     h5 {
         font-size: 1.2rem;
         border-bottom: 1px ridge #b0635d;
         width: 50%;
+    }
+    p {
+        font-size: 1rem;
     }
     /* main */
     .intro-image {
@@ -777,6 +785,7 @@ media qs
         justify-content: space-between;
     }
     /* hides the second image due to lack of space */
+    .section-4-images .small-sized-images,
     .section-4-images figure:last-of-type {
         display: none;
     }

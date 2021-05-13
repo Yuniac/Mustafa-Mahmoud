@@ -5,6 +5,7 @@ const noticeButton = document.querySelector("#hideButton");
 const noticeDiv = document.querySelector("#noticeDiv");
 noticeButton.addEventListener("click", () => {
     noticeDiv.style.visibility = "hidden";
+    noticeDiv.style.display = "none";
 });
 
 // the carousel
@@ -13,7 +14,6 @@ const imgExtension = ".jpg";
 const carouselImg = document.querySelector("#carouselImg");
 let imgCount = 9;
 let i = 1;
-// let imgURL = `${tempURL}${i}${imgExtension}`;
 
 const backwardImg = document.querySelector(".backward-icon");
 const forwardImg = document.querySelector(".forward-icon");
