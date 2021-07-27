@@ -5,7 +5,7 @@
 
 This a biography website about the Egyptian philosopher and doctor [Mustafa Mahmoud](https://en.wikipedia.org/wiki/Mustafa_Mahmoud).
 
-This website contains information in the Arabic language about the Doctor. The information provided here is quoted from him or interpreted by me from his talks. He didn't write his life story or anything like that but he, instead, talked about his life on many occasions such interviews or talk shows that he was on.
+This website contains information in the Arabic language about the Doctor. The information provided here is quoted from him or interpreted by me from his talks. He didn't write his life story or anything like that but he, instead, talked about his life on many occasions such as interviews or talk shows that he was on.
 
 ## Website content
 
