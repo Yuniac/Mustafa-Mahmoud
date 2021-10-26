@@ -93,3 +93,85 @@ lgLink.addEventListener("click", () => {
 //         copyInfo.textContent = notCopied;
 //     }, 2000)
 // })
+
+// the video controls
+
+const playIcon =
+	'<svg xmlns="http://www.w3.org/2000/svg" height="42px" viewBox="0 0 24 24" width="42px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M10 8.64L15.27 12 10 15.36V8.64M8 5v14l11-7L8 5z"/></svg>';
+const pauseIcon =
+	'<svg xmlns="http://www.w3.org/2000/svg" height="42px" viewBox="0 0 24 24" width="42px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
+const replayIcon =
+	'<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="36px" viewBox="0 0 24 24" width="36px" fill="#000000"><g><rect fill="none" height="24" width="24"/><rect fill="none" height="24" width="24"/><rect fill="none" height="24" width="24"/></g><g><g/><path d="M12,5V1L7,6l5,5V7c3.31,0,6,2.69,6,6s-2.69,6-6,6s-6-2.69-6-6H4c0,4.42,3.58,8,8,8s8-3.58,8-8S16.42,5,12,5z"/></g></svg>';
+
+const playButton = document.querySelector("#play");
+playButton.innerHTML = playIcon;
+const replayButton = document.querySelector("#replay");
+replayButton.innerHTML = replayIcon;
+
+const timerWrapper = document.querySelector("#timer");
+const timerBar = document.querySelector("#timer-bar");
+const timerNumbers = document.querySelector("#timer-numbers");
+
+const video = document.querySelector("video");
+
+const volumeSlider = document.querySelector("#volume");
+
+const playButtonAsOverlay = document.querySelector("#play-overlay");
+
+function toggleVideoPlay() {
+	playButton.addEventListener("click", () => {
+		if (video.paused) {
+			video.play();
+			playButton.innerHTML = pauseIcon;
+		} else {
+			video.pause();
+			playButton.innerHTML = playIcon;
+		}
+	});
+}
+function replayVideoFromStart() {
+	replayButton.addEventListener("click", () => {
+		if (video.currentTime > 0) {
+			video.pause();
+			video.currentTime = 0;
+			video.play();
+			playButton.innerHTML = pauseIcon;
+		}
+	});
+	playButtonAsOverlay.addEventListener("click", () => {
+		video.play();
+		playButtonAsOverlay.style.display = "none";
+		playButton.innerHTML = pauseIcon;
+	});
+}
+function seek(e) {
+	video.currentTime = (e.offsetX * video.duration) / timerWrapper.clientWidth;
+}
+
+function volume() {
+	video.volume = volumeSlider.value / 10;
+	return volumeSlider.value;
+}
+function setTime() {
+	const minutes = Math.floor(video.currentTime / 60);
+	const seconds = Math.floor(video.currentTime - minutes * 60);
+	const minutesValue = "0" + minutes;
+	let secondsValue;
+
+	if (seconds < 10) {
+		secondsValue = "0" + seconds;
+	} else {
+		secondsValue = seconds;
+	}
+
+	const videoTime = minutesValue + ":" + secondsValue;
+	timerNumbers.textContent = videoTime;
+	const barLength = timerWrapper.clientWidth * (video.currentTime / video.duration);
+	timerBar.style.width = barLength + "px";
+}
+toggleVideoPlay(playButton);
+replayVideoFromStart();
+video.addEventListener("timeupdate", setTime);
+timerWrapper.addEventListener("click", seek);
+volumeSlider.addEventListener("input", volume);
+volume();
