@@ -90,7 +90,7 @@ li.active:hover {
 		font-size: 1.1rem;
 		justify-content: space-between;
 		width: 100%;
-		padding: 0px 5px;
+		padding: 0px;
 	}
 }
 
@@ -147,9 +147,12 @@ footer {
 	background-color: #bda7a3;
 	border-top: 1px solid #b0635d;
 }
-
+footer ul {
+	margin-right: 1.5rem;
+}
 footer li {
 	padding: 0.4rem 0.2rem;
+	list-style-type: arabic-indic;
 }
 
 footer ul a:hover {
@@ -189,8 +192,6 @@ footer figure {
 	margin: 0;
 	display: none;
 }
-
-/* footer special links */
 
 footer a.language {
 	color: #918a89;
@@ -249,7 +250,6 @@ footer a.language:hover {
 	border-width: 0px 10px 20px 10px;
 	border-color: transparent transparent #ab8d87 transparent;
 }
-
 @media (max-width: 900px) {
 	/* footer */
 	footer li {
