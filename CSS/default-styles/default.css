@@ -152,13 +152,6 @@ footer li {
 	padding: 0.4rem 0.2rem;
 }
 
-footer ul li.special-li,
-li.special-li > a,
-li.special-li a:hover {
-	cursor: copy;
-	color: #918a89;
-}
-
 footer ul a:hover {
 	color: #b0635d;
 	cursor: pointer;
@@ -214,7 +207,6 @@ footer a.language:hover {
 	color: black;
 	background-color: #ab8d87;
 	border-radius: 5px;
-	padding: 4px;
 	max-width: 90px;
 	margin-top: 0.3rem;
 	direction: rtl;
