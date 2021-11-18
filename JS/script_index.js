@@ -66,36 +66,7 @@ lgLink.addEventListener("click", () => {
 	}
 });
 
-// const copyLink = document.querySelector(".special-li");
-// const copyInfo = document.querySelector(".copy-notice");
-// const notCopied = "أنقر لنسخ رابط الموقع";
-// const copied = "تم النسخ!";
-// copyInfo.textContent = notCopied;
-
-// copyLink.addEventListener("mouseover", () => {
-//     //some delay to make it smooth
-//     setTimeout(() => {
-//         if (copyInfo.classList.contains("copy-notice-visibility")) {
-//             copyInfo.classList.remove("copy-notice-visibility");
-//             setTimeout(function() {
-//                 copyInfo.classList.add("copy-notice-visibility");
-//             }, 1500)
-//         }
-//     }, 400)
-// });
-
-// copyLink.addEventListener("click", () => {
-//     let websiteLink = document.querySelector("#link");
-//     let copiedWebsiteLink = websiteLink.textContent;
-//     navigator.clipboard.writeText(copiedWebsiteLink);
-//     copyInfo.textContent = copied;
-//     setTimeout(() => {
-//         copyInfo.textContent = notCopied;
-//     }, 2000)
-// })
-
 // the video controls
-
 const playIcon =
 	'<svg xmlns="http://www.w3.org/2000/svg" height="42px" viewBox="0 0 24 24" width="42px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M10 8.64L15.27 12 10 15.36V8.64M8 5v14l11-7L8 5z"/></svg>';
 const pauseIcon =
@@ -147,7 +118,6 @@ function replayVideoFromStart() {
 function seek(e) {
 	video.currentTime = (e.offsetX * video.duration) / timerWrapper.clientWidth;
 }
-
 function volume() {
 	video.volume = volumeSlider.value / 10;
 	return volumeSlider.value;
@@ -169,9 +139,13 @@ function setTime() {
 	const barLength = timerWrapper.clientWidth * (video.currentTime / video.duration);
 	timerBar.style.width = barLength + "px";
 }
-toggleVideoPlay(playButton);
-replayVideoFromStart();
-video.addEventListener("timeupdate", setTime);
-timerWrapper.addEventListener("click", seek);
-volumeSlider.addEventListener("input", volume);
-volume();
+
+function videoPayer() {
+	toggleVideoPlay(playButton);
+	replayVideoFromStart();
+	video.addEventListener("timeupdate", setTime);
+	timerWrapper.addEventListener("click", seek);
+	volumeSlider.addEventListener("input", volume);
+	volume();
+}
+videoPayer()
