@@ -1,0 +1,20 @@
+{
+  "name": "Mustafa_Mahmoud_website",
+  "version": "1.2.0",
+  "description": "Biography website about the Egyptian philosopher and doctor Mustafa Mahmoud. ",
+  "main": "index.js",
+  "repository": "git@github.com:Yuniac/Mustafa-Mahmoud.git",
+  "author": "Yusuf Sabbag <sist.heb@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.13",
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "start": "nodemon ./server/index.js"
+  },
+  "proxy": "http://localhost:5000"
+}
