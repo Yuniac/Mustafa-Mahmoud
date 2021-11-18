@@ -259,8 +259,8 @@ li.active:hover > a {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	transition: box-shadow 1500ms ease-in-out;
 	border: 1px solid #b0635d;
+	transition: all 500ms ease-in-out;
 }
 
 .book-card img {
@@ -322,6 +322,7 @@ li.active:hover > a {
 
 .highlight {
 	box-shadow: 5px 5px 25px 21.5px #b0635d;
+	transform: translateY(5px);
 }
 
 /* no wiki page class */
