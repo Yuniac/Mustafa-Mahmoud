@@ -1,17 +1,18 @@
 const mongoose = require("mongoose");
 //TODO mongoose connect url
-const url = "mongodb://localhost:27017/MMBooks"
+const url = "mongodb://localhost:27017/MMBooks";
 mongoose.connect(url);
 
 const schema = new mongoose.Schema({
 	name: {
 		type: String,
 		required: true,
-		trim: true
+		trim: true,
 	},
 	author: {
 		type: String,
 		required: true,
+		trim: true,
 	},
 	country: {
 		type: String,
@@ -23,10 +24,9 @@ const schema = new mongoose.Schema({
 	},
 	publisher: {
 		type: String,
-		required: false,
-		default: "الناشر غير معروف",
+		required: true,
 	},
-	publishing_date: {
+	publishing_year: {
 		type: Number,
 		required: true,
 	},
@@ -48,8 +48,7 @@ const schema = new mongoose.Schema({
 	},
 	quotes: {
 		type: [Object],
-		required: false,
-		default: "لا مقتطفات موجودة لهذا الكتاب حالياً"
+		required: true,
 	},
 	links: {
 		type: Object,
@@ -57,11 +56,10 @@ const schema = new mongoose.Schema({
 	},
 	index: {
 		type: [Object],
-		required: false,
-		default: "الفهرس غير متاح"
-	}
+		required: true,
+	},
 });
 
 const Book = mongoose.model("Book", schema);
 
-module.exports.Book = Book
+module.exports.Book = Book;
