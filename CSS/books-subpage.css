@@ -41,7 +41,9 @@ h2:first-of-type {
 
 h2 {
 	text-align: center;
+	margin-bottom: 8rem;
 	margin-top: 8rem;
+	font-size: 2rem;
 }
 
 h2::before {
@@ -245,13 +247,16 @@ li.active:hover > a {
 .gallery {
 	width: 90%;
 	margin: 4rem auto 1rem;
-	display: grid;
-	row-gap: 1.5rem;
-	grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-	grid-template-rows: auto;
-	justify-items: center;
 }
 
+.books-wrapper {
+	display: grid;
+	row-gap: 1.5rem;
+	grid-template-columns: repeat(auto-fit, minmax(420px, 550px));
+	grid-template-rows: auto;
+	justify-items: center;
+	justify-content: center;
+}
 .book-card {
 	text-align: center;
 	width: 60%;
@@ -260,7 +265,15 @@ li.active:hover > a {
 	flex-direction: column;
 	justify-content: space-between;
 	border: 1px solid #b0635d;
-	transition: all 500ms ease-in-out;
+	margin-bottom: 2rem;
+}
+/* TODO */
+/* transition: all 500ms ease-in-out; */
+
+/* book title */
+.book-upper p {
+	margin: 0.6rem 0;
+	font-size: 1.4rem;
 }
 
 .book-card img {
@@ -289,10 +302,7 @@ li.active:hover > a {
 }
 
 .book-links {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	width: 50%;
+	width: 40%;
 	margin: 0 auto;
 	position: relative;
 }

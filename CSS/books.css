@@ -27,7 +27,24 @@ h1 {
 	border-bottom: 1px solid #b0635d;
 	border-width: 60%;
 }
+h2 {
+	text-align: center;
+	margin-bottom: 8rem;
+	margin-top: 8rem;
+	font-size: 2rem;
+}
 
+h2::before {
+	content: "{";
+	padding: 0 0.4rem;
+	color: #b0635d;
+}
+
+h2::after {
+	content: "}";
+	padding: 0 0.4rem;
+	color: #b0635d;
+}
 h5 {
 	font-size: 1rem;
 }
@@ -233,24 +250,20 @@ li.active:hover > a {
 	font-weight: 400;
 }
 
-/* book titles margin fixer class due to different size images */
-
-.margin-fixer {
-	margin-top: 1.5rem;
-}
-
 /* grid (books gallery) */
 
 .gallery {
 	width: 90%;
 	margin: 4rem auto 1rem;
+}
+.books-wrapper {
 	display: grid;
 	row-gap: 1.5rem;
-	grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(420px, 550px));
 	grid-template-rows: auto;
 	justify-items: center;
+	justify-content: center;
 }
-
 .book-card {
 	text-align: center;
 	width: 60%;
@@ -259,9 +272,15 @@ li.active:hover > a {
 	flex-direction: column;
 	justify-content: space-between;
 	border: 1px solid #b0635d;
-	transition: all 500ms ease-in-out;
+	margin-bottom: 2rem;
 }
+/* TODO figure out the transition */
 
+.book-upper p {
+	margin: 0.6rem 0;
+	font-size: 1.4rem;
+}
+/* transition: all 500ms ease-in-out; */
 .book-card img {
 	display: block;
 	margin: 0 auto;
@@ -288,9 +307,6 @@ li.active:hover > a {
 }
 
 .book-links {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
 	width: 40%;
 	margin: 0 auto;
 	position: relative;
@@ -324,6 +340,7 @@ li.active:hover > a {
 
 a.missing-wiki-source {
 	color: #ccc;
+	/* pointer-events: none; */
 }
 
 a.missing-wiki-source:hover {
@@ -378,9 +395,14 @@ a.missing-wiki-source:hover {
 } */
 
 @media (max-width: 1400px) {
-	.gallery {
+	.books-wrapper {
 		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 		width: 96%;
+		margin: 0 auto;
+	}
+	.book {
+		margin: 0 auto 2rem;
+		width: 65%;
 	}
 }
 
@@ -402,9 +424,7 @@ a.missing-wiki-source:hover {
 		font-size: 0.9rem;
 	}
 	/* main */
-	.gallery {
-		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-	}
+
 	.book-card {
 		width: 90%;
 	}
