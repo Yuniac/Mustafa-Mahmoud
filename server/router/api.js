@@ -87,7 +87,7 @@ router.get("/books/categories", async (req, res) => {
 	try {
 		const result = await getAllCategories();
 		if (result && result.length) {
-			res.json({ success: true, data: result });
+			res.json({ success: true, data: result, error_message: null });
 		} else {
 			res.json({
 				success: false,
