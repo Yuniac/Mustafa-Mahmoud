@@ -28,13 +28,8 @@ const getAllCategories = async () => {
 };
 
 const getBasedOnAcategory = async (category, limit) => {
-	if (limit) {
-		const booksOffOneCategory = await Book.find({ category: category }).limit(Number(limit));
-		return booksOffOneCategory;
-	} else {
-		const booksOffOneCategory = await Book.find({ category: category });
-		return booksOffOneCategory;
-	}
+	const booksOffOneCategory = await Book.find({ category: category }).limit(Number(limit));
+	return booksOffOneCategory;
 };
 
 const getBooksBasedOnQueryParams = async (query) => {
