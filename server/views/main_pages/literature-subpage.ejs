@@ -3,60 +3,13 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="title" content="مصطفى محمود" />
-		<meta name="description" content="موقع عن الدكتور مصطفى محمود" />
-		<meta name="keywords" content="مصطفى محمود" />
-		<meta name="robots" content="index, follow" />
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="language" content="Arabic" />
-		<link rel="icon" href="img/Icons/icon.png" />
-		<!-- MY CSS -->
+		<%- include("../partials/head") %> 
 		<link type="text/css" rel="stylesheet" href="CSS/books-subpage.css" />
-		<link type="text/css" rel="stylesheet" href="CSS/default-styles/default.css" />
-		<!-- FONTS -->
-		<!-- Aref Ruqaa -->
-		<link rel="preconnect" href="https://fonts.gstatic.com" />
-		<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet" />
-		<!-- Lateef arabic font -->
-		<link rel="preconnect" href="https://fonts.gstatic.com" />
-		<link href="https://fonts.googleapis.com/css2?family=Lateef&display=swap" rel="stylesheet" />
-		<!-- Cairo arabic font -->
-		<link rel="preconnect" href="https://fonts.gstatic.com" />
-		<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@600&display=swap" rel="stylesheet" />
-		<title>مصطفى محمود</title>
 	</head>
 
 	<body>
 		<header>
-			<!-- desktop nav -->
-			<div class="banner">
-				<div>
-					<img class="desktop-banner-image mobile-banner-image" src="img/Banner/banner.png" alt="صورة للدكتور" />
-					<div>
-						<ul class="desktop-nav nav-items">
-							<li><a href="index.html">الرئيسيةَ</a></li>
-							<li class="active"><a href=" books.html" class="active">أعمال المَحمود</a></li>
-							<li>
-								<a href="lifestory.html">حياة المَحمود</a>
-							</li>
-							<li><a href="memorial.html">في ذكرى المحَمود</a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- mobile nav -->
-				<div class="mobile-banner">
-					<ul class="nav mobile-nav nav-items">
-						<li class="current-page"><a href="#" class="current-page">حياة المَحمود</a></li>
-						<ul class="sub-nav-items" style="height: 0px">
-							<li class="active"><a class="active" href="books.html">أعمال المَحمود</a></li>
-							<li><a href="index.html ">الرئيسية</a></li>
-							<li><a href="memorial.html ">في ذكرى المحَمود</a></li>
-						</ul>
-					</ul>
-				</div>
-			</div>
+			<%- include("../partials/navbar") %> 
 		</header>
 		<main>
 			<section class="intro">
@@ -80,70 +33,7 @@
         </div> 
 		</main>
 		<footer>
-			<div class="figure">
-				<figure>
-					<img src="img/Banner/footer-img.png" alt="Picture of the doctor " />
-				</figure>
-				<p class="footer-text">مصطفى محمود</p>
-			</div>
-			<div class="footer-items">
-				<div>
-					<h5>المصادر المستخدمة:</h5>
-					<ul>
-						<li><a href="https://ar.wikipedia.org">ويكيبيديا بالعربي</a></li>
-						<li><a href="https://en.wikipedia.org">ويكيبيديا بالإنجليزية</a></li>
-						<li>
-							<a
-								href="https://archive.org/details/science.faith/%D9%83%D8%AA%D8%A7%D8%A8%20%D8%A7%D8%B9%D8%AA%D8%B1%D8%A7%D9%81%D8%A7%D8%AA%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D9%85%D8%AD%D9%85%D9%88%D8%AF"
-								>مصطفى محمود - الأعمال الكاملة</a
-							>
-						</li>
-						<li>
-							<a
-								href="https://www.youtube.com/results?search_query=%D9%85%D8%B5%D8%B7%D9%81%D9%89+%D9%85%D8%AD%D9%85%D9%88%D8%AF"
-								>اليوتيوب</a
-							>
-						</li>
-					</ul>
-				</div>
-				<div>
-					<h5>جِد الدكتور من خلال:</h5>
-					<ul>
-						<li>
-							<a href="https://www.youtube.com/user/DrMostafaMahmud">القناة الرسمية على اليوتيوب</a>
-						</li>
-						<li>
-							<a
-								href="https://www.facebook.com/Science.Faith?refid=7&_ft_=qid.6061565986845148325%3Amf_story_key.-6295907305872139573"
-								>صفحته على الفيسبوك</a
-							>
-						</li>
-						<li>
-							<a href="https://dmostafamahmoud.blogspot.com/">بلوغ خاص بالدكتور</a>
-						</li>
-						<li>
-							<a href="https://www.mustafamahmoud.net">الموقع هذا</a>
-						</li>
-						<li class="copy-notice copy-notice-visibility"></li>
-						<span id="link">https://yuniac.github.io/Mustafa-Mahmoud.github.io/</span>
-					</ul>
-				</div>
-				<div>
-					<h5>عن مصمم الموقع:</h5>
-					<ul>
-						<li>
-							<a href="https://github.com/Yuniac">غيتهب (Github)</a>
-						</li>
-						<li>
-							<a href="https://www.twitter.com/YMsabbag">تويتر (Twitter)</a>
-						</li>
-						<li>
-							<a class="language">AR | EN</a>
-							<p class="language-description lginfo-visibility">SOON | قريباً</p>
-						</li>
-					</ul>
-				</div>
-			</div>
+			<%- include("../partials/footer")  %> 
 		</footer>
 		<script src="JS/script_books-subpage.js" async></script>
 	</body>
