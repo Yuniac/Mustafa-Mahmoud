@@ -13,7 +13,7 @@ const {
 // helpers
 const { isEmpty } = require("../helpers/helpers");
 
-router.get("/books", async (req, res) => {
+router.get("/", async (req, res) => {
 	// we first check whether any query parameters are present, we do this by checking whether `req.query` is empty or not;
 	const isReqQueryEmpty = isEmpty(req.query);
 	try {
@@ -61,7 +61,7 @@ router.get("/books", async (req, res) => {
 	}
 });
 
-router.get("/books/count", async (req, res) => {
+router.get("/count", async (req, res) => {
 	try {
 		const result = await getBooksCount();
 		if (result) {
@@ -83,7 +83,7 @@ router.get("/books/count", async (req, res) => {
 	}
 });
 
-router.get("/books/categories", async (req, res) => {
+router.get("/categories", async (req, res) => {
 	try {
 		const result = await getAllCategories();
 		if (result && result.length) {
@@ -105,7 +105,7 @@ router.get("/books/categories", async (req, res) => {
 	}
 });
 
-router.get("/books/list", async (req, res) => {
+router.get("/list", async (req, res) => {
 	try {
 		const result = await getBooksIDAndNames();
 		if (result) {
@@ -122,7 +122,7 @@ router.get("/books/list", async (req, res) => {
 	}
 });
 
-router.get("/books/quote", async (req, res) => {
+router.get("/quote", async (req, res) => {
 	try {
 		const isReqBodyEmpty = isEmpty(req.query);
 		if (isReqBodyEmpty) {
