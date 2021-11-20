@@ -1,10 +1,11 @@
 // Copyright Yusuf Sabbag. Distributed under the MIT License respectively CC-BY NC License.
 
 const loadBooks = async () => {
-	const categoriesForBooksPage = [121, 19, 20, 77, 36, 84];
+	const categoriesForSubBooksPage = [121, 19, 20, 77, 36, 84];
 	const gallerySection = document.querySelector("section.gallery");
-	for (let i = 0; i < categoriesForBooksPage.length; i++) {
-		const books = await (await fetch(`http://localhost:5000/books?category=${categoriesForBooksPage[i]}`)).json();
+	const loadingAnimationEl = document.querySelector(".loading-animation");
+	for (let i = 0; i < categoriesForSubBooksPage.length; i++) {
+		const books = await (await fetch(`http://localhost:5000/books?category=${categoriesForSubBooksPage[i]}`)).json();
 		// each category has a wrapper
 		const categoryContainer = document.createElement("div");
 		categoryContainer.classList.add("category-container");
@@ -16,6 +17,10 @@ const loadBooks = async () => {
 
 		const categoryHeader = document.createElement("h2");
 		categoryHeader.classList.add("category-header");
+		// when the data has been fetched, remove the loading animation
+		gallerySection.classList.remove("temp-gallery");
+		loadingAnimationEl.style.display = "none";
+
 		// the category name
 		categoryHeader.textContent = books.data[0].subject;
 		categoryContainer.append(categoryHeader);
@@ -42,7 +47,7 @@ const loadBooks = async () => {
 
 			//
 			const bookBio = document.createElement("div");
-			bookLower.classList.add("book-bio");
+			bookBio.classList.add("book-bio");
 
 			const bookSubject = document.createElement("p");
 			bookSubject.textContent = book.subject;
@@ -54,7 +59,7 @@ const loadBooks = async () => {
 			bookBio.append(bookPublishingYear);
 
 			const bookLinks = document.createElement("div");
-			bookLower.classList.add("book-links");
+			bookLinks.classList.add("book-links");
 
 			const wikiLink = document.createElement("a");
 			if (book.links.wiki_link === "") {

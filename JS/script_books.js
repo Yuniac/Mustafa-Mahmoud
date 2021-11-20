@@ -3,6 +3,7 @@
 const loadBooks = async () => {
 	const categoriesForBooksPage = [97, 52, 3, 1, 67];
 	const gallerySection = document.querySelector("section.gallery");
+	const loadingAnimationEl = document.querySelector(".loading-animation");
 	for (let i = 0; i < categoriesForBooksPage.length; i++) {
 		const books = await (await fetch(`http://localhost:5000/books?category=${categoriesForBooksPage[i]}`)).json();
 		// each category has a wrapper
@@ -16,6 +17,10 @@ const loadBooks = async () => {
 
 		const categoryHeader = document.createElement("h2");
 		categoryHeader.classList.add("category-header");
+		//
+		// when the data has been fetched, remove the loading animation
+		gallerySection.classList.remove("temp-gallery");
+		loadingAnimationEl.style.display = "none";
 		// the category name
 		categoryHeader.textContent = books.data[0].subject;
 		categoryContainer.append(categoryHeader);
