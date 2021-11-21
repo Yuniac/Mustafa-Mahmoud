@@ -46,88 +46,54 @@
 
 /* active page class */
 
-li.active {
+.active {
 	padding: 5px 15px;
 	background-color: #b0635d;
 	box-shadow: -7px -7px black;
 	color: white;
 }
 
-li.active:hover,
-li.active:hover > a {
+.active:hover {
 	background-color: #ab8d87;
 	color: black;
-}
-
-li.active:hover {
 	box-shadow: -7px -7px #b0635d;
 }
 
-/* nav on mobile */
-
-.mobile-banner {
-	display: none;
+@media (max-width: 1100px) {
+	.desktop-nav {
+		width: 98%;
+		margin: 0 auto;
+	}
 }
 
-.mobile-nav-list {
-	display: flex;
-	flex-direction: row-reverse;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.mobile-banner nav {
-	display: flex;
-	justify-content: space-between;
-	width: 90%;
-	margin: 1rem auto 0;
-}
-
-/* header END */
-
-@media (max-width: 1000px) {
+/* @media (max-width: 1000px) {
 	.nav-items {
 		font-size: 1.1rem;
 		justify-content: space-between;
 		width: 100%;
 		padding: 0px;
 	}
-}
+} */
 
-@media (max-width: 572px) {
-	/* header and nav */
+@media (max-width: 600px) {
 	.desktop-nav {
-		display: none;
-	}
-	.mobile-banner {
-		display: block;
-		width: 80%;
-		margin: 0 auto;
-	}
-	.mobile-nav {
-		display: flex;
-		justify-content: space-around;
 		flex-direction: column;
-		font-size: 1.3rem;
-		font-weight: 500;
-		line-height: 3.5rem;
-		padding: 0;
+		justify-content: space-between;
+		align-items: center;
 	}
-	.mobile-nav li {
+	.desktop-nav {
 		text-align: center;
-		min-width: 220px;
-		padding: 2px;
-		margin: 10px 0;
-		border-radius: 20px;
+	}
+	.desktop-nav li {
+		margin: 1rem auto;
 		box-shadow: none;
 	}
-	.mobile-nav a {
-		padding-right: 15px;
-	}
-	.mobile-banner-image {
+	.desktop-banner-image {
 		width: 240px;
 	}
 }
+/* 
+
 
 /* books gallery */
 
@@ -278,14 +244,6 @@ a.missing-wiki-source:hover {
 
 .wiki-visibility {
 	visibility: hidden;
-}
-/* re-adujusting the header on certain sizes*/
-
-@media (min-width: 573px) and (max-width: 621px) {
-	.desktop-nav {
-		justify-content: space-evenly;
-		font-size: 1.1rem;
-	}
 }
 
 /* footer */

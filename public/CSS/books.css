@@ -264,14 +264,6 @@ li.active:hover > a {
 	}
 }
 
-/* starting from thhe widest screen size */
-
-/* @media (max-width: 1600px) {
-    .missing-wiki-source-notice {
-        font-size: 0.7rem;
-    }
-} */
-
 @media (max-width: 1400px) {
 	.books-wrapper {
 		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -290,6 +282,10 @@ li.active:hover > a {
 		justify-content: space-between;
 		width: 100%;
 		padding: 0px 5px;
+	}
+	.desktop-nav {
+		width: 90%;
+		margin: 0 auto;
 	}
 }
 

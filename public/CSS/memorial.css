@@ -323,15 +323,6 @@ footer a.language:hover {
 	}
 }
 
-@media (max-width: 1000px) {
-	.nav-items {
-		font-size: 1.1rem;
-		justify-content: space-between;
-		width: 100%;
-		padding: 0px 5px;
-	}
-}
-
 @media (max-width: 1200px) {
 	h1 {
 		font-size: 4rem;
@@ -365,26 +356,6 @@ footer a.language:hover {
 }
 
 @media (max-width: 572px) {
-	/* header and nav */
-	.desktop-nav-items {
-		display: none;
-	}
-	.mobile-nav-items {
-		display: flex;
-		justify-content: space-around;
-		flex-direction: column;
-		font-size: 1.3rem;
-		font-weight: 500;
-		line-height: 3.5rem;
-		width: 98%;
-	}
-	.mobile-nav-items li {
-		padding: 2px 5px;
-		border-radius: 20px;
-	}
-	.mobile-banner-image {
-		width: 240px;
-	}
 	/* main */
 	section div:last-of-type p:last-of-type {
 		margin-top: 0;
