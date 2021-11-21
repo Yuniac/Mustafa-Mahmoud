@@ -167,6 +167,9 @@ main img {
 	border: 1px solid #b0635d;
 }
 
+q {
+	color: #b0635d;
+}
 section div {
 	margin: 2rem 0;
 }

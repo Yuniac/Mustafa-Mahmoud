@@ -144,8 +144,8 @@ aside figcaption {
 	margin-bottom: 1rem;
 }
 
-aside hr {
-	border: 1px solid #b0635d;
+aside .align-end {
+	align-self: flex-end;
 }
 
 .aside-info {
@@ -156,6 +156,10 @@ aside hr {
 	display: flex;
 	justify-content: space-between;
 	border-bottom: 1px solid #b0635d;
+}
+aside .no-border {
+	border: none;
+	width: auto;
 }
 
 aside p:first-of-type {
