@@ -123,11 +123,13 @@
 	border: 1px solid #b0635d;
 	margin-bottom: 2rem;
 }
-/* TODO figure out the transition */
 
 .book-upper p {
 	margin: 0.6rem 0;
 	font-size: 1.4rem;
+}
+.book-lower {
+	position: relative;
 }
 /* transition: all 500ms ease-in-out; */
 .book-card img {
@@ -180,11 +182,6 @@
 	display: block;
 }
 
-.highlight {
-	box-shadow: 5px 5px 25px 21.5px #b0635d;
-	transform: translateY(5px);
-}
-
 /* loading animation */
 .loading-animation {
 	display: block;
@@ -231,8 +228,8 @@ a.missing-wiki-source:hover {
 	border-radius: 5px;
 	padding: 1px;
 	position: absolute;
-	right: -110px;
-	top: -120px;
+	right: -2px !important;
+	top: -84px !important;
 	transition: opacity 1s;
 }
 
@@ -246,6 +243,12 @@ a.missing-wiki-source:hover {
 	visibility: hidden;
 }
 
+/* highlight book */
+.book-card:hover {
+	box-shadow: 5px 5px 25px 21.5px #b0635d;
+	transform: translateY(5px);
+	cursor: pointer;
+}
 /* footer */
 
 footer {
