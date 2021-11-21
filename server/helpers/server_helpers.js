@@ -10,4 +10,5 @@ const allowCrossDomain = (req, res, next) => {
 	res.header("Access-Control-Allow-Methods", "GET");
 	next();
 };
+
 module.exports = { isEmpty, allowCrossDomain };

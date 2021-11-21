@@ -3,7 +3,7 @@ const path = require("path");
 const app = express();
 const { router: APIRouter } = require("./router/api");
 const { router: websiteRouter } = require("./router/website");
-const { allowCrossDomain } = require("./helpers/helpers");
+const { allowCrossDomain } = require("./helpers/server_helpers");
 
 app.use(allowCrossDomain);
 

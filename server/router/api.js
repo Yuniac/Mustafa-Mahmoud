@@ -11,7 +11,7 @@ const {
 	getRandomQuoteFromABook,
 } = require("../controllers/get");
 // helpers
-const { isEmpty } = require("../helpers/helpers");
+const { isEmpty } = require("../helpers/server_helpers");
 
 router.get("/", async (req, res) => {
 	// we first check whether any query parameters are present, we do this by checking whether `req.query` is empty or not;
