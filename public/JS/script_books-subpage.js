@@ -1,11 +1,11 @@
 // Copyright Yusuf Sabbag. Distributed under the MIT License respectively CC-BY NC License.
 
 const loadBooks = async () => {
-	const categoriesForSubBooksPage = [121, 19, 20, 77, 36, 84];
+	const categoriesForBooksPage = [121, 19, 20, 77, 36, 84];
 	const gallerySection = document.querySelector("section.gallery");
 	const loadingAnimationEl = document.querySelector(".loading-animation");
-	for (let i = 0; i < categoriesForSubBooksPage.length; i++) {
-		const books = await (await fetch(`http://localhost:5000/books?category=${categoriesForSubBooksPage[i]}`)).json();
+	for (let i = 0; i < categoriesForBooksPage.length; i++) {
+		const books = await (await fetch(`http://localhost:5000/books?category=${categoriesForBooksPage[i]}`)).json();
 		// each category has a wrapper
 		const categoryContainer = document.createElement("div");
 		categoryContainer.classList.add("category-container");
@@ -17,10 +17,10 @@ const loadBooks = async () => {
 
 		const categoryHeader = document.createElement("h2");
 		categoryHeader.classList.add("category-header");
+		//
 		// when the data has been fetched, remove the loading animation
 		gallerySection.classList.remove("temp-gallery");
 		loadingAnimationEl.style.display = "none";
-
 		// the category name
 		categoryHeader.textContent = books.data[0].subject;
 		categoryContainer.append(categoryHeader);
@@ -64,6 +64,14 @@ const loadBooks = async () => {
 			const wikiLink = document.createElement("a");
 			if (book.links.wiki_link === "") {
 				wikiLink.classList.add("missing-wiki-source");
+				wikiLink.setAttribute("data-missing-book-id", book.name);
+
+				const missingBookInfo = document.createElement("p");
+				missingBookInfo.textContent = "لا يوجد صفحة لهذا الكتاب في ويكيبيديا على حسب عِلمنا";
+				missingBookInfo.classList.add("missing-wiki-source-notice", "wiki-notice-hide");
+				missingBookInfo.setAttribute("data-missing-book-id", book.name);
+
+				bookLower.append(missingBookInfo);
 			} else {
 				wikiLink.href = book.links.wiki_link;
 			}
@@ -80,44 +88,34 @@ const loadBooks = async () => {
 		});
 		categoryContainer.append(booksWrapper);
 	}
+	// calling this function here because it depends on `loadBooks` and `loadBooks` is async
+	popoversForMissinglinks();
 };
+// TODO loading animation
 loadBooks();
-// the popovers for the missing links of the books
-const wikiLinks = document.querySelectorAll(".missing-wiki-source");
-wikiLinks.forEach((link) => {
-	link.addEventListener("click", () => {
-		const missigBookInfo = document.querySelector(`#${link.id}Info`);
-		missigBookInfo.classList.remove("wiki-visibility");
-		if (missigBookInfo.classList.contains("wiki-notice-hide")) {
-			missigBookInfo.classList.remove("wiki-notice-hide");
-			// then again, hide it after a short delay
-			setTimeout(() => {
-				missigBookInfo.classList.add("wiki-notice-hide");
-			}, 3500);
-			setTimeout(() => {
-				missigBookInfo.classList.add("wiki-visibility");
-			}, 4600);
-		}
-	});
-});
 
-// the no download link
-const missingDlLink = document.querySelector("#missingDlLink");
-missingDlLink.addEventListener("click", () => {
-	const missingDLPara = document.querySelector("#missingDLPara");
-	missingDLPara.classList.remove("wiki-visibility");
-	if (missingDLPara.classList.contains("wiki-notice-hide")) {
-		missingDLPara.classList.remove("wiki-notice-hide");
-		missingDLPara.style.right = "140px";
-		missingDLPara.style.width = "120px";
-		setTimeout(function () {
-			missingDLPara.classList.add("wiki-notice-hide");
-		}, 3500);
-		setTimeout(function () {
-			missingDLPara.classList.add("wiki-visibility");
-		}, 4600);
-	}
-});
+const popoversForMissinglinks = () => {
+	// the popovers for the missing links of the books
+	const wikiLinks = document.querySelectorAll(".missing-wiki-source");
+
+	wikiLinks.forEach((link) => {
+		link.addEventListener("click", () => {
+			const missigBookInfo = document.querySelector(`[data-missing-book-id=
+				'${link.dataset.missingBookId}']`);
+			missigBookInfo.classList.remove("wiki-visibility");
+			if (missigBookInfo.classList.contains("wiki-notice-hide")) {
+				missigBookInfo.classList.remove("wiki-notice-hide");
+				// then again, hide it after a short delay
+				setTimeout(() => {
+					missigBookInfo.classList.add("wiki-notice-hide");
+				}, 3500);
+				setTimeout(() => {
+					missigBookInfo.classList.add("wiki-visibility");
+				}, 4600);
+			}
+		});
+	});
+};
 
 // highlight book cards
 // TODO change base url
@@ -133,17 +131,6 @@ window.addEventListener("load", () => {
 		setTimeout(() => {
 			el.classList.remove("highlight");
 		}, 2500);
-	}
-});
-
-// the navbar
-const menuButton = document.querySelector(".current-page");
-const navBar = document.querySelector(".sub-nav-items");
-menuButton.addEventListener("click", () => {
-	if (navBar.style.height === "0px") {
-		navBar.style.height = "220px";
-	} else {
-		navBar.style.height = "0px";
 	}
 });
 

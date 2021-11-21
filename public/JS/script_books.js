@@ -64,6 +64,14 @@ const loadBooks = async () => {
 			const wikiLink = document.createElement("a");
 			if (book.links.wiki_link === "") {
 				wikiLink.classList.add("missing-wiki-source");
+				wikiLink.setAttribute("data-missing-book-id", book.name);
+
+				const missingBookInfo = document.createElement("p");
+				missingBookInfo.textContent = "لا يوجد صفحة لهذا الكتاب في ويكيبيديا على حسب عِلمنا";
+				missingBookInfo.classList.add("missing-wiki-source-notice", "wiki-notice-hide");
+				missingBookInfo.setAttribute("data-missing-book-id", book.name);
+
+				bookLower.append(missingBookInfo);
 			} else {
 				wikiLink.href = book.links.wiki_link;
 			}
@@ -80,28 +88,34 @@ const loadBooks = async () => {
 		});
 		categoryContainer.append(booksWrapper);
 	}
+	// calling this function here because it depends on `loadBooks` and `loadBooks` is async
+	popoversForMissinglinks();
 };
 // TODO loading animation
 loadBooks();
-// the popovers for the missing links of the books
-const wikiLinks = document.querySelectorAll(".missing-wiki-source");
 
-wikiLinks.forEach((link) => {
-	link.addEventListener("click", () => {
-		const missigBookInfo = document.querySelector(`#${link.id}Info`);
-		missigBookInfo.classList.remove("wiki-visibility");
-		if (missigBookInfo.classList.contains("wiki-notice-hide")) {
-			missigBookInfo.classList.remove("wiki-notice-hide");
-			// then again, hide it after a short delay
-			setTimeout(() => {
-				missigBookInfo.classList.add("wiki-notice-hide");
-			}, 3500);
-			setTimeout(() => {
-				missigBookInfo.classList.add("wiki-visibility");
-			}, 4600);
-		}
+const popoversForMissinglinks = () => {
+	// the popovers for the missing links of the books
+	const wikiLinks = document.querySelectorAll(".missing-wiki-source");
+
+	wikiLinks.forEach((link) => {
+		link.addEventListener("click", () => {
+			const missigBookInfo = document.querySelector(`[data-missing-book-id=
+				'${link.dataset.missingBookId}']`);
+			missigBookInfo.classList.remove("wiki-visibility");
+			if (missigBookInfo.classList.contains("wiki-notice-hide")) {
+				missigBookInfo.classList.remove("wiki-notice-hide");
+				// then again, hide it after a short delay
+				setTimeout(() => {
+					missigBookInfo.classList.add("wiki-notice-hide");
+				}, 3500);
+				setTimeout(() => {
+					missigBookInfo.classList.add("wiki-visibility");
+				}, 4600);
+			}
+		});
 	});
-});
+};
 
 // highlight function
 // TODO change base url
@@ -120,16 +134,6 @@ window.addEventListener("load", () => {
 				el.classList.remove("highlight");
 			}, 2500);
 		}
-	}
-});
-// the navbar
-const menuButton = document.querySelector(".current-page");
-const navBar = document.querySelector(".sub-nav-items");
-menuButton.addEventListener("click", () => {
-	if (navBar.style.height === "0px") {
-		navBar.style.height = "220px";
-	} else {
-		navBar.style.height = "0px";
 	}
 });
 
