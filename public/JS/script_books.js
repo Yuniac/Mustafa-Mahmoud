@@ -27,7 +27,7 @@ const loadBooks = async () => {
 		books.data.forEach((book) => {
 			const bookCardDiv = document.createElement("div");
 			bookCardDiv.classList.add("book-card");
-
+			// in order to highlight some books, from other page via a link, we need to give certain books special IDs.
 			//
 			const bookUpper = document.createElement("div");
 			bookUpper.classList.add("book-upper");
@@ -91,7 +91,6 @@ const loadBooks = async () => {
 	// calling this function here because it depends on `loadBooks` and `loadBooks` is async
 	popoversForMissinglinks();
 };
-// TODO loading animation
 loadBooks();
 
 const popoversForMissinglinks = () => {
@@ -116,26 +115,6 @@ const popoversForMissinglinks = () => {
 		});
 	});
 };
-
-// highlight function
-// TODO change base url
-
-window.addEventListener("load", () => {
-	// const baseUrl = "https://www.mustafamahmoud.net/books.html";
-	const baseUrl = "file:///D:/G%20Drive/All%20Info/web%20development/WD/Mustafa-Mahmoud/books.html";
-	const hash = window.location.hash;
-	if (hash) {
-		const el = document.querySelector(hash);
-		const elMatchingUrl = `${baseUrl}${hash}`;
-
-		if (window.location.href === elMatchingUrl) {
-			el.classList.add("highlight");
-			setTimeout(() => {
-				el.classList.remove("highlight");
-			}, 2500);
-		}
-	}
-});
 
 // the footer links
 const lgLink = document.querySelector(".language"); // the language link

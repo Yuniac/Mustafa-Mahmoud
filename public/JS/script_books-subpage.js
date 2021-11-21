@@ -91,7 +91,7 @@ const loadBooks = async () => {
 	// calling this function here because it depends on `loadBooks` and `loadBooks` is async
 	popoversForMissinglinks();
 };
-// TODO loading animation
+
 loadBooks();
 
 const popoversForMissinglinks = () => {
@@ -116,23 +116,6 @@ const popoversForMissinglinks = () => {
 		});
 	});
 };
-
-// highlight book cards
-// TODO change base url
-window.addEventListener("load", () => {
-	// const baseUrl = "https://www.mustafamahmoud.net/books-subpage.html";
-	const baseUrl = "file:///D:/G%20Drive/All%20Info/web%20development/WD/Mustafa-Mahmoud/books-subpage.html";
-	const hash = window.location.hash;
-	const el = document.querySelector(hash);
-	const elMatchingUrl = `${baseUrl}${hash}`;
-
-	if (window.location.href === elMatchingUrl) {
-		el.classList.add("highlight");
-		setTimeout(() => {
-			el.classList.remove("highlight");
-		}, 2500);
-	}
-});
 
 // the footer links
 const lgLink = document.querySelector(".language"); // the language link
