@@ -487,16 +487,6 @@ footer a.language:hover {
 media qs
 ============ */
 
-/* anything but mobile screens */
-
-@media (min-width: 573px) {
-	.mobile-navbar,
-	.mobile-banner,
-	.mobile-banner button {
-		display: none;
-	}
-}
-
 /* starting from thhe widest screen size */
 
 @media (max-width: 1400px) {
@@ -627,22 +617,6 @@ media qs
 	/* header and nav */
 	.desktop-nav-items {
 		display: none;
-	}
-	.mobile-nav-items {
-		display: flex;
-		justify-content: space-around;
-		flex-direction: column;
-		font-size: 1.3rem;
-		font-weight: 500;
-		line-height: 3.5rem;
-		width: 98%;
-	}
-	.mobile-nav-items li {
-		padding: 2px 5px;
-		border-radius: 20px;
-	}
-	.mobile-banner-image {
-		width: 320px;
 	}
 	/* typography */
 	h1 {

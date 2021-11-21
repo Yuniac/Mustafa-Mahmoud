@@ -196,37 +196,6 @@ li.active:hover > a {
 	color: black;
 }
 
-/* nav on mobile */
-
-.mobile-nav-list {
-	display: flex;
-	flex-direction: row-reverse;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.mobile-banner nav {
-	display: flex;
-	justify-content: space-between;
-	width: 90%;
-	margin: 1rem auto 0;
-}
-
-.mobile-banner nav button {
-	height: 3rem;
-	background-color: transparent;
-	border: none;
-	outline: none;
-}
-
-.mobile-banner h5 {
-	align-self: center;
-}
-
-.mobile-nav-items {
-	display: none;
-}
-
 /* header END */
 
 /* main */

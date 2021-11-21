@@ -118,37 +118,6 @@ li.active:hover > a {
 	box-shadow: -7px -7px #b0635d;
 }
 
-/* nav on mobile */
-
-.mobile-nav-list {
-	display: flex;
-	flex-direction: row-reverse;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.mobile-banner nav {
-	display: flex;
-	justify-content: space-between;
-	width: 90%;
-	margin: 1rem auto 0;
-}
-
-.mobile-banner nav button {
-	height: 3rem;
-	background-color: transparent;
-	border: none;
-	outline: none;
-}
-
-.mobile-banner h5 {
-	align-self: center;
-}
-
-.mobile-nav-items {
-	display: none;
-}
-
 /* header END */
 
 /* main */
@@ -312,16 +281,6 @@ footer a.language:hover {
    ============ */
 
 /* starting from thhe widest screen size */
-
-/* anything but mobile screens */
-
-@media (min-width: 573px) {
-	.mobile-navbar,
-	.mobile-banner,
-	.mobile-banner button {
-		display: none;
-	}
-}
 
 @media (max-width: 1200px) {
 	h1 {

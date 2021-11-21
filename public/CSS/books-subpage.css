@@ -206,37 +206,6 @@ li.active:hover > a {
 	box-shadow: -5px -5px #b0635d;
 }
 
-/* nav on mobile */
-
-.mobile-nav-list {
-	display: flex;
-	flex-direction: row-reverse;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.mobile-banner nav {
-	display: flex;
-	justify-content: space-between;
-	width: 90%;
-	margin: 1rem auto 0;
-}
-
-.mobile-banner nav button {
-	height: 3rem;
-	background-color: transparent;
-	border: none;
-	outline: none;
-}
-
-.mobile-banner h5 {
-	align-self: center;
-}
-
-.mobile-nav-items {
-	display: none;
-}
-
 /* main */
 
 .intro {
@@ -370,16 +339,8 @@ footer a.language:hover {
 /* footer END */
 
 /* =============
-        media qs
-       ============ */
-
-/* anything but mobile screens */
-
-@media (min-width: 573px) {
-	.mobile-banner {
-		display: none;
-	}
-}
+    media qs
+============ */
 
 @media (max-width: 1400px) {
 	.gallery {
@@ -448,24 +409,7 @@ footer a.language:hover {
 	.desktop-nav-items {
 		display: none;
 	}
-	.mobile-nav-items {
-		display: flex;
-		justify-content: space-around;
-		flex-direction: column;
-		font-size: 1.3rem;
-		font-weight: 500;
-		line-height: 3.5rem;
-		width: 98%;
-	}
-	.mobile-nav-items li {
-		padding: 2px 5px;
-		border-radius: 20px;
-	}
-	.mobile-banner-image {
-		width: 320px;
-		outline: 1px solid white;
-		outline-offset: -1px;
-	}
+
 	/* second nav */
 	.secondary-nav ul {
 		border-radius: 0;
