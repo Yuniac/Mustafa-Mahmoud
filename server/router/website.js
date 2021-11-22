@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { getBookById } = require("../controllers/get");
+const { getBookById, getSimilarBooks } = require("../controllers/get");
 
 router.get("/", (req, res) => {
 	res.render("main_pages/index");
@@ -24,7 +24,9 @@ router.get("/memorial", (req, res) => {
 
 router.get("/book/:id", async (req, res) => {
 	const { id } = req.params;
-	const { name, description, publisher, publishing_year, subject, details, quotes, index, links } = await getBookById(id);
+	const { name, description, publisher, publishing_year, subject, category, details, quotes, index, links } = await getBookById(id);
+	const similarBooks = await getSimilarBooks(category);
+
 	res.render("main_pages/book", {
 		name,
 		description,
@@ -37,6 +39,7 @@ router.get("/book/:id", async (req, res) => {
 		chapters: index,
 		img: links.img,
 		wiki: links.wiki_link,
+		sBooks: similarBooks,
 	});
 });
 

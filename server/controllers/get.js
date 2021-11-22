@@ -154,8 +154,16 @@ const getRandomQuoteFromABook = async (query) => {
 	}
 };
 
+const getSimilarBooks = async (category) => {
+	const resultLength = await Book.find({ category: category }).countDocuments();
+	const randomNumber = Math.floor(Math.random() * resultLength);
+	const result = await Book.find({ category: category }).skip(randomNumber).limit(3);
+	return result;
+};
+
 module.exports = {
 	getAllBooks,
+	getSimilarBooks,
 	getBookById,
 	getAllCategories,
 	getBasedOnAcategory,

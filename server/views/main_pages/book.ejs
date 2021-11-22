@@ -93,6 +93,35 @@
 				</figure>
 			</aside>
 		</main>
+		<div>
+			<% if (sBooks.length) { %>
+			<h3 class="similar-books-heading">كتب ممُاثلة:</h3>
+			<!--  -->
+			<div class="similar-books">
+				<% for( let i = 0; i < sBooks.length; i++ ) { %>
+				<!--  -->
+				<div class="book-card">
+					<div class="book-upper">
+						<a href="/book/<%= sBooks[i]._id %>">
+							<!--  -->
+							<img src="<%= sBooks[i].links.img %>" alt="صورة غلاف <%= sBooks[i].name %> " />
+							<!--  --> </a
+						><a href="/book/<%= sBooks[i]._id %>"><p><%= sBooks[i].name %></p></a>
+					</div>
+					<div class="book-lower book-info">
+						<div class="book-bio">
+							<p><%= sBooks[i].subject %></p>
+							<p><%= sBooks[i].publishing_year %></p>
+						</div>
+						<div class="book-links">
+							<a href=" <%= sBooks[i].links.wiki_link %>  ">ويكيبيديا</a>
+						</div>
+					</div>
+				</div>
+				<% } %>
+			</div>
+			<% } %>
+		</div>
 		<footer><%- include("../partials/footer") %></footer>
 	</body>
 </html>
