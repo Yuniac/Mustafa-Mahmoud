@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+	<head>
+		<%- include("../partials/head") %>
+		<link type="text/css" rel="stylesheet" href="CSS/book.css" />
+	</head>
+
+	<body>
+		<header>
+			<%- include("../partials/navbar") %>
+			<div class="custom-nav">
+				<h1><%= name %></h1>
+			</div>
+		</header>
+
+		<main>
+			<div class="content">
+				<h2 class="title">-كتاب <%= name %> :</h2>
+				<p class="description">
+					عنبر 7 كتاب للكاتب المصري الدكتور مصطفى محمود صدر عن دار المعارف، والكتاب يتكون من 12 قصة قصيرة، عنبر في مستشفى، عربة
+					قطار درجة ثالثة، صالون أنيق في بيت برجوازي، مقهى شعبي، عوالم مختلفة يدخلها د. مصطفى محمود في هذه المجموعة القصصية وأنواع
+					مختلفة من البشر يقدمها بأسلوبه العذب كاشفاً عن تناقضات النفس الإنسانية
+				</p>
+				<h3>معلومات عن الكتاب:</h3>
+				<div class="details-table">
+					<div class="grid-table">
+						<div class="title thead thead-dark">العنوان</div>
+
+						<div class="pub thead thead-light">الناشر</div>
+
+						<div class="pub-year thead thead-dark">سنة النشر</div>
+
+						<div class="category thead thead-light">الفئة</div>
+
+						<div class="pages thead thead-dark">عدد الصفحات</div>
+
+						<div class="copy thead thead-light">نوع الطبعة</div>
+
+						<div class="title-result tbody tbody-dark"><%= name %></div>
+
+						<div class="pub-result tbody tbody-light"><%= publisher %></div>
+
+						<div class="pub-year-result tbody tbody-dark"><%= publishing_year %></div>
+
+						<div class="category-result tbody tbody-light"><%= subject %></div>
+
+						<div class="pages-result tbody tbody-dark"><%= pages_count %></div>
+
+						<div class="copy-result tbody tbody-light"><%= copy_type %></div>
+					</div>
+				</div>
+				<div class="quotes">
+					<h3>إقتباسات من الكتاب:</h3>
+					<ul>
+						<% for( let i = 0; i < quotes.length; i++ ) { %>
+						<li><%= quotes[i].content %></li>
+						<% } %>
+					</ul>
+				</div>
+				<hr />
+				<div class="chapters">
+					<h3>فصول الكتاب:</h3>
+					<ul>
+						<% for( let i = 0; i < chapters.length; i++ ) { %>
+						<li><%= chapters[i].chapter_number %> - <%= chapters[i].chapter_name %></li>
+						<% } %>
+					</ul>
+				</div>
+			</div>
+
+			<aside>
+				<figure>
+					<img src="<%= img %>" alt="صورة كتاب <% name %>" />
+
+					<figcaption>صورة غلاف <%= name %></figcaption>
+				</figure>
+			</aside>
+		</main>
+		<footer><%- include("../partials/footer") %></footer>
+	</body>
+</html>

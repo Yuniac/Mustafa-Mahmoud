@@ -1,0 +1,213 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+body {
+	box-sizing: border-box;
+	color: black;
+	font-family: "Cairo", sans-serif;
+	background-color: #bda7a3;
+}
+a,
+button {
+	outline: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+main {
+	border: 1px solid #b0635d;
+	border-top: 0.7px solid #b0635d;
+	background-color: white;
+	width: 80%;
+
+	margin: 1rem auto 2rem;
+	padding: 0 1rem;
+
+	display: flex;
+	justify-content: space-between;
+}
+
+h1 {
+	margin: 3rem 0 2rem;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	font-size: 5rem;
+	font-family: "Aref Ruqaa", serif;
+	font-weight: 700;
+}
+
+h2 {
+	margin-top: 4rem;
+	font-size: 2rem;
+}
+
+figcaption {
+	text-align: center;
+}
+aside {
+	margin-right: auto;
+	margin-top: 5rem;
+}
+.content {
+	width: 70%;
+}
+.description {
+	margin: 2rem 0 1rem;
+	font-size: 1.1rem;
+	line-height: 2.5rem;
+}
+.details-table {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.details-table .grid-table {
+	margin: 2rem auto;
+
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: 1fr 1fr;
+
+	justify-items: center;
+	align-items: center;
+
+	grid-template-areas:
+		"title pub pub-year category pages copy"
+		"title-result pub-result pub-year-result category-result pages-result copy-result";
+}
+
+.thead {
+	padding: 0.5rem 2rem;
+	text-align: center;
+	width: max-content;
+	margin: 0;
+}
+.thead:first-of-type {
+	padding: 0.5rem 40px;
+}
+
+.tbody {
+	border-bottom: 1px solid #b0635d;
+}
+
+.thead-dark {
+	background-color: #b0625d7e;
+}
+
+.thead-light {
+	background-color: #bda7a3;
+}
+
+/* grid naming */
+.title {
+	grid-area: title;
+}
+.pub {
+	grid-area: pub;
+}
+.pub-year {
+	grid-area: pub-year;
+}
+.category {
+	grid-area: category;
+}
+.pages {
+	grid-area: pages;
+}
+.copy {
+	grid-area: copy;
+}
+/* corresponding results */
+.title-result {
+	grid-area: title-result;
+}
+.pub-result {
+	grid-area: pub-result;
+}
+.pub-year-result {
+	grid-area: pub-year-result;
+}
+.category-result {
+	grid-area: category-result;
+}
+.pages-result {
+	grid-area: pages-result;
+}
+.copy-result {
+	grid-area: copy-result;
+}
+.quotes li {
+	list-style-type: arabic-indic;
+}
+.quotes li {
+	margin: 1rem 0;
+	margin-right: 0.8rem;
+}
+hr {
+	background-color: #b0635d;
+	border: 2px ridge #b0635d;
+	width: 100%;
+	margin: 3rem auto;
+}
+@media (max-width: 1450px) {
+	main {
+		flex-direction: column-reverse;
+		justify-content: center;
+		align-items: center;
+	}
+	aside {
+		margin: 0;
+	}
+}
+
+@media (max-width: 960px) {
+	main {
+		width: 95%;
+	}
+}
+@media (max-width: 760px) {
+	main {
+		width: 80%;
+	}
+	.details-table .grid-table {
+		grid-template-columns: repeat(2, 154px);
+		grid-template-rows: auto;
+		grid-template-areas:
+			"title title-result"
+			"pub pub-result"
+			"pub-year pub-year-result"
+			"category category-result"
+			"pages pages-result"
+			"copy copy-result";
+		justify-items: flex-start;
+	}
+	.thead {
+		width: 100%;
+		padding: 0;
+	}
+	.thead:first-of-type {
+		padding: 0;
+	}
+	.tbody {
+		width: 100%;
+		text-align: center;
+		border: none;
+	}
+}
+
+@media (max-width: 572px) {
+	aside img {
+		width: 90%;
+		margin: 0 auto;
+	}
+}
