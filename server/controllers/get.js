@@ -156,6 +156,7 @@ const getRandomQuoteFromABook = async (query) => {
 
 module.exports = {
 	getAllBooks,
+	getBookById,
 	getAllCategories,
 	getBasedOnAcategory,
 	getBooksBasedOnQueryParams,
