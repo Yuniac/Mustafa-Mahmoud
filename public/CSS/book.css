@@ -9,6 +9,7 @@ body {
 	color: black;
 	font-family: "Cairo", sans-serif;
 	background-color: #bda7a3;
+	counter-set: li;
 }
 a,
 button {
@@ -57,15 +58,35 @@ aside {
 	margin-right: auto;
 	margin-top: 5rem;
 }
+aside img {
+	max-width: 400px;
+	border: 1px solid #b0635d;
+}
 .content {
 	width: 70%;
 }
 .description {
-	margin: 2rem 0 1rem;
+	margin: 2rem 0 0.4rem;
 	font-size: 1.1rem;
 	line-height: 2.5rem;
 }
-.details-table {
+
+.wiki-link {
+	margin-bottom: 2rem;
+	color: royalblue;
+}
+
+.wiki-link:hover {
+	color: #b0635d;
+	text-decoration: underline;
+}
+
+.about,
+.quotes {
+	margin: 2rem 0;
+}
+
+.description .details-table {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -146,12 +167,28 @@ aside {
 .copy-result {
 	grid-area: copy-result;
 }
-.quotes li {
-	list-style-type: arabic-indic;
+.quotes li::before {
+	counter-increment: li;
+	content: counter(li);
+	color: #b0635d;
 }
 .quotes li {
 	margin: 1rem 0;
-	margin-right: 0.8rem;
+	margin-right: 1.2rem;
+}
+.chapters ul {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	max-height: 460px;
+	max-width: 100%;
+	flex-wrap: wrap;
+}
+.chapters li {
+	margin: 1rem;
+}
+.chapters li span {
+	color: #b0635d;
 }
 hr {
 	background-color: #b0635d;
@@ -159,6 +196,11 @@ hr {
 	width: 100%;
 	margin: 3rem auto;
 }
+
+.missing-content-notice {
+	margin: 1rem 0;
+}
+/*  */
 @media (max-width: 1450px) {
 	main {
 		flex-direction: column-reverse;
