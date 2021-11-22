@@ -168,14 +168,18 @@
 	height: 16px;
 }
 
-.book-links a:visited {
-	color: royalblue;
+.book-card a:visited,
+.book-card a {
+	color: #b0635d;
 }
-
-.book-links a:hover {
+.book-card .book-upper a:last-of-type {
+	width: max-content;
+	display: inline-block;
+}
+.book-card a:hover {
 	cursor: pointer;
 	text-decoration: underline;
-	color: #b0635d;
+	color: royalblue;
 }
 
 .book-links a:last-of-type {
@@ -247,7 +251,6 @@ a.missing-wiki-source:hover {
 .book-card:hover {
 	box-shadow: 5px 5px 25px 21.5px #b0635d;
 	transform: translateY(5px);
-	cursor: pointer;
 }
 /* footer */
 
