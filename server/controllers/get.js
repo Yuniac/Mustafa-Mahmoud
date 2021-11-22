@@ -83,7 +83,7 @@ const getBooksCount = async () => {
 
 const getBookByName = async (name) => {
 	const matchingBook = await Book.findOne({ name: name });
-	if (matchingBook) return [matchingBook];
+	if (matchingBook) return matchingBook;
 };
 
 const getBookById = async (id) => {
