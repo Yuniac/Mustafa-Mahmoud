@@ -24,9 +24,10 @@ router.get("/memorial", (req, res) => {
 
 router.get("/book/:id", async (req, res) => {
 	const { id } = req.params;
-	const { name, publisher, publishing_year, subject, details, quotes, index, links } = await getBookById(id);
+	const { name, description, publisher, publishing_year, subject, details, quotes, index, links } = await getBookById(id);
 	res.render("main_pages/book", {
 		name,
+		description,
 		publisher,
 		publishing_year,
 		subject,
@@ -35,6 +36,7 @@ router.get("/book/:id", async (req, res) => {
 		quotes,
 		chapters: index,
 		img: links.img,
+		wiki: links.wiki_link,
 	});
 });
 

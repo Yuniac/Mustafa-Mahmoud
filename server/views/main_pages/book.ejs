@@ -16,55 +16,72 @@
 		<main>
 			<div class="content">
 				<h2 class="title">-كتاب <%= name %> :</h2>
-				<p class="description">
-					عنبر 7 كتاب للكاتب المصري الدكتور مصطفى محمود صدر عن دار المعارف، والكتاب يتكون من 12 قصة قصيرة، عنبر في مستشفى، عربة
-					قطار درجة ثالثة، صالون أنيق في بيت برجوازي، مقهى شعبي، عوالم مختلفة يدخلها د. مصطفى محمود في هذه المجموعة القصصية وأنواع
-					مختلفة من البشر يقدمها بأسلوبه العذب كاشفاً عن تناقضات النفس الإنسانية
-				</p>
-				<h3>معلومات عن الكتاب:</h3>
-				<div class="details-table">
-					<div class="grid-table">
-						<div class="title thead thead-dark">العنوان</div>
+				<div>
+					<% if (description && description.length) { %>
+					<p class="description"><%= description %>.</p>
+					<% } else { %>
+					<p>لا يوجد وصف لهذا الكتاب حالياً</p>
+					<% } %>
+					<!--  -->
+					<% if (wiki && wiki.length) { %>
+					<a class="wiki-link" href="<%= wiki %>">صفحة الكتاب على ويكيبديا</a>
+					<% } %>
+				</div>
+				<!-- TODO add some contribute to add missing content -->
+				<div class="about">
+					<h3>-معلومات عن الكتاب:</h3>
+					<div class="details-table">
+						<div class="grid-table">
+							<div class="title thead thead-dark">العنوان</div>
 
-						<div class="pub thead thead-light">الناشر</div>
+							<div class="pub thead thead-light">الناشر</div>
 
-						<div class="pub-year thead thead-dark">سنة النشر</div>
+							<div class="pub-year thead thead-dark">سنة النشر</div>
 
-						<div class="category thead thead-light">الفئة</div>
+							<div class="category thead thead-light">الفئة</div>
 
-						<div class="pages thead thead-dark">عدد الصفحات</div>
+							<div class="pages thead thead-dark">عدد الصفحات</div>
 
-						<div class="copy thead thead-light">نوع الطبعة</div>
+							<div class="copy thead thead-light">نوع الطبعة</div>
 
-						<div class="title-result tbody tbody-dark"><%= name %></div>
+							<div class="title-result tbody tbody-dark"><%= name %></div>
 
-						<div class="pub-result tbody tbody-light"><%= publisher %></div>
+							<div class="pub-result tbody tbody-light"><%= publisher %></div>
 
-						<div class="pub-year-result tbody tbody-dark"><%= publishing_year %></div>
+							<div class="pub-year-result tbody tbody-dark"><%= publishing_year %></div>
 
-						<div class="category-result tbody tbody-light"><%= subject %></div>
+							<div class="category-result tbody tbody-light"><%= subject %></div>
 
-						<div class="pages-result tbody tbody-dark"><%= pages_count %></div>
+							<div class="pages-result tbody tbody-dark"><%= pages_count %></div>
 
-						<div class="copy-result tbody tbody-light"><%= copy_type %></div>
+							<div class="copy-result tbody tbody-light"><%= copy_type %></div>
+						</div>
 					</div>
 				</div>
 				<div class="quotes">
-					<h3>إقتباسات من الكتاب:</h3>
+					<h3>-إقتباسات من الكتاب:</h3>
+					<% if (quotes && quotes.length) { %>
 					<ul>
 						<% for( let i = 0; i < quotes.length; i++ ) { %>
-						<li><%= quotes[i].content %></li>
+						<li>- <%= quotes[i].content %></li>
 						<% } %>
 					</ul>
+					<% } else {%>
+					<p class="missing-content-notice">لا يوجد إقتباسات من هذا الكتاب حالياً</p>
+					<% } %>
 				</div>
 				<hr />
 				<div class="chapters">
-					<h3>فصول الكتاب:</h3>
+					<h3>-فصول الكتاب:</h3>
+					<% if (chapters && chapters.length) { %>
 					<ul>
 						<% for( let i = 0; i < chapters.length; i++ ) { %>
-						<li><%= chapters[i].chapter_number %> - <%= chapters[i].chapter_name %></li>
+						<li><span><%= chapters[i].chapter_number %></span> - <%= chapters[i].chapter_name %></li>
 						<% } %>
 					</ul>
+					<% } else {%>
+					<p class="missing-content-notice">فصول الكتاب غير متاحة حالياً</p>
+					<% } %>
 				</div>
 			</div>
 
