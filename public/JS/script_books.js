@@ -39,11 +39,19 @@ const loadBooks = async () => {
 			const bookImg = document.createElement("img");
 			bookImg.src = book.links.img;
 
+			const bookImgLink = document.createElement("a");
+			bookImgLink.append(bookImg);
+			bookImgLink.href = `/book/${book._id}`;
+
 			const bookTitle = document.createElement("p");
 			bookTitle.textContent = book.name;
 
-			bookUpper.append(bookImg);
-			bookUpper.append(bookTitle);
+			const bookTitleLink = document.createElement("a");
+			bookTitleLink.append(bookTitle);
+			bookTitleLink.href = `/book/${book._id}`;
+
+			bookUpper.append(bookImgLink);
+			bookUpper.append(bookTitleLink);
 
 			//
 			const bookBio = document.createElement("div");
