@@ -185,7 +185,62 @@
 .book-links a:last-of-type {
 	display: block;
 }
+/* search css */
 
+.search-results .book-card {
+	width: auto;
+	max-width: 300px;
+}
+.search {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	width: 90%;
+	margin: 1rem auto 0;
+}
+.search form div {
+	display: flex;
+}
+.search form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+.search button {
+	margin: 0.5rem 1rem 0;
+	padding: 0.5rem;
+	background: #b0635d;
+}
+.search img {
+	width: 32px;
+}
+.search-input {
+	background-color: #918a89;
+	outline: none;
+	border: none;
+	padding: 0.4rem;
+	width: 268px;
+}
+.search-input:focus {
+	border-color: #b0635d;
+}
+
+.search-results-wrapper {
+	max-height: max-content;
+	position: relative;
+}
+.results-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.no-search-results {
+	font-size: 2rem;
+	text-align: center;
+	margin: 2rem 0;
+}
 /* loading animation */
 .loading-animation {
 	display: block;
@@ -211,6 +266,14 @@
 		transform: rotate(360deg);
 	}
 }
+
+hr {
+	background-color: #b0635d;
+	border: 2px ridge #b0635d;
+	width: 80%;
+	margin: 3rem auto;
+}
+
 /* no wiki pages class */
 
 a.missing-wiki-source {
