@@ -236,7 +236,7 @@
 	align-items: center;
 }
 
-.no-search-results {
+.search-result-notice {
 	font-size: 2rem;
 	text-align: center;
 	margin: 2rem 0;
