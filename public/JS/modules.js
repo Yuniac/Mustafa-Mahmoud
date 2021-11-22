@@ -127,26 +127,33 @@ export const searchFunction = () => {
 		const loadingAnimationEl = document.querySelector(".search-results-wrapper span");
 		loadingAnimationEl.classList.add("loading-animation");
 		const query = searchInput.value;
-		const result = await (await fetch(`/books?name=${query}`)).json();
-		if (result.success) {
-			displaySearchResults(result);
-			loadingAnimationEl.classList.remove("loading-animation");
+		const isQueryValid = /^[\u0621-\u064A0-9 ]+$/.test(query);
+		if (isQueryValid) {
+			const result = await (await fetch(`/books?name=${query}`)).json();
+			if (result.success) {
+				displaySearchResults(result);
+				loadingAnimationEl.classList.remove("loading-animation");
+			} else {
+				displaySearchResults(false, query);
+				loadingAnimationEl.classList.remove("loading-animation");
+			}
 		} else {
-			displaySearchResults(false, query);
+			const regexWarningMessage = "إستخدم اللغة العربية فقط في البحث، لا تضف كلمة 'كتاب' إلى البحث، فقط إسم الكتاب.";
+			displaySearchResults(false, query, regexWarningMessage);
 			loadingAnimationEl.classList.remove("loading-animation");
 		}
 	});
 };
 
-export const displaySearchResults = (result, query) => {
-	if (!result) return noResults(query);
-	const searchResultsContainer = document.querySelector(".search-results");
-	searchResultsContainer.innerHTML = "";
-	searchResultsContainer.classList.add("search-results-loading");
+export const displaySearchResults = (result, query, msg) => {
+	if (!result) return noResults(query, msg);
+	const searchResults = document.querySelector(".search-results");
+	searchResults.innerHTML = "";
+	searchResults.classList.add("search-results-loading");
 	const { data: book } = result;
 
-	const resultsEl = document.createElement("div");
-	resultsEl.classList.add("results-container");
+	const resultBook = document.createElement("div");
+	resultBook.classList.add("results-container");
 
 	const bookCardDiv = document.createElement("div");
 	bookCardDiv.classList.add("book-card");
@@ -215,19 +222,29 @@ export const displaySearchResults = (result, query) => {
 
 	bookCardDiv.append(bookUpper);
 	bookCardDiv.append(bookLower);
-	resultsEl.append(bookCardDiv);
+	resultBook.append(bookCardDiv);
 
-	searchResultsContainer.append(resultsEl);
+	const searchResultsHeading = document.createElement("h3");
+	searchResultsHeading.textContent = "نتائج البحث:";
+	searchResultsHeading.classList.add("search-result-notice");
+
+	searchResults.append(searchResultsHeading);
+	searchResults.append(resultBook);
 	const hr = document.createElement("hr");
-	searchResultsContainer.append(hr);
+	searchResults.append(hr);
 };
 
-export const noResults = (query) => {
+export const noResults = (query, msg) => {
 	const searchResultsContainer = document.querySelector(".search-results");
 	const noResultsNoticeEl = document.createElement("h3");
-	noResultsNoticeEl.classList.add("no-search-results");
+	noResultsNoticeEl.classList.add("search-result-notice");
 	const arabicText = "لا نتائج بحث مطابقة ل";
-	noResultsNoticeEl.textContent = `${arabicText}"${query}"`;
+	if (msg) {
+		noResultsNoticeEl.textContent = msg;
+	} else {
+		noResultsNoticeEl.textContent = `${arabicText}"${query}"`;
+	}
+
 	searchResultsContainer.innerHTML = "";
 
 	searchResultsContainer.append(noResultsNoticeEl);
