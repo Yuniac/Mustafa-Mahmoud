@@ -13,5 +13,6 @@ app.set("view engine", "ejs");
 app.use("/", express.static("public"));
 app.use("/", websiteRouter);
 app.use("/books", APIRouter);
+app.use("/book", express.static("public"));
 
 app.listen(5000, () => console.log("app running at port 5000..."));
