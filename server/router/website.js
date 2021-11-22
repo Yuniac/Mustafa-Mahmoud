@@ -25,7 +25,7 @@ router.get("/memorial", (req, res) => {
 router.get("/book/:id", async (req, res) => {
 	const { id } = req.params;
 	const { name, description, publisher, publishing_year, subject, category, details, quotes, index, links } = await getBookById(id);
-	const similarBooks = await getSimilarBooks(category);
+	const similarBooks = await getSimilarBooks(category, id);
 
 	res.render("main_pages/book", {
 		name,

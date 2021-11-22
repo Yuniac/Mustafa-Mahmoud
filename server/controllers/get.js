@@ -154,10 +154,13 @@ const getRandomQuoteFromABook = async (query) => {
 	}
 };
 
-const getSimilarBooks = async (category) => {
+const getSimilarBooks = async (category, id) => {
 	const resultLength = await Book.find({ category: category }).countDocuments();
 	const randomNumber = Math.floor(Math.random() * resultLength);
-	const result = await Book.find({ category: category }).skip(randomNumber).limit(3);
+	// return similar books but not the same book the use is currently viewing
+	const result = await Book.find({ category: category, _id: { $ne: id } })
+		.skip(randomNumber)
+		.limit(3);
 	return result;
 };
 
