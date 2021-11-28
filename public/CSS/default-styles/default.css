@@ -316,6 +316,11 @@ a.missing-wiki-source:hover {
 	transform: translateY(5px);
 }
 /* footer */
+h5 {
+	font-size: 1.1em;
+	margin: 0 0 0.8rem;
+	padding: 5px;
+}
 
 footer {
 	display: flex;
