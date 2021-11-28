@@ -1,3 +1,4 @@
+// API/BOOKS
 const express = require("express");
 const router = express.Router();
 // controllers
@@ -9,8 +10,10 @@ const {
 	getBooksIDAndNames,
 	getRandomQuote,
 	getRandomQuoteFromABook,
+	getBookById,
+	getBookByName,
 } = require("../controllers/get");
-// helpers
+
 const { isEmpty } = require("../helpers/server_helpers");
 
 router.get("/", async (req, res) => {
@@ -22,7 +25,7 @@ router.get("/", async (req, res) => {
 			const result = await getAllBooks();
 
 			if (result) {
-				res.status(200).json({ success: true, data: result });
+				res.status(200).json({ success: true, data: result, error_message: null });
 			} else {
 				res.status(500).json({
 					success: true,
@@ -51,13 +54,17 @@ router.get("/", async (req, res) => {
 					});
 					break;
 				case result: // success here
-					res.json({ success: true, data: result, error_message: null });
+					res.status(200).json({ success: true, data: result, error_message: null });
 					break;
 			}
 		}
 	} catch (e) {
 		console.log(e);
-		res.json({ sucess: false, data: null, error_message: "Something went wrong, please try again later or check your request" });
+		res.status(500).json({
+			sucess: false,
+			data: null,
+			error_message: "Something went wrong, please try again later or check your request",
+		});
 	}
 });
 
@@ -122,12 +129,37 @@ router.get("/list", async (req, res) => {
 	}
 });
 
+router.get("/:identifier/chapters", async (req, res) => {
+	try {
+		const { identifier } = req.params;
+		let book;
+		// if a request was made by the book's name and not it's ID, this way, we can have the same route work on both the book's name and its ID
+		if (/^[\u0621-\u064A0-9 ]+$/.test(identifier)) {
+			book = await getBookByName(identifier);
+		} else {
+			book = await getBookById(identifier);
+		}
+		res.status(200).json({
+			success: true,
+			data: book.index,
+			error_message: null,
+		});
+	} catch (err) {
+		console.log(err);
+		res.status(404).json({
+			success: false,
+			data: null,
+			error_message: "This book doesn't exist or it doesn't have any chapters saved in our data base",
+		});
+	}
+});
+
 router.get("/quote", async (req, res) => {
 	try {
 		const isReqBodyEmpty = isEmpty(req.query);
 		if (isReqBodyEmpty) {
 			const result = await getRandomQuote();
-			if (result && result !== String) {
+			if (result && result !== "no quote") {
 				res.status(200).json({ success: true, data: result, error_message: null });
 			} else {
 				res.status(500).json({
@@ -138,18 +170,24 @@ router.get("/quote", async (req, res) => {
 			}
 		} else {
 			const result = await getRandomQuoteFromABook(req.query);
-			if (result && result !== String) {
+			if (result && result !== "no quote") {
 				res.status(200).json({ success: true, data: result, error_message: null });
 			} else {
 				res.status(500).json({
 					success: false,
 					data: null,
-					error_message: "Couldn't retrieve a quote at the moment... please try again later",
+					error_message:
+						"This book has no quotes in our database... if you can contribute and add quotes please do so by contacting me",
 				});
 			}
 		}
 	} catch (e) {
 		console.log(e);
+		res.status(500).json({
+			success: false,
+			data: null,
+			error_message: "Couldn't retrieve a quote at the moment... please try again later",
+		});
 	}
 });
 

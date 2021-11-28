@@ -60,9 +60,25 @@ returns all books
 
         example:
 
-        /books/quote?name=أكل عيش
+        /books/quote?name=أكل عيش&all=true
 
         > returns ALL quotes from the book called "أكل عيش"
+
+-   # /books/(ID OR NAME)/chapters:
+
+    returns a book's chapters.
+
+    example:
+
+    /books/6197d0bc8b36e4234db41a39/chapters
+
+    > returns the requested book's chapters.
+
+    example 2:
+
+    /book/الماركسية والإسلام/chapters
+
+    > returns the related book's chapters
 
 ---
 
@@ -76,7 +92,7 @@ returns all books
 
     /books?limit=10
 
-    > returns 10 books
+    > returns 10 books.
 
     -   notes:
         -   querying to limit using a number that is above the maximum amount of books available will return all available books (its the same as doing `?limit=81` or not limiting at all).
