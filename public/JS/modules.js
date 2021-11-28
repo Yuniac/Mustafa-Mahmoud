@@ -22,74 +22,7 @@ export const loadBooks = async (categoriesForBooksPage) => {
 		categoryHeader.textContent = books.data[0].subject;
 		categoryContainer.append(categoryHeader);
 		books.data.forEach((book) => {
-			const bookCardDiv = document.createElement("div");
-			bookCardDiv.classList.add("book-card");
-
-			//
-			const bookUpper = document.createElement("div");
-			bookUpper.classList.add("book-upper");
-
-			const bookLower = document.createElement("div");
-			bookLower.classList.add("book-lower", "book-info");
-
-			//
-			const bookImg = document.createElement("img");
-			bookImg.src = book.links.img;
-
-			const bookImgLink = document.createElement("a");
-			bookImgLink.append(bookImg);
-			bookImgLink.href = `/book/${book._id}`;
-
-			const bookTitle = document.createElement("p");
-			bookTitle.textContent = book.name;
-
-			const bookTitleLink = document.createElement("a");
-			bookTitleLink.append(bookTitle);
-			bookTitleLink.href = `/book/${book._id}`;
-
-			bookUpper.append(bookImgLink);
-			bookUpper.append(bookTitleLink);
-
-			//
-			const bookBio = document.createElement("div");
-			bookBio.classList.add("book-bio");
-
-			const bookSubject = document.createElement("p");
-			bookSubject.textContent = book.subject;
-
-			const bookPublishingYear = document.createElement("p");
-			bookPublishingYear.textContent = book.publishing_year;
-
-			bookBio.append(bookSubject);
-			bookBio.append(bookPublishingYear);
-
-			const bookLinks = document.createElement("div");
-			bookLinks.classList.add("book-links");
-
-			const wikiLink = document.createElement("a");
-			if (book.links.wiki_link === "") {
-				wikiLink.classList.add("missing-wiki-source");
-				wikiLink.setAttribute("data-missing-book-id", book.name);
-
-				const missingBookInfo = document.createElement("p");
-				missingBookInfo.textContent = "لا يوجد صفحة لهذا الكتاب في ويكيبيديا على حسب عِلمنا";
-				missingBookInfo.classList.add("missing-wiki-source-notice", "wiki-notice-hide");
-				missingBookInfo.setAttribute("data-missing-book-id", book.name);
-
-				bookLower.append(missingBookInfo);
-			} else {
-				wikiLink.href = book.links.wiki_link;
-			}
-			wikiLink.textContent = "ويكيبيديا";
-
-			bookLinks.append(wikiLink);
-
-			bookLower.append(bookBio);
-			bookLower.append(bookLinks);
-
-			bookCardDiv.append(bookUpper);
-			bookCardDiv.append(bookLower);
-			booksWrapper.append(bookCardDiv);
+			booksWrapper.append(buildHTMLForBooks(book));
 		});
 		categoryContainer.append(booksWrapper);
 	}
@@ -156,9 +89,38 @@ export const displaySearchResults = (result, query, msg) => {
 	const resultBook = document.createElement("div");
 	resultBook.classList.add("results-container");
 
+	resultBook.append(buildHTMLForBooks(book));
+
+	const searchResultsHeading = document.createElement("h3");
+	searchResultsHeading.textContent = "نتائج البحث:";
+	searchResultsHeading.classList.add("search-result-notice");
+
+	searchResults.append(searchResultsHeading);
+	searchResults.append(resultBook);
+	const hr = document.createElement("hr");
+	searchResults.append(hr);
+};
+
+export const noResults = (query, msg) => {
+	const searchResultsContainer = document.querySelector(".search-results");
+	const noResultsNoticeEl = document.createElement("h3");
+	noResultsNoticeEl.classList.add("search-result-notice");
+	const arabicText = "لا نتائج بحث مطابقة ل";
+	if (msg) {
+		noResultsNoticeEl.textContent = msg;
+	} else {
+		noResultsNoticeEl.textContent = `${arabicText}"${query}"`;
+	}
+
+	searchResultsContainer.innerHTML = "";
+
+	searchResultsContainer.append(noResultsNoticeEl);
+};
+
+const buildHTMLForBooks = (book) => {
 	const bookCardDiv = document.createElement("div");
 	bookCardDiv.classList.add("book-card");
-	// in order to highlight some books, from other page via a link, we need to give certain books special IDs.
+
 	//
 	const bookUpper = document.createElement("div");
 	bookUpper.classList.add("book-upper");
@@ -223,30 +185,5 @@ export const displaySearchResults = (result, query, msg) => {
 
 	bookCardDiv.append(bookUpper);
 	bookCardDiv.append(bookLower);
-	resultBook.append(bookCardDiv);
-
-	const searchResultsHeading = document.createElement("h3");
-	searchResultsHeading.textContent = "نتائج البحث:";
-	searchResultsHeading.classList.add("search-result-notice");
-
-	searchResults.append(searchResultsHeading);
-	searchResults.append(resultBook);
-	const hr = document.createElement("hr");
-	searchResults.append(hr);
-};
-
-export const noResults = (query, msg) => {
-	const searchResultsContainer = document.querySelector(".search-results");
-	const noResultsNoticeEl = document.createElement("h3");
-	noResultsNoticeEl.classList.add("search-result-notice");
-	const arabicText = "لا نتائج بحث مطابقة ل";
-	if (msg) {
-		noResultsNoticeEl.textContent = msg;
-	} else {
-		noResultsNoticeEl.textContent = `${arabicText}"${query}"`;
-	}
-
-	searchResultsContainer.innerHTML = "";
-
-	searchResultsContainer.append(noResultsNoticeEl);
+	return bookCardDiv;
 };
