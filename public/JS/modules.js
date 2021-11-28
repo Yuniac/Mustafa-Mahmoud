@@ -2,7 +2,7 @@ export const loadBooks = async (categoriesForBooksPage) => {
 	const gallerySection = document.querySelector("section.gallery");
 	const loadingAnimationEl = document.querySelector(".loading-animation");
 	for (let i = 0; i < categoriesForBooksPage.length; i++) {
-		const books = await (await fetch(`http://localhost:5000/books?category=${categoriesForBooksPage[i]}`)).json();
+		const books = await (await fetch(`http://localhost:5000/api/books?category=${categoriesForBooksPage[i]}`)).json();
 		// each category has a wrapper
 		const categoryContainer = document.createElement("div");
 		categoryContainer.classList.add("category-container");
@@ -124,12 +124,13 @@ export const searchFunction = () => {
 	const searchInput = document.querySelector("#search");
 	form.addEventListener("submit", async (e) => {
 		e.preventDefault();
+		const query = searchInput.value;
+		if (!query.length) return;
 		const loadingAnimationEl = document.querySelector(".search-results-wrapper span");
 		loadingAnimationEl.classList.add("loading-animation");
-		const query = searchInput.value;
 		const isQueryValid = /^[\u0621-\u064A0-9 ]+$/.test(query);
 		if (isQueryValid) {
-			const result = await (await fetch(`/books?name=${query}`)).json();
+			const result = await (await fetch(`/api/books?name=${query}`)).json();
 			if (result.success) {
 				displaySearchResults(result);
 				loadingAnimationEl.classList.remove("loading-animation");
@@ -138,7 +139,7 @@ export const searchFunction = () => {
 				loadingAnimationEl.classList.remove("loading-animation");
 			}
 		} else {
-			const regexWarningMessage = "إستخدم اللغة العربية فقط في البحث، لا تضف كلمة 'كتاب' إلى البحث، فقط إسم الكتاب.";
+			const regexWarningMessage = "إستخدم اللغة العربية فقط في البحث، لا تضف كلمة 'كتاب' إلى البحث، فقط إسم الكتاب الكامل.";
 			displaySearchResults(false, query, regexWarningMessage);
 			loadingAnimationEl.classList.remove("loading-animation");
 		}

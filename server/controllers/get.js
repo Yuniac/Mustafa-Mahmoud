@@ -42,9 +42,15 @@ const getBooksBasedOnQueryParams = async (query) => {
 	}
 
 	if (name) {
+		// to avoid calling the data base two times in a row without a good reason, we check if we can find the book by its name, if not then using a regex;
 		const matchingBook = await getBookByName(name);
-		if (matchingBook) return matchingBook;
-		return "no matching book";
+		if (!matchingBook) {
+			const matchingBookBasedOnRegex = await getBookByRegex(name);
+			if (matchingBookBasedOnRegex) return matchingBookBasedOnRegex;
+			return "no matching book";
+		} else {
+			return matchingBook;
+		}
 	}
 
 	if (year) {
@@ -75,7 +81,11 @@ const getBooksBasedOnQueryParams = async (query) => {
 	}
 	return "query parameters error";
 };
-
+const getBookByRegex = async (name) => {
+	const regex = new RegExp(name);
+	const result = await Book.findOne({ name: { $regex: regex } });
+	return result;
+};
 const getBooksCount = async () => {
 	const result = await Book.countDocuments();
 	return result;
