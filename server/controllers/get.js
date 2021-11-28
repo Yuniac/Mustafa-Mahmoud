@@ -121,7 +121,7 @@ const getRandomQuote = async () => {
 		quote: randomDocument.quotes[randomQuoteNumber],
 	};
 	if (result) return result;
-	return "Couldn't retrieve any quotes, please check your request";
+	return "no quote";
 };
 
 const getRandomQuoteFromABook = async (query) => {
@@ -150,7 +150,7 @@ const getRandomQuoteFromABook = async (query) => {
 		};
 		return result;
 	} else {
-		return "This book has no quotes in our database... if you can contribute and add quotes please do by contacting me";
+		return "no quote";
 	}
 };
 
@@ -168,6 +168,7 @@ module.exports = {
 	getAllBooks,
 	getSimilarBooks,
 	getBookById,
+	getBookByName,
 	getAllCategories,
 	getBasedOnAcategory,
 	getBooksBasedOnQueryParams,
