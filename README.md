@@ -1,1 +1,1 @@
-This branch's purpose is to transform the previously static website (On main branch) into an non-static one where users can create accounts, data is fetched from a database, the website uses server side-rendering, etc
+This branch's purpose is to transform the previously static website (on Main branch) into an non-static one where users can create accounts, data is fetched from a database, the website uses server side-rendering, etc.
