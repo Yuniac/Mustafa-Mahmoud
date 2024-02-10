@@ -342,9 +342,6 @@ footer a.language:hover {
   h1 {
     font-size: 4rem;
   }
-  .intro-image {
-    width: 50%;
-  }
 }
 
 /* mobile and small screens */
@@ -361,9 +358,7 @@ footer a.language:hover {
   footer img {
     display: none;
   }
-  .intro-image {
-    width: 60%;
-  }
+
   h5 {
     padding: 0;
     margin: 0 0 0.5rem;

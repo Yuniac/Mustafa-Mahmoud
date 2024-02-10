@@ -198,6 +198,7 @@ a:hover {
 .intro-image {
   display: block;
   width: 45%;
+  height: 240px;
   max-width: 900px;
   min-width: 275px;
   margin: 0 auto 1rem;

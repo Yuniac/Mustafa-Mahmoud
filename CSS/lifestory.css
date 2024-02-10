@@ -609,9 +609,7 @@ media qs
   h2 {
     font-size: 2.5rem;
   }
-  .intro-image {
-    width: 60%;
-  }
+
   h3 {
     text-align: center;
   }
@@ -677,10 +675,7 @@ media qs
   p {
     font-size: 1rem;
   }
-  /* main */
-  .intro-image {
-    width: 75%;
-  }
+
   main .notice-div {
     width: 75%;
   }
