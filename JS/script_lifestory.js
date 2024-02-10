@@ -50,6 +50,7 @@ function changeImgB() {
     carouselImg.style.opacity = 1;
   }, 750);
 }
+
 forwardImg.addEventListener("click", changeImgF);
 backwardImg.addEventListener("click", changeImgB);
 
