@@ -1,31 +1,5 @@
 /* Copyright Yusuf Sabbag. Distributed under the MIT License respectively CC-BY NC License. */
 
-@font-face {
-  font-family: "Aref Ruqaa";
-  src: url("./fonts/arefBold.ttf");
-}
-
-@font-face {
-  font-family: "Cairo";
-  src: url("./fonts/cairo.ttf");
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style-type: none;
-}
-
-body {
-  color: black;
-  font-family: "Cairo";
-  background-color: #bda7a3;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-}
-
 /* Typography */
 
 h1 {

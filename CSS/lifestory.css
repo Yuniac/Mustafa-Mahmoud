@@ -1,27 +1,5 @@
 /* Copyright Yusuf Sabbag. Distributed under the MIT License respectively CC-BY NC License. */
 
-@font-face {
-  font-family: "Aref Ruqaa";
-  src: url("./fonts/arefBold.ttf");
-}
-
-@font-face {
-  font-family: "Cairo";
-  src: url("./fonts/cairo.ttf");
-}
-* {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-body {
-  box-sizing: border-box;
-  color: black;
-  font-family: "Cairo";
-  background-color: #bda7a3;
-}
-
 /* Typography */
 
 h1,
@@ -284,7 +262,9 @@ main button {
   position: relative;
   background-color: #ab8d87;
   border: 2px double #b0635d;
-  box-shadow: 5px 5px 65px 5px black, -5px -5px 65px 5px black;
+  box-shadow:
+    5px 5px 65px 5px black,
+    -5px -5px 65px 5px black;
 }
 
 .carousel-img {
