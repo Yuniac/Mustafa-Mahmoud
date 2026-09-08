@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="كتب مصطفى محمود" />
+    <meta name="title" content="كتب مصطفى محمود — قائمة أعمال الدكتور" />
     <meta
       name="description"
       content="ألف مصطفى محمود حوالي 89 كتابًا، نستطلع هنا الكتب العلمية، الدينية، الفلسفية ،الاجتماعية والسياسية"
@@ -23,7 +23,22 @@
       rel="stylesheet"
       href="CSS/default-styles/default.css"
     />
-    <title>مصطفى محمود</title>
+    <title>كتب مصطفى محمود — قائمة أعمال الدكتور</title>
+    <link rel="canonical" href="https://www.mustafamahmoud.net/books.html" />
+    <link rel="preload" as="font" type="font/woff2" href="CSS/fonts/cairo.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="CSS/fonts/arefBold.woff2" crossorigin>
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="مصطفى محمود" />
+    <meta property="og:locale" content="ar_EG" />
+    <meta property="og:url" content="https://www.mustafamahmoud.net/books.html" />
+    <meta property="og:title" content="كتب مصطفى محمود — قائمة أعمال الدكتور" />
+    <meta property="og:description" content="ألف مصطفى محمود حوالي 89 كتابًا، نستطلع هنا الكتب العلمية، الدينية، الفلسفية ،الاجتماعية والسياسية" />
+    <meta property="og:image" content="https://www.mustafamahmoud.net/img/Banner/footer-img.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="كتب مصطفى محمود — قائمة أعمال الدكتور" />
+    <meta name="twitter:description" content="ألف مصطفى محمود حوالي 89 كتابًا، نستطلع هنا الكتب العلمية، الدينية، الفلسفية ،الاجتماعية والسياسية" />
+    <meta name="twitter:image" content="https://www.mustafamahmoud.net/img/Banner/footer-img.png" />
+
   </head>
 
   <body>
@@ -31,11 +46,12 @@
       <!-- desktop nav -->
       <div class="banner">
         <div>
-          <img
-            class="desktop-banner-image mobile-banner-image"
-            src="img/Banner/banner.png"
-            alt="صورة للدكتور"
-          />
+          <picture>
+                    <source srcset="img/Banner/banner.avif" type="image/avif">
+                    <source srcset="img/Banner/banner.webp" type="image/webp">
+                    <img class="desktop-banner-image mobile-banner-image" src="img/Banner/banner.png"
+                        alt="صورة للدكتور" width="470" height="325" fetchpriority="high" decoding="async">
+                </picture>
           <div>
             <ul class="desktop-nav nav-items">
               <li><a href="index.html">الرئيسيةَ</a></li>
@@ -52,12 +68,12 @@
           <ul class="nav mobile-nav nav-items">
             <li class="active current-page">
               <a href="#" class="active current-page">أعمال المَحمود</a>
-            </li>
-            <ul class="sub-nav-items" style="height: 0px">
+              <ul class="sub-nav-items" style="height: 0px">
               <li><a href="index.html">الرئيسية</a></li>
               <li><a href="lifestory.html">حياة المَحمود</a></li>
               <li><a href="memorial.html">في ذكرى المحَمود</a></li>
             </ul>
+            </li>
           </ul>
         </div>
       </div>
@@ -1074,13 +1090,13 @@
     <footer>
       <div class="figure">
         <figure>
-          <img src="img/Banner/footer-img.png " alt="Picture of the doctor " />
+          <img src="img/Banner/footer-img.png" alt="صورة للدكتور مصطفى محمود" width="500" height="500" loading="lazy" decoding="async" />
         </figure>
         <p class="footer-text">مصطفى محمود</p>
       </div>
       <div class="footer-items">
         <div>
-          <h5>المصادر المستخدمة:</h5>
+          <h2 class="footer-heading">المصادر المستخدمة:</h2>
           <ul>
             <li>
               <a
@@ -1108,7 +1124,7 @@
           </ul>
         </div>
         <div>
-          <h5>جِد الدكتور من خلال:</h5>
+          <h2 class="footer-heading">جِد الدكتور من خلال:</h2>
           <ul>
             <li>
               <a href="https://www.youtube.com/user/DrMostafaMahmud "
@@ -1136,7 +1152,7 @@
           </ul>
         </div>
         <div>
-          <h5>عن مصمم الموقع:</h5>
+          <h2 class="footer-heading">عن مصمم الموقع:</h2>
           <ul>
             <li>
               <a href="https://github.com/Yuniac ">غيتهب (Github)</a>
@@ -1145,7 +1161,7 @@
               <a href="https://www.twitter.com/YMsabbag ">تويتر (Twitter)</a>
             </li>
             <li>
-              <a class="language">AR | EN</a>
+              <button type="button" class="language">AR | EN</button>
               <p class="language-description lginfo-visibility">
                 SOON | قريباً
               </p>

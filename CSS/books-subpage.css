@@ -15,7 +15,7 @@ h1 {
 h1::after {
   content: "";
   position: absolute;
-  background-color: #b0635d;
+  background-color: #a95c56;
   width: 300px;
   height: 1px;
   right: 0;
@@ -34,13 +34,13 @@ h2 {
 h2::before {
   content: "{";
   padding: 0 0.4rem;
-  color: #b0635d;
+  color: #a95c56;
 }
 
 h2::after {
   content: "}";
   padding: 0 0.4rem;
-  color: #b0635d;
+  color: #a95c56;
 }
 
 a,
@@ -54,7 +54,7 @@ a {
 }
 
 a:hover {
-  color: #b0635d;
+  color: #a95c56;
 }
 
 h5 {
@@ -99,13 +99,13 @@ p {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   cursor: pointer;
-  box-shadow: -5px -5px #b0635d;
+  box-shadow: -5px -5px #a95c56;
 }
 
 .desktop-nav-items a:hover,
 .desktop-nav-items li:hover {
   cursor: pointer;
-  background-color: #b0635d;
+  background-color: #a95c56;
   color: white;
   box-shadow: none;
 }
@@ -114,7 +114,7 @@ p {
 
 .desktop-nav-items li.active {
   padding: 5px 15px;
-  background-color: #b0635d;
+  background-color: #a95c56;
   box-shadow: -7px -7px black;
   color: white;
 }
@@ -126,7 +126,7 @@ li.active:hover > a {
 }
 
 .desktop-nav-items li.active:hover {
-  box-shadow: -7px -7px #b0635d;
+  box-shadow: -7px -7px #a95c56;
 }
 
 /* second nav */
@@ -140,7 +140,7 @@ li.active:hover > a {
   width: 90%;
   margin-right: 5%;
   height: 2px;
-  background-color: #b0635d;
+  background-color: #a95c56;
 }
 
 .secondary-nav {
@@ -162,13 +162,13 @@ li.active:hover > a {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   padding: 4px 14px;
-  box-shadow: -5px -5px #b0635d;
+  box-shadow: -5px -5px #a95c56;
 }
 
 .secondary-nav a:hover,
 .secondary-nav li:hover {
   cursor: pointer;
-  background-color: #b0635d;
+  background-color: #a95c56;
   color: white;
   box-shadow: none;
 }
@@ -176,7 +176,7 @@ li.active:hover > a {
 /* second nav active class */
 
 .second-nav-items li.active {
-  background-color: #b0635d;
+  background-color: #a95c56;
   box-shadow: -7px -7px black;
   color: white;
 }
@@ -188,7 +188,7 @@ li.active:hover > a {
 }
 
 .second-nav-items li.active:hover {
-  box-shadow: -5px -5px #b0635d;
+  box-shadow: -5px -5px #a95c56;
 }
 
 /* nav on mobile */
@@ -247,13 +247,14 @@ li.active:hover > a {
   flex-direction: column;
   justify-content: space-between;
   transition: box-shadow 1500ms ease-in-out;
-  border: 1px solid #b0635d;
+  border: 1px solid #a95c56;
 }
 
 .book-card img {
   display: block;
   margin: 0 auto;
   width: 90%;
+  height: auto;
 }
 
 .book-card h4 {
@@ -294,7 +295,7 @@ li.active:hover > a {
 }
 
 .book-links a {
-  color: #b0635d;
+  color: #a95c56;
 }
 
 .book-links a:hover {
@@ -308,7 +309,7 @@ li.active:hover > a {
 }
 
 .highlight {
-  box-shadow: 5px 5px 25px 21.5px #b0635d;
+  box-shadow: 5px 5px 25px 21.5px #a95c56;
 }
 
 /* no wiki page class */
@@ -354,7 +355,7 @@ footer {
   flex-direction: row-reverse;
   width: 100%;
   background-color: #bda7a3;
-  border-top: 1px solid #b0635d;
+  border-top: 1px solid #a95c56;
 }
 
 footer li {
@@ -370,7 +371,7 @@ li.special-li a:hover {
 }
 
 footer ul a:hover {
-  color: #b0635d;
+  color: #a95c56;
   cursor: pointer;
 }
 
@@ -575,12 +576,12 @@ footer a.language:hover {
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     padding: 4px 14px;
-    box-shadow: -5px -5px #b0635d;
+    box-shadow: -5px -5px #a95c56;
   }
   .secondary-nav a:hover,
   .secondary-nav li:hover {
     cursor: pointer;
-    background-color: #b0635d;
+    background-color: #a95c56;
     color: white;
     box-shadow: none;
   }
@@ -593,7 +594,7 @@ footer a.language:hover {
   }
   h5 {
     font-size: 1.1rem;
-    border-bottom: 1px ridge #b0635d;
+    border-bottom: 1px ridge #a95c56;
     width: 50%;
   }
   p {
@@ -621,6 +622,7 @@ footer a.language:hover {
   }
   .book-card img {
     height: 300px;
+    object-fit: contain;
   }
   .book-links img {
     width: 16px;
@@ -658,7 +660,7 @@ footer a.language:hover {
     margin-top: 1rem;
     font-size: 11vw;
     font-family: "Aref Ruqaa";
-    color: #b0635d;
+    color: #a95c56;
   }
   .footer-items {
     display: flex;

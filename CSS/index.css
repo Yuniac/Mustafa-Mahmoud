@@ -13,7 +13,7 @@ h1 {
 h2 {
   font-size: 1.3rem;
   padding: 2.5rem 0 0.9rem;
-  color: #b0635d;
+  color: #a95c56;
   position: relative;
 }
 
@@ -50,11 +50,11 @@ a {
 }
 
 a:hover {
-  color: #b0635d;
+  color: #a95c56;
 }
 
 .main-content a {
-  color: #b0635d;
+  color: #a95c56;
   outline: 0;
 }
 
@@ -87,7 +87,7 @@ a:hover {
   position: absolute;
   bottom: 0px;
   width: 100%;
-  transition: all 0.7s ease-out;
+  transition: opacity 0.7s ease-out, background-color 0.7s ease-out;
 
   outline: 1px solid black;
   outline-offset: -1px;
@@ -176,7 +176,8 @@ a:hover {
   max-width: 900px;
   min-width: 275px;
   margin: 0 auto 1rem;
-  border: solid 1px #b0635d;
+  border: solid 1px #a95c56;
+  object-fit: cover;
 }
 
 .main-content {
@@ -191,7 +192,7 @@ a:hover {
 
 .main-content section {
   width: calc(33.3%);
-  border-right: 2px solid #b0635d;
+  border-right: 2px solid #a95c56;
   padding: 0.9rem 1.5rem 0rem;
 }
 
@@ -233,19 +234,19 @@ a:hover {
 }
 
 .interview-body {
-  border: 2px solid #b0635d;
+  border: 2px solid #a95c56;
   border-top: none;
   border-bottom: none;
   visibility: hidden;
   max-height: 0;
   overflow: hidden;
-  transition: all 650ms ease-in;
+  transition: max-height 650ms ease-in, visibility 650ms ease-in;
   text-align: right;
 }
 
 .interview-img {
   position: relative;
-  border: 2px solid #b0635d;
+  border: 2px solid #a95c56;
 }
 
 .interview-img::before {
@@ -253,7 +254,7 @@ a:hover {
   position: absolute;
   height: 2px;
   width: 50%;
-  background-color: #b0635d;
+  background-color: #a95c56;
   top: 0;
   right: 0;
 }
@@ -278,7 +279,7 @@ a:hover {
   margin: 1rem auto 0.5rem;
   max-width: 300px;
   align-self: center;
-  transition: all ease-in-out 200ms;
+  transition: transform ease-in-out 200ms;
   overflow: hidden;
 }
 
@@ -287,7 +288,7 @@ a:hover {
 }
 
 .interviews-accordion button {
-  color: #b0635d;
+  color: #a95c56;
   padding: 0.4rem 1rem;
   line-height: 1.7rem;
   border: none;
@@ -339,7 +340,7 @@ a:hover {
     margin: 0 auto;
   }
   .main-content section:first-of-type {
-    border-right: 2px solid #b0635d;
+    border-right: 2px solid #a95c56;
   }
   .interview-title {
     width: 100%;
@@ -374,7 +375,7 @@ a:hover {
   }
   h5 {
     font-size: 1rem;
-    border-bottom: 1px ridge #b0635d;
+    border-bottom: 1px ridge #a95c56;
     width: 50%;
   }
 }

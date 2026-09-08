@@ -9,7 +9,7 @@ h1 {
   font-weight: 700;
   margin: 1.4rem 0 2rem;
   padding-bottom: 0.6rem;
-  border-bottom: 1px solid #b0635d;
+  border-bottom: 1px solid #a95c56;
   border-width: 60%;
 }
 
@@ -29,7 +29,7 @@ a {
 
 main section a {
   text-decoration: none;
-  color: #b0635d;
+  color: #a95c56;
 }
 
 a:hover {
@@ -73,13 +73,13 @@ h5 {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   cursor: pointer;
-  box-shadow: -5px -5px #b0635d;
+  box-shadow: -5px -5px #a95c56;
 }
 
 .desktop-nav-items a:hover,
 .desktop-nav-items li:hover {
   cursor: pointer;
-  background-color: #b0635d;
+  background-color: #a95c56;
   color: white;
   box-shadow: none;
 }
@@ -88,7 +88,7 @@ h5 {
 
 .desktop-nav-items li.active {
   padding: 5px 15px;
-  background-color: #b0635d;
+  background-color: #a95c56;
   box-shadow: -7px -7px black;
   color: white;
 }
@@ -100,7 +100,7 @@ li.active:hover > a {
 }
 
 .desktop-nav-items li.active:hover {
-  box-shadow: -7px -7px #b0635d;
+  box-shadow: -7px -7px #a95c56;
 }
 
 /* second nav */
@@ -114,7 +114,7 @@ li.active:hover > a {
   width: 90%;
   margin-right: 5%;
   height: 2px;
-  background-color: #b0635d;
+  background-color: #a95c56;
 }
 
 .secondary-nav {
@@ -135,13 +135,13 @@ li.active:hover > a {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   padding: 4px 14px;
-  box-shadow: -5px -5px #b0635d;
+  box-shadow: -5px -5px #a95c56;
 }
 
 .secondary-nav a:hover,
 .secondary-nav li:hover {
   cursor: pointer;
-  background-color: #b0635d;
+  background-color: #a95c56;
   color: white;
   box-shadow: none;
 }
@@ -149,13 +149,13 @@ li.active:hover > a {
 /* second nav active class */
 
 .second-nav-items li.active {
-  background-color: #b0635d;
+  background-color: #a95c56;
   box-shadow: -7px -7px black;
   color: white;
 }
 
 .second-nav-items li.active:hover {
-  box-shadow: -5px -5px #b0635d;
+  box-shadow: -5px -5px #a95c56;
 }
 
 .second-nav-items li.active:hover,
@@ -208,7 +208,7 @@ li.active:hover > a {
 }
 
 .intro span {
-  color: #b0635d;
+  color: #a95c56;
 }
 
 .intro section p {
@@ -243,13 +243,14 @@ li.active:hover > a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid #b0635d;
+  border: 1px solid #a95c56;
 }
 
 .book-card img {
   display: block;
   margin: 0 auto;
   width: 90%;
+  height: auto;
 }
 
 .book-card h4 {
@@ -292,7 +293,7 @@ li.active:hover > a {
 .book-links a:hover {
   cursor: pointer;
   text-decoration: underline;
-  color: #b0635d;
+  color: #a95c56;
 }
 
 .book-links a:last-of-type {
@@ -300,7 +301,7 @@ li.active:hover > a {
 }
 
 .highlight {
-  box-shadow: 5px 5px 25px 21.5px #b0635d;
+  box-shadow: 5px 5px 25px 21.5px #a95c56;
 }
 
 /* no wiki pages class */
@@ -452,7 +453,7 @@ a.missing-wiki-source:hover {
     width: 240px;
   }
   .mobile-nav-items a:hover {
-    color: #b0635d;
+    color: #a95c56;
   }
   /* second nav */
   .secondary-nav ul {
@@ -465,12 +466,12 @@ a.missing-wiki-source:hover {
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     padding: 4px 14px;
-    box-shadow: -5px -5px #b0635d;
+    box-shadow: -5px -5px #a95c56;
   }
   .secondary-nav a:hover,
   .secondary-nav li:hover {
     cursor: pointer;
-    background-color: #b0635d;
+    background-color: #a95c56;
     color: white;
     box-shadow: none;
   }
@@ -480,7 +481,7 @@ a.missing-wiki-source:hover {
   }
   h5 {
     font-size: 1.1rem;
-    border-bottom: 1px ridge #b0635d;
+    border-bottom: 1px ridge #a95c56;
     width: 50%;
   }
   .intro {
@@ -497,6 +498,7 @@ a.missing-wiki-source:hover {
   }
   .book-card img {
     height: 300px;
+    object-fit: contain;
   }
   .book-links img {
     width: 16px;

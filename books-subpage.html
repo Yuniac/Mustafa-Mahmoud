@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="كتب مصطفى محمود" />
+    <meta name="title" content="كتب مصطفى محمود — قصص وروايات ومسرحيات" />
     <meta
     name="description"
     content="ألف مصطفى محمود حوالي 89 كتابًا، نستطلع هنا القصص القصيرة ،الروايات، المسرحيات و أدب الرحلات"
@@ -19,8 +19,22 @@
     <link rel="icon" href="img/Icons/icon.png">
     <link type="text/css" rel="stylesheet" href="CSS/books-subpage.css" />
     <link type="text/css" rel="stylesheet" href="CSS/default-styles/default.css">
-    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@600&display=swap" rel="stylesheet">
-    <title>كتب مصطفى محمود</title>
+    <title>كتب مصطفى محمود — قصص وروايات ومسرحيات</title>
+    <link rel="canonical" href="https://www.mustafamahmoud.net/books-subpage.html" />
+    <link rel="preload" as="font" type="font/woff2" href="CSS/fonts/cairo.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="CSS/fonts/arefBold.woff2" crossorigin>
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="مصطفى محمود" />
+    <meta property="og:locale" content="ar_EG" />
+    <meta property="og:url" content="https://www.mustafamahmoud.net/books-subpage.html" />
+    <meta property="og:title" content="كتب مصطفى محمود — قصص وروايات ومسرحيات" />
+    <meta property="og:description" content="ألف مصطفى محمود حوالي 89 كتابًا، نستطلع هنا القصص القصيرة ،الروايات، المسرحيات و أدب الرحلات" />
+    <meta property="og:image" content="https://www.mustafamahmoud.net/img/Banner/footer-img.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="كتب مصطفى محمود — قصص وروايات ومسرحيات" />
+    <meta name="twitter:description" content="ألف مصطفى محمود حوالي 89 كتابًا، نستطلع هنا القصص القصيرة ،الروايات، المسرحيات و أدب الرحلات" />
+    <meta name="twitter:image" content="https://www.mustafamahmoud.net/img/Banner/footer-img.png" />
+
 </head>
 
 <body>
@@ -28,7 +42,12 @@
         <!-- desktop nav -->
         <div class="banner">
             <div>
-                <img class="desktop-banner-image mobile-banner-image" src="img/Banner/banner.png" alt="صورة للدكتور">
+                <picture>
+                    <source srcset="img/Banner/banner.avif" type="image/avif">
+                    <source srcset="img/Banner/banner.webp" type="image/webp">
+                    <img class="desktop-banner-image mobile-banner-image" src="img/Banner/banner.png"
+                        alt="صورة للدكتور" width="470" height="325" fetchpriority="high" decoding="async">
+                </picture>
                 <div>
                     <ul class="desktop-nav nav-items">
                         <li><a href="index.html">الرئيسيةَ</a></li>
@@ -43,12 +62,13 @@
             <!-- mobile nav -->
             <div class="mobile-banner">
                 <ul class=" nav mobile-nav nav-items ">
-                    <li class=" current-page"><a href="#" class="current-page">حياة المَحمود</a></li>
+                    <li class=" current-page"><a href="#" class="current-page">حياة المَحمود</a>
                     <ul class="sub-nav-items" style="height: 0px; ">
                         <li class="active "><a class="active " href="books.html">أعمال المَحمود</a></li>
                         <li><a href="index.html ">الرئيسية</a></li>
                         <li><a href="memorial.html ">في ذكرى المحَمود</a></li>
                     </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -176,7 +196,8 @@
                     <img src="img/books/short-stories/book1.jpg" alt="book cover">
                     <p>المسيخ الدجال</p>
                 </div>
-                <div class="book-bio" <p>قصة قصيرة</p>
+                <div class="book-bio">
+                    <p>قصة قصيرة</p>
                     <p>أُصدر عام: 1979</p>
                 </div>
                 <div class="book-links">
@@ -615,13 +636,13 @@
     <footer>
         <div class="figure">
             <figure>
-                <img src="img/Banner/footer-img.png" alt="Picture of the doctor ">
+                <img src="img/Banner/footer-img.png" alt="صورة للدكتور مصطفى محمود" width="500" height="500" loading="lazy" decoding="async">
             </figure>
             <p class="footer-text">مصطفى محمود</p>
         </div>
         <div class="footer-items">
             <div>
-                <h5>المصادر المستخدمة:</h5>
+                <h2 class="footer-heading">المصادر المستخدمة:</h2>
                 <ul>
                     <li>
                       <a
@@ -649,7 +670,7 @@
                   </ul>
             </div>
             <div>
-                <h5>جِد الدكتور من خلال:</h5>
+                <h2 class="footer-heading">جِد الدكتور من خلال:</h2>
                 <ul>
                     <li>
                         <a href="https://www.youtube.com/user/DrMostafaMahmud">القناة الرسمية على اليوتيوب</a>
@@ -668,7 +689,7 @@
                 </ul>
             </div>
             <div>
-                <h5>عن مصمم الموقع:</h5>
+                <h2 class="footer-heading">عن مصمم الموقع:</h2>
                 <ul>
                     <li>
                         <a href="https://github.com/Yuniac">غيتهب (Github)</a>
@@ -677,7 +698,7 @@
                         <a href="https://www.twitter.com/YMsabbag">تويتر (Twitter)</a>
                     </li>
                     <li>
-                        <a class="language">AR | EN</a>
+                        <button type="button" class="language">AR | EN</button>
                         <p class="language-description lginfo-visibility">SOON | قريباً</p>
                     </li>
                 </ul>

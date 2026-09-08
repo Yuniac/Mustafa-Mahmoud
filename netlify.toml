@@ -1,0 +1,10 @@
+# Static site, no build step. Netlify serves the repo root as-is.
+[build]
+  publish = "."
+
+# Redirect the apex domain to www (matches the CNAME + sitemap canonical host).
+[[redirects]]
+  from = "https://mustafamahmoud.net/*"
+  to = "https://www.mustafamahmoud.net/:splat"
+  status = 301
+  force = true

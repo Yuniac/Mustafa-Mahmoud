@@ -5,7 +5,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="مصطفى محمود" />
+    <meta name="title" content="في ذكرى مصطفى محمود" />
     <meta
       name="description"
       content="هدف الموقع والهدف من خلف بنائه، معلومات عالمية عن الدكتور أيضاً"
@@ -26,6 +26,21 @@
       href="CSS/default-styles/default.css"
     />
     <title>في ذكرى مصطفى محمود</title>
+    <link rel="canonical" href="https://www.mustafamahmoud.net/memorial.html" />
+    <link rel="preload" as="font" type="font/woff2" href="CSS/fonts/cairo.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="CSS/fonts/arefBold.woff2" crossorigin>
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="مصطفى محمود" />
+    <meta property="og:locale" content="ar_EG" />
+    <meta property="og:url" content="https://www.mustafamahmoud.net/memorial.html" />
+    <meta property="og:title" content="في ذكرى مصطفى محمود" />
+    <meta property="og:description" content="هدف الموقع والهدف من خلف بنائه، معلومات عالمية عن الدكتور أيضاً" />
+    <meta property="og:image" content="https://www.mustafamahmoud.net/img/Banner/footer-img.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="في ذكرى مصطفى محمود" />
+    <meta name="twitter:description" content="هدف الموقع والهدف من خلف بنائه، معلومات عالمية عن الدكتور أيضاً" />
+    <meta name="twitter:image" content="https://www.mustafamahmoud.net/img/Banner/footer-img.png" />
+
   </head>
 
   <body>
@@ -33,11 +48,12 @@
       <div class="banner">
         <!-- desktop nav -->
         <div>
-          <img
-            class="desktop-banner-image mobile-banner-image"
-            src="img/Banner/banner.png"
-            alt="صورة للدكتور"
-          />
+          <picture>
+                    <source srcset="img/Banner/banner.avif" type="image/avif">
+                    <source srcset="img/Banner/banner.webp" type="image/webp">
+                    <img class="desktop-banner-image mobile-banner-image" src="img/Banner/banner.png"
+                        alt="صورة للدكتور" width="470" height="325" fetchpriority="high" decoding="async">
+                </picture>
           <div>
             <ul class="desktop-nav nav-items">
               <li><a href="index.html">الرئيسيةَ</a></li>
@@ -54,12 +70,12 @@
           <ul class="nav mobile-nav nav-items">
             <li class="active current-page">
               <a href="#" class="active current-page">في ذكرى المحَمود</a>
-            </li>
-            <ul class="sub-nav-items" style="height: 0px">
+              <ul class="sub-nav-items" style="height: 0px">
               <li><a href="index.html">الرئيسية</a></li>
               <li><a href="books.html">أعمال المَحمود</a></li>
               <li><a href="lifestory.html">حياة المَحمود</a></li>
             </ul>
+            </li>
           </ul>
         </div>
       </div>
@@ -159,19 +175,19 @@
           </p>
         </div>
         <p>رحم الله مصطفى محمود و تَقَبَّله قُبولٌ حسن.</p>
-        <img src="img/in-memory/img1.png" alt="صورة للدكتور في مسجده" />
+        <img src="img/in-memory/img1.jpg" alt="صورة للدكتور في مسجده" width="834" height="476" loading="lazy" decoding="async" />
       </section>
     </main>
     <footer>
       <div class="figure">
         <figure>
-          <img src="img/Banner/footer-img.png" alt="صورة للدكتور" />
+          <img src="img/Banner/footer-img.png" alt="صورة للدكتور مصطفى محمود" width="500" height="500" loading="lazy" decoding="async" />
         </figure>
         <p class="footer-text">مصطفى محمود</p>
       </div>
       <div class="footer-items">
         <div>
-          <h5>المصادر المستخدمة:</h5>
+          <h2 class="footer-heading">المصادر المستخدمة:</h2>
           <ul>
             <li>
               <a
@@ -199,7 +215,7 @@
           </ul>
         </div>
         <div>
-          <h5>جِد الدكتور من خلال:</h5>
+          <h2 class="footer-heading">جِد الدكتور من خلال:</h2>
           <ul>
             <li>
               <a href="https://www.youtube.com/user/DrMostafaMahmud"
@@ -227,7 +243,7 @@
           </ul>
         </div>
         <div>
-          <h5>عن مصمم الموقع:</h5>
+          <h2 class="footer-heading">عن مصمم الموقع:</h2>
           <ul>
             <li>
               <a href="https://github.com/Yuniac ">غيتهب (Github)</a>
@@ -236,7 +252,7 @@
               <a href="https://www.twitter.com/YMsabbag ">تويتر (Twitter)</a>
             </li>
             <li>
-              <a class="language">AR | EN</a>
+              <button type="button" class="language">AR | EN</button>
               <p class="language-description lginfo-visibility">
                 SOON | قريباً
               </p>

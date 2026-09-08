@@ -25,8 +25,8 @@ missingLinks.forEach((link) => {
 });
 
 // the no download link
-const missingDlLink = document.querySelector("#missingDLLink");
-missingDlLink.addEventListener("click", () => {
+const missingDlLink = document.querySelector("#missingDlLink");
+missingDlLink?.addEventListener("click", () => {
   const missingDLPara = document.querySelector("#missingDLPara");
   missingDLPara.classList.remove("wiki-visibility");
 
