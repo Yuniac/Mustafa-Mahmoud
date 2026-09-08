@@ -1,12 +1,12 @@
 @font-face {
   font-family: "Aref Ruqaa";
-  src: url("../fonts/arefBold.woff2") format("woff2");
+  src: url("/CSS/fonts/arefBold.woff2") format("woff2");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Cairo";
-  src: url("../fonts/cairo.woff2") format("woff2");
+  src: url("/CSS/fonts/cairo.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -83,6 +83,9 @@ header {
   overflow: hidden;
   transition: height 730ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
   padding: 0;
+}
+.sub-nav-items.is-open {
+  height: 220px;
 }
 
 /* active page class */

@@ -7,6 +7,7 @@ import mdx from '@astrojs/mdx';
 export default defineConfig({
   site: 'https://www.mustafamahmoud.net',
   trailingSlash: 'never',
+  compressHTML: false,
   build: {
     // Emit `books.astro` -> `dist/books.html`, served at exactly `/books.html`.
     // Keeps the current live URLs (which have organic search traffic) with zero redirects.

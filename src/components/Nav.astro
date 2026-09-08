@@ -1,0 +1,74 @@
+---
+interface Props {
+  /** Canonical path of the current page, e.g. "/" or "/books.html". */
+  currentPath: string;
+}
+const { currentPath } = Astro.props;
+const current = currentPath === "/" ? "/index.html" : currentPath;
+
+const links = [
+  { href: "/index.html", label: "الرئيسيةَ" },
+  { href: "/books.html", label: "أعمال المَحمود" },
+  { href: "/lifestory.html", label: "حياة المَحمود" },
+  { href: "/memorial.html", label: "في ذكرى المحَمود" },
+];
+
+const isCurrent = (href: string) => href === current;
+const currentLink = links.find((l) => isCurrent(l.href)) ?? links[0];
+const otherLinks = links.filter((l) => !isCurrent(l.href));
+---
+
+<header>
+  <div class="banner">
+    <!-- desktop nav -->
+    <div>
+      <picture>
+        <source srcset="/img/Banner/banner.avif" type="image/avif" />
+        <source srcset="/img/Banner/banner.webp" type="image/webp" />
+        <img
+          class="desktop-banner-image mobile-banner-image"
+          src="/img/Banner/banner.png"
+          alt="صورة للدكتور"
+          width="470"
+          height="325"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </picture>
+      <div>
+        <ul class="desktop-nav nav-items">
+          {
+            links.map((l) =>
+              isCurrent(l.href) ? (
+                <li class="active">
+                  <a class="active" href="#">{l.label}</a>
+                </li>
+              ) : (
+                <li>
+                  <a href={l.href}>{l.label}</a>
+                </li>
+              ),
+            )
+          }
+        </ul>
+      </div>
+    </div>
+    <!-- mobile nav -->
+    <div class="mobile-banner">
+      <ul class="nav mobile-nav nav-items">
+        <li class="active current-page">
+          <a href="#" class="active current-page">{currentLink.label}</a>
+          <ul class="sub-nav-items">
+            {
+              otherLinks.map((l) => (
+                <li>
+                  <a href={l.href}>{l.label}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
