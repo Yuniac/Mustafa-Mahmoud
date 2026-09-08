@@ -1,0 +1,59 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  book: CollectionEntry<"books">["data"];
+}
+const { book } = Astro.props;
+const { wiki, download } = book;
+const wikiNoteId = `${book.id}-wikinote`;
+const dlNoteId = `${book.id}-dlnote`;
+
+const wikiMissing = wiki && "missing" in wiki;
+const dlMissing = download && "missing" in download;
+---
+
+<div class="book-bio">
+  <p>{book.category}</p>
+  <p>{book.releaseText}</p>
+</div>
+<div class="book-links">
+  <p class="book-source">
+    {
+      wiki && !wikiMissing && <a href={wiki.url}>Wiki </a>
+    }
+    {
+      wiki && wikiMissing && (
+        <a class="missing-wiki-source" href={wiki.url} role="button" tabindex="0" aria-controls={wikiNoteId}>wiki</a>
+      )
+    }
+  </p>
+  {
+    download && !dlMissing && (
+      <a href={download.url}>
+        <img src="/img/Icons/download.png" alt="download-link" />
+      </a>
+    )
+  }
+  {
+    download && dlMissing && (
+      <a class="missing-wiki-source" role="button" tabindex="0" aria-controls={dlNoteId}>
+        <img src="/img/Icons/no-download.png" alt="download-link" />
+      </a>
+    )
+  }
+  {
+    wiki && wikiMissing && wiki.note && (
+      <p id={wikiNoteId} class="missing-wiki-source-notice wiki-notice-hide wiki-visibility">
+        {wiki.note}
+      </p>
+    )
+  }
+  {
+    download && dlMissing && download.note && (
+      <p id={dlNoteId} class="missing-wiki-source-notice wiki-notice-hide wiki-visibility">
+        {download.note}
+      </p>
+    )
+  }
+</div>

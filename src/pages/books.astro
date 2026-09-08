@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BookGallery from "../components/BookGallery.astro";
+import "../styles/books.css";
+import "../styles/default.css";
+---
+
+<BaseLayout
+  path="/books.html"
+  title="كتب مصطفى محمود — قائمة أعمال الدكتور"
+  description="ألف مصطفى محمود حوالي 89 كتابًا، نستطلع هنا الكتب العلمية، الدينية، الفلسفية ،الاجتماعية والسياسية"
+  keywords="مصطفى محمود, كتب مصطفى محمود, بيوغرافي, الدكتور مصطفى محمود"
+>
+  <main>
+    <section class="intro">
+      <section>
+        <h1>جميع مؤلفات مصطفى محمود:</h1>
+        <p>
+          -ألف مصطفى محمود حوالي 89 كتابًا، تباينت في مواضيعها ما بين الكتب
+          العلمية والدينية والفلسفية والاجتماعية والسياسية، بالإضافة إلى القصص
+          القصيرة والروايات والمسرحيات والتأليف في أدب الرحلات أيضاً،<sup
+            ><a
+              href="https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D9%85%D8%A4%D9%84%D9%81%D8%A7%D8%AA_%D9%85%D8%B5%D8%B7%D9%81%D9%89_%D9%85%D8%AD%D9%85%D9%88%D8%AF"
+              >[1]</a
+            ></sup
+          >
+        </p>
+      </section>
+    </section>
+    <div class="secondary-nav" id="books">
+      <ul class="second-nav-items">
+        <li class="active">
+          <a href="/books.html#books">كَتب</a>
+        </li>
+        <li><a href="/books-subpage.html#books-2">قصص و مسرحيات</a></li>
+      </ul>
+    </div>
+
+    <BookGallery page="main" />
+  </main>
+  <script>
+    import "../scripts/books.ts";
+  </script>
+</BaseLayout>

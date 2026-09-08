@@ -1,0 +1,49 @@
+---
+import { Picture } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import type { CollectionEntry } from "astro:content";
+import BookInfo from "./BookInfo.astro";
+
+const covers = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/books/**/*.{jpg,jpeg,png,JPG}",
+  { eager: true },
+);
+
+interface Props {
+  book: CollectionEntry<"books">["data"];
+}
+const { book } = Astro.props;
+
+const coverKey = `../assets/books/${book.cover}`;
+const coverMod = covers[coverKey];
+if (!coverMod) {
+  throw new Error(`BookCard: no cover asset for "${book.id}" at ${coverKey}`);
+}
+const cover = coverMod.default;
+
+const cardClass = book.highlighted ? "book-card highlighted" : "book-card";
+---
+
+<div class={cardClass} id={book.anchor ? book.id : undefined}>
+  <div>
+    <Picture
+      src={cover}
+      formats={["avif", "webp"]}
+      widths={[150, 300]}
+      sizes="(max-width: 572px) 40vw, 180px"
+      alt="book cover"
+      loading="lazy"
+      decoding="async"
+    />
+    <p class={book.titleClass || undefined}>{book.title}</p>
+  </div>
+  {
+    book.unwrapped ? (
+      <BookInfo book={book} />
+    ) : (
+      <div class="book-info">
+        <BookInfo book={book} />
+      </div>
+    )
+  }
+</div>
