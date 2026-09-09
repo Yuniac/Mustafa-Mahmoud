@@ -13,7 +13,7 @@ h1 {
 h2 {
   font-size: 1.3rem;
   padding: 2.5rem 0 0.9rem;
-  color: #a95c56;
+  color: #9a4f4a;
   position: relative;
 }
 
@@ -50,11 +50,11 @@ a {
 }
 
 a:hover {
-  color: #a95c56;
+  color: #9a4f4a;
 }
 
 .main-content a {
-  color: #a95c56;
+  color: #9a4f4a;
   outline: 0;
 }
 
@@ -176,7 +176,7 @@ a:hover {
   max-width: 900px;
   min-width: 275px;
   margin: 0 auto 1rem;
-  border: solid 1px #a95c56;
+  border: solid 1px #9a4f4a;
   object-fit: cover;
 }
 
@@ -192,7 +192,7 @@ a:hover {
 
 .main-content section {
   width: calc(33.3%);
-  border-right: 2px solid #a95c56;
+  border-right: 2px solid #9a4f4a;
   padding: 0.9rem 1.5rem 0rem;
 }
 
@@ -234,7 +234,7 @@ a:hover {
 }
 
 .interview-body {
-  border: 2px solid #a95c56;
+  border: 2px solid #9a4f4a;
   border-top: none;
   border-bottom: none;
   visibility: hidden;
@@ -246,7 +246,7 @@ a:hover {
 
 .interview-img {
   position: relative;
-  border: 2px solid #a95c56;
+  border: 2px solid #9a4f4a;
 }
 
 .interview-img::before {
@@ -254,7 +254,7 @@ a:hover {
   position: absolute;
   height: 2px;
   width: 50%;
-  background-color: #a95c56;
+  background-color: #9a4f4a;
   top: 0;
   right: 0;
 }
@@ -288,7 +288,7 @@ a:hover {
 }
 
 .interviews-accordion button {
-  color: #a95c56;
+  color: #9a4f4a;
   padding: 0.4rem 1rem;
   line-height: 1.7rem;
   border: none;
@@ -340,7 +340,7 @@ a:hover {
     margin: 0 auto;
   }
   .main-content section:first-of-type {
-    border-right: 2px solid #a95c56;
+    border-right: 2px solid #9a4f4a;
   }
   .interview-title {
     width: 100%;
@@ -375,7 +375,7 @@ a:hover {
   }
   h5 {
     font-size: 1rem;
-    border-bottom: 1px ridge #a95c56;
+    border-bottom: 1px ridge #9a4f4a;
     width: 50%;
   }
 }

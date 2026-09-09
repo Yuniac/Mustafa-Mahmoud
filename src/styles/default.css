@@ -63,13 +63,13 @@ header {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   cursor: pointer;
-  box-shadow: -5px -5px #a95c56;
+  box-shadow: -5px -5px #9a4f4a;
 }
 
 .nav-items li:hover,
 .nav-items a:hover {
   cursor: pointer;
-  background-color: #a95c56;
+  background-color: #9a4f4a;
   color: white;
   box-shadow: none;
 }
@@ -92,7 +92,7 @@ header {
 
 li.active {
   padding: 5px 15px;
-  background-color: #a95c56;
+  background-color: #9a4f4a;
   box-shadow: -7px -7px black;
   color: white;
 }
@@ -104,7 +104,7 @@ li.active:hover > a {
 }
 
 li.active:hover {
-  box-shadow: -7px -7px #a95c56;
+  box-shadow: -7px -7px #9a4f4a;
 }
 
 /* nav on mobile */
@@ -189,7 +189,7 @@ footer {
   justify-content: space-between;
   flex-direction: row-reverse;
   background-color: #bda7a3;
-  border-top: 1px solid #a95c56;
+  border-top: 1px solid #9a4f4a;
 }
 footer ul {
   margin-right: 1.5rem;
@@ -200,7 +200,7 @@ footer li {
 }
 
 footer ul a:hover {
-  color: #a95c56;
+  color: #9a4f4a;
   cursor: pointer;
 }
 
@@ -271,7 +271,7 @@ footer .language:hover {
 @media (max-width: 572px) {
   .footer-heading {
     font-size: 1rem;
-    border-bottom: 1px ridge #a95c56;
+    border-bottom: 1px ridge #9a4f4a;
     width: 50%;
   }
 }
@@ -378,7 +378,7 @@ footer .language:hover {
     margin-top: 1rem;
     font-size: 11vw;
     font-family: "Aref Ruqaa";
-    color: #a95c56;
+    color: #9a4f4a;
   }
   .figure {
     display: flex;

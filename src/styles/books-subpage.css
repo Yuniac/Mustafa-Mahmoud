@@ -15,7 +15,7 @@ h1 {
 h1::after {
   content: "";
   position: absolute;
-  background-color: #a95c56;
+  background-color: #9a4f4a;
   width: 300px;
   height: 1px;
   right: 0;
@@ -34,13 +34,13 @@ h2 {
 h2::before {
   content: "{";
   padding: 0 0.4rem;
-  color: #a95c56;
+  color: #9a4f4a;
 }
 
 h2::after {
   content: "}";
   padding: 0 0.4rem;
-  color: #a95c56;
+  color: #9a4f4a;
 }
 
 a,
@@ -54,7 +54,7 @@ a {
 }
 
 a:hover {
-  color: #a95c56;
+  color: #9a4f4a;
 }
 
 h5 {
@@ -99,13 +99,13 @@ p {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   cursor: pointer;
-  box-shadow: -5px -5px #a95c56;
+  box-shadow: -5px -5px #9a4f4a;
 }
 
 .desktop-nav-items a:hover,
 .desktop-nav-items li:hover {
   cursor: pointer;
-  background-color: #a95c56;
+  background-color: #9a4f4a;
   color: white;
   box-shadow: none;
 }
@@ -114,7 +114,7 @@ p {
 
 .desktop-nav-items li.active {
   padding: 5px 15px;
-  background-color: #a95c56;
+  background-color: #9a4f4a;
   box-shadow: -7px -7px black;
   color: white;
 }
@@ -126,7 +126,7 @@ li.active:hover > a {
 }
 
 .desktop-nav-items li.active:hover {
-  box-shadow: -7px -7px #a95c56;
+  box-shadow: -7px -7px #9a4f4a;
 }
 
 /* second nav */
@@ -140,7 +140,7 @@ li.active:hover > a {
   width: 90%;
   margin-right: 5%;
   height: 2px;
-  background-color: #a95c56;
+  background-color: #9a4f4a;
 }
 
 .secondary-nav {
@@ -162,13 +162,13 @@ li.active:hover > a {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   padding: 4px 14px;
-  box-shadow: -5px -5px #a95c56;
+  box-shadow: -5px -5px #9a4f4a;
 }
 
 .secondary-nav a:hover,
 .secondary-nav li:hover {
   cursor: pointer;
-  background-color: #a95c56;
+  background-color: #9a4f4a;
   color: white;
   box-shadow: none;
 }
@@ -176,7 +176,7 @@ li.active:hover > a {
 /* second nav active class */
 
 .second-nav-items li.active {
-  background-color: #a95c56;
+  background-color: #9a4f4a;
   box-shadow: -7px -7px black;
   color: white;
 }
@@ -188,7 +188,7 @@ li.active:hover > a {
 }
 
 .second-nav-items li.active:hover {
-  box-shadow: -5px -5px #a95c56;
+  box-shadow: -5px -5px #9a4f4a;
 }
 
 /* nav on mobile */
@@ -247,7 +247,7 @@ li.active:hover > a {
   flex-direction: column;
   justify-content: space-between;
   transition: box-shadow 1500ms ease-in-out;
-  border: 1px solid #a95c56;
+  border: 1px solid #9a4f4a;
 }
 
 .book-card img {
@@ -295,7 +295,7 @@ li.active:hover > a {
 }
 
 .book-links a {
-  color: #a95c56;
+  color: #9a4f4a;
 }
 
 .book-links a:hover {
@@ -309,19 +309,19 @@ li.active:hover > a {
 }
 
 .highlight {
-  box-shadow: 5px 5px 25px 21.5px #a95c56;
+  box-shadow: 5px 5px 25px 21.5px #9a4f4a;
 }
 
 /* no wiki page class */
 
 a.missing-wiki-source {
-  color: #ccc;
+  color: #6b6b6b;
 }
 
 a.missing-wiki-source:hover {
   cursor: help;
   text-decoration: none;
-  color: #ccc;
+  color: #6b6b6b;
 }
 
 .missing-wiki-source-notice {
@@ -355,7 +355,7 @@ footer {
   flex-direction: row-reverse;
   width: 100%;
   background-color: #bda7a3;
-  border-top: 1px solid #a95c56;
+  border-top: 1px solid #9a4f4a;
 }
 
 footer li {
@@ -371,7 +371,7 @@ li.special-li a:hover {
 }
 
 footer ul a:hover {
-  color: #a95c56;
+  color: #9a4f4a;
   cursor: pointer;
 }
 
@@ -576,12 +576,12 @@ footer a.language:hover {
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     padding: 4px 14px;
-    box-shadow: -5px -5px #a95c56;
+    box-shadow: -5px -5px #9a4f4a;
   }
   .secondary-nav a:hover,
   .secondary-nav li:hover {
     cursor: pointer;
-    background-color: #a95c56;
+    background-color: #9a4f4a;
     color: white;
     box-shadow: none;
   }
@@ -594,7 +594,7 @@ footer a.language:hover {
   }
   h5 {
     font-size: 1.1rem;
-    border-bottom: 1px ridge #a95c56;
+    border-bottom: 1px ridge #9a4f4a;
     width: 50%;
   }
   p {
@@ -660,7 +660,7 @@ footer a.language:hover {
     margin-top: 1rem;
     font-size: 11vw;
     font-family: "Aref Ruqaa";
-    color: #a95c56;
+    color: #9a4f4a;
   }
   .footer-items {
     display: flex;

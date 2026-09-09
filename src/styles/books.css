@@ -9,7 +9,7 @@ h1 {
   font-weight: 700;
   margin: 1.4rem 0 2rem;
   padding-bottom: 0.6rem;
-  border-bottom: 1px solid #a95c56;
+  border-bottom: 1px solid #9a4f4a;
   border-width: 60%;
 }
 
@@ -29,7 +29,12 @@ a {
 
 main section a {
   text-decoration: none;
-  color: #a95c56;
+  color: #9a4f4a;
+}
+
+/* the intro footnote link sits on the mauve page background — needs to be darker */
+.intro a {
+  color: #6b2e29;
 }
 
 a:hover {
@@ -73,13 +78,13 @@ h5 {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   cursor: pointer;
-  box-shadow: -5px -5px #a95c56;
+  box-shadow: -5px -5px #9a4f4a;
 }
 
 .desktop-nav-items a:hover,
 .desktop-nav-items li:hover {
   cursor: pointer;
-  background-color: #a95c56;
+  background-color: #9a4f4a;
   color: white;
   box-shadow: none;
 }
@@ -88,7 +93,7 @@ h5 {
 
 .desktop-nav-items li.active {
   padding: 5px 15px;
-  background-color: #a95c56;
+  background-color: #9a4f4a;
   box-shadow: -7px -7px black;
   color: white;
 }
@@ -100,7 +105,7 @@ li.active:hover > a {
 }
 
 .desktop-nav-items li.active:hover {
-  box-shadow: -7px -7px #a95c56;
+  box-shadow: -7px -7px #9a4f4a;
 }
 
 /* second nav */
@@ -114,7 +119,7 @@ li.active:hover > a {
   width: 90%;
   margin-right: 5%;
   height: 2px;
-  background-color: #a95c56;
+  background-color: #9a4f4a;
 }
 
 .secondary-nav {
@@ -135,13 +140,13 @@ li.active:hover > a {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   padding: 4px 14px;
-  box-shadow: -5px -5px #a95c56;
+  box-shadow: -5px -5px #9a4f4a;
 }
 
 .secondary-nav a:hover,
 .secondary-nav li:hover {
   cursor: pointer;
-  background-color: #a95c56;
+  background-color: #9a4f4a;
   color: white;
   box-shadow: none;
 }
@@ -149,13 +154,13 @@ li.active:hover > a {
 /* second nav active class */
 
 .second-nav-items li.active {
-  background-color: #a95c56;
+  background-color: #9a4f4a;
   box-shadow: -7px -7px black;
   color: white;
 }
 
 .second-nav-items li.active:hover {
-  box-shadow: -5px -5px #a95c56;
+  box-shadow: -5px -5px #9a4f4a;
 }
 
 .second-nav-items li.active:hover,
@@ -208,7 +213,7 @@ li.active:hover > a {
 }
 
 .intro span {
-  color: #a95c56;
+  color: #9a4f4a;
 }
 
 .intro section p {
@@ -243,7 +248,7 @@ li.active:hover > a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid #a95c56;
+  border: 1px solid #9a4f4a;
 }
 
 .book-card img {
@@ -293,7 +298,7 @@ li.active:hover > a {
 .book-links a:hover {
   cursor: pointer;
   text-decoration: underline;
-  color: #a95c56;
+  color: #9a4f4a;
 }
 
 .book-links a:last-of-type {
@@ -301,19 +306,19 @@ li.active:hover > a {
 }
 
 .highlight {
-  box-shadow: 5px 5px 25px 21.5px #a95c56;
+  box-shadow: 5px 5px 25px 21.5px #9a4f4a;
 }
 
 /* no wiki pages class */
 
 a.missing-wiki-source {
-  color: #ccc;
+  color: #6b6b6b;
 }
 
 a.missing-wiki-source:hover {
   cursor: help;
   text-decoration: none;
-  color: #ccc;
+  color: #6b6b6b;
 }
 
 .missing-wiki-source-notice {
@@ -453,7 +458,7 @@ a.missing-wiki-source:hover {
     width: 240px;
   }
   .mobile-nav-items a:hover {
-    color: #a95c56;
+    color: #9a4f4a;
   }
   /* second nav */
   .secondary-nav ul {
@@ -466,12 +471,12 @@ a.missing-wiki-source:hover {
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     padding: 4px 14px;
-    box-shadow: -5px -5px #a95c56;
+    box-shadow: -5px -5px #9a4f4a;
   }
   .secondary-nav a:hover,
   .secondary-nav li:hover {
     cursor: pointer;
-    background-color: #a95c56;
+    background-color: #9a4f4a;
     color: white;
     box-shadow: none;
   }
@@ -481,7 +486,7 @@ a.missing-wiki-source:hover {
   }
   h5 {
     font-size: 1.1rem;
-    border-bottom: 1px ridge #a95c56;
+    border-bottom: 1px ridge #9a4f4a;
     width: 50%;
   }
   .intro {

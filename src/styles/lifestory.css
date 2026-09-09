@@ -25,7 +25,7 @@ p {
 
 blockquote p,
 p q {
-  color: #a95c56;
+  color: #9a4f4a;
 }
 
 figcaption {
@@ -53,7 +53,7 @@ a {
 }
 
 main a {
-  color: #a95c56;
+  color: #9a4f4a;
 }
 
 main a:visited,
@@ -62,7 +62,7 @@ main a:hover {
 }
 
 a:hover {
-  color: #a95c56;
+  color: #9a4f4a;
 }
 
 h5 {
@@ -85,15 +85,15 @@ h5 {
 /* main */
 
 main {
-  border: 1px solid #a95c56;
-  border-top: 0.7px solid #a95c56;
+  border: 1px solid #9a4f4a;
+  border-top: 0.7px solid #9a4f4a;
   background-color: white;
   width: 80%;
   margin: 0rem auto 2rem;
 }
 
 main img {
-  border: 2px solid #a95c56;
+  border: 2px solid #9a4f4a;
 }
 
 .no-border {
@@ -111,7 +111,7 @@ figure img {
 aside {
   background-color: #f2f2f2;
   text-align: center;
-  border: 1px solid #a95c56;
+  border: 1px solid #9a4f4a;
   display: flex;
   flex-direction: column;
   padding: 0 0.5rem 1rem;
@@ -125,7 +125,7 @@ aside {
 aside img {
   display: block;
   margin: 0 auto;
-  border: 2px ridge #a95c56;
+  border: 2px ridge #9a4f4a;
 }
 
 aside figcaption {
@@ -133,7 +133,7 @@ aside figcaption {
 }
 
 aside hr {
-  border: 1px solid #a95c56;
+  border: 1px solid #9a4f4a;
 }
 
 .aside-info {
@@ -143,7 +143,7 @@ aside hr {
 .aside-info div {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #a95c56;
+  border-bottom: 1px solid #9a4f4a;
 }
 
 aside p:first-of-type {
@@ -163,7 +163,7 @@ aside p:first-of-type {
   margin: 0 auto 1rem;
   display: flex;
   justify-content: center;
-  border: 1px solid #a95c56;
+  border: 1px solid #9a4f4a;
   border-top: none;
   padding: 0.4rem;
   background-color: #f2f2f2;
@@ -261,7 +261,7 @@ main button {
   margin: 1rem auto 4rem;
   position: relative;
   background-color: #ab8d87;
-  border: 2px double #a95c56;
+  border: 2px double #9a4f4a;
   box-shadow:
     5px 5px 65px 5px black,
     -5px -5px 65px 5px black;
@@ -281,7 +281,7 @@ main button {
   display: block;
   width: 82%;
   height: 3px;
-  background-color: #a95c56;
+  background-color: #9a4f4a;
 }
 
 .carousel::before {
@@ -292,13 +292,13 @@ main button {
   display: block;
   width: 82%;
   height: 3px;
-  background-color: #a95c56;
+  background-color: #9a4f4a;
 }
 
 .carousel img {
   margin: 0 auto;
   display: block;
-  border: 2px ridge #a95c56;
+  border: 2px ridge #9a4f4a;
   padding: 1rem;
   background-color: black;
 }
@@ -333,7 +333,7 @@ main button {
   display: block;
   width: 82%;
   height: 3px;
-  background-color: #a95c56;
+  background-color: #9a4f4a;
 }
 
 .section-8 button {
@@ -352,7 +352,7 @@ footer {
   justify-content: space-between;
   flex-direction: row-reverse;
   background-color: #bda7a3;
-  border-top: 1px solid #a95c56;
+  border-top: 1px solid #9a4f4a;
 }
 
 footer li {
@@ -367,7 +367,7 @@ li.special-li a:hover {
 }
 
 footer ul a:hover {
-  color: #a95c56;
+  color: #9a4f4a;
   cursor: pointer;
 }
 
@@ -649,7 +649,7 @@ media qs
   }
   h5 {
     font-size: 1.2rem;
-    border-bottom: 1px ridge #a95c56;
+    border-bottom: 1px ridge #9a4f4a;
     width: 50%;
   }
   p {
@@ -710,7 +710,7 @@ media qs
     margin-top: 1rem;
     font-size: 11vw;
     font-family: "Aref Ruqaa";
-    color: #a95c56;
+    color: #9a4f4a;
     line-height: normal;
   }
   .footer-items {
