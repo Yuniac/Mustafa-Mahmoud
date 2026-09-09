@@ -1,6 +1,10 @@
-# Static site, no build step. Netlify serves the repo root as-is.
+# Astro static build. Netlify runs the build and serves dist/.
 [build]
-  publish = "."
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
 
 # Redirect the apex domain to www (matches the CNAME + sitemap canonical host).
 [[redirects]]

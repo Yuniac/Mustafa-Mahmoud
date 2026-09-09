@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.mustafamahmoud.net/sitemap.xml
+Sitemap: https://www.mustafamahmoud.net/sitemap-index.xml

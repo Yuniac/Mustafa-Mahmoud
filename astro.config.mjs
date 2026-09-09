@@ -14,5 +14,16 @@ export default defineConfig({
     format: 'file',
     inlineStylesheets: 'auto',
   },
-  integrations: [mdx(), sitemap()],
+  integrations: [
+    mdx(),
+    sitemap({
+      // format:'file' routes report as "/books"; the real URLs are "/books.html".
+      serialize(item) {
+        if (item.url !== 'https://www.mustafamahmoud.net/') {
+          item.url = item.url.replace(/\/$/, '') + '.html';
+        }
+        return item;
+      },
+    }),
+  ],
 });
