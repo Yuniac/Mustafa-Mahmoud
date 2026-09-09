@@ -13,9 +13,15 @@ const links = [
   { href: "/memorial.html", label: "في ذكرى المحَمود" },
 ];
 
-const isCurrent = (href: string) => href === current;
-const currentLink = links.find((l) => isCurrent(l.href)) ?? links[0];
-const otherLinks = links.filter((l) => !isCurrent(l.href));
+// Sub-pages that live under a top-level nav section, so the section tab still
+// highlights (e.g. books-subpage belongs to "أعمال المَحمود").
+const sectionOf: Record<string, string> = {
+  "/books-subpage.html": "/books.html",
+};
+const section = sectionOf[current] ?? current;
+
+const isCurrent = (href: string) => href === section;
+const isExact = (href: string) => href === current;
 ---
 
 <header>
@@ -41,7 +47,9 @@ const otherLinks = links.filter((l) => !isCurrent(l.href));
             links.map((l) =>
               isCurrent(l.href) ? (
                 <li class="active">
-                  <a class="active" href="#">{l.label}</a>
+                  <a class="active" href={isExact(l.href) ? "#" : l.href}>
+                    {l.label}
+                  </a>
                 </li>
               ) : (
                 <li>
@@ -53,22 +61,31 @@ const otherLinks = links.filter((l) => !isCurrent(l.href));
         </ul>
       </div>
     </div>
-    <!-- mobile nav -->
+    <!-- mobile nav — a simple always-visible row, no toggle -->
     <div class="mobile-banner">
-      <ul class="nav mobile-nav nav-items">
-        <li class="active current-page">
-          <a href="#" class="active current-page">{currentLink.label}</a>
-          <ul class="sub-nav-items">
-            {
-              otherLinks.map((l) => (
+      <nav class="mobile-nav" aria-label="التنقّل">
+        <ul>
+          {
+            links.map((l) =>
+              isCurrent(l.href) ? (
+                <li class="active">
+                  <a
+                    class="active"
+                    aria-current="page"
+                    href={isExact(l.href) ? "#" : l.href}
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              ) : (
                 <li>
                   <a href={l.href}>{l.label}</a>
                 </li>
-              ))
-            }
-          </ul>
-        </li>
-      </ul>
+              ),
+            )
+          }
+        </ul>
+      </nav>
     </div>
   </div>
 </header>

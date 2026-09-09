@@ -4,43 +4,45 @@
 ---
 
 <div class="intro-video">
-  <video src="/videos/science-and-faith-intro.mp4" preload="metadata">
-    <track
-      kind="captions"
-      src="/videos/science-and-faith-intro.ar.vtt"
-      srclang="ar"
-      label="العربية"
-      default
-    />
-  </video>
-  <div class="controls">
-    <div class="controls-buttons">
-      <button id="play" aria-label="play pause toggle"></button>
-      <button id="replay" aria-label="replay"></button>
+  <div class="intro-video-frame">
+    <video src="/videos/science-and-faith-intro.mp4" preload="metadata">
+      <track
+        kind="captions"
+        src="/videos/science-and-faith-intro.ar.vtt"
+        srclang="ar"
+        label="العربية"
+        default
+      />
+    </video>
+    <div class="controls">
+      <div class="controls-buttons">
+        <button id="play" aria-label="play pause toggle"></button>
+        <button id="replay" aria-label="replay"></button>
 
-      <div id="timer" class="timer">
-        <div class="timer-bar" id="timer-bar"></div>
-        <span aria-label="timer" id="timer-numbers">00:00</span>
+        <div id="timer" class="timer">
+          <div class="timer-bar" id="timer-bar"></div>
+          <span aria-label="timer" id="timer-numbers">00:00</span>
+        </div>
       </div>
+      <input
+        type="range"
+        name="volume"
+        id="volume"
+        min="0"
+        max="10"
+        step="0.5"
+        aria-label="مستوى الصوت"
+      />
     </div>
-    <input
-      type="range"
-      name="volume"
-      id="volume"
-      min="0"
-      max="10"
-      step="0.5"
-      aria-label="مستوى الصوت"
+    <img
+      src="/img/Icons/play.png"
+      alt="play icon"
+      class="play-overlay"
+      id="play-overlay"
+      width="100"
+      height="100"
     />
   </div>
-  <img
-    src="/img/Icons/play.png"
-    alt="play icon"
-    class="play-overlay"
-    id="play-overlay"
-    width="100"
-    height="100"
-  />
   <p>تتر برنامج العلم و الإيمان</p>
 </div>
 

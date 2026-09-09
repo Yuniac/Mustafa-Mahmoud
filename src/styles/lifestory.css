@@ -159,23 +159,54 @@ aside p:first-of-type {
 /* notice div */
 
 .notice-div {
-  width: 350px;
-  margin: 0 auto 1rem;
+  width: min(420px, 92%);
+  margin: 0 auto 1.5rem;
   display: flex;
-  justify-content: center;
+  align-items: flex-start;
+  gap: 0.55rem;
   border: 1px solid #9a4f4a;
   border-top: none;
-  padding: 0.4rem;
+  border-radius: 0 0 8px 8px;
+  padding: 0.7rem 0.9rem;
   background-color: #f2f2f2;
   visibility: visible;
 }
 
 .notice-div img {
   display: block;
-  width: 16px;
-  height: 16px;
-  margin-top: 27px;
-  margin-left: 5px;
+  width: 18px;
+  height: 18px;
+  margin-top: 0.15rem;
+  flex: 0 0 auto;
+}
+
+.notice-div p {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.notice-div > div {
+  flex: 0 0 auto;
+}
+
+#hideButton {
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0.1rem 0.4rem;
+  font-size: 1.15rem;
+  line-height: 1;
+  color: #9a4f4a;
+  border-radius: 4px;
+}
+
+#hideButton:hover {
+  background-color: rgba(154, 79, 74, 0.12);
 }
 
 main button {
@@ -183,7 +214,6 @@ main button {
   background-color: transparent;
   cursor: pointer;
   font-size: 1.1rem;
-  margin-top: 1.3rem;
 }
 
 .flex-container {
@@ -520,7 +550,7 @@ media qs
 
 @media (max-width: 900px) {
   main .notice-div {
-    width: 50%;
+    width: min(440px, 90%);
   }
   .section-1 {
     flex-direction: column;
@@ -617,35 +647,17 @@ media qs
 /* mobile */
 
 @media (max-width: 572px) {
-  /* header and nav */
-  .desktop-nav-items {
-    display: none;
-  }
-  .mobile-nav-items {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    font-size: 1.3rem;
-    font-weight: 500;
-    line-height: 3.5rem;
-    width: 98%;
-  }
-  .mobile-nav-items li {
-    padding: 2px 5px;
-    border-radius: 20px;
-  }
-  .mobile-banner-image {
-    width: 320px;
-  }
-  /* typography */
-  h1 {
-    margin: 1rem 0 4rem;
-  }
+  /* typography — the biography was laid out for a wide column; tighten it */
+  h1,
   h2 {
-    margin-bottom: 1rem;
+    font-size: 2.1rem;
+    line-height: 1.15;
+    margin: 1.5rem 0 0.9rem;
   }
   h3 {
-    font-size: 2rem;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    margin: 1.4rem 0 0.7rem;
   }
   h5 {
     font-size: 1.2rem;
@@ -654,10 +666,7 @@ media qs
   }
   p {
     font-size: 1rem;
-  }
-
-  main .notice-div {
-    width: 75%;
+    line-height: 1.9;
   }
   .section-4-images {
     flex-direction: column;

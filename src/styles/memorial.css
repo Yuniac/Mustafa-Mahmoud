@@ -339,39 +339,39 @@ footer a.language:hover {
     padding: 0;
     margin: 0 0 0.5rem;
   }
+
+  /* the essay was tuned for a wide column — tighten it for phones */
+  h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin: 2rem 0;
+  }
+  p {
+    font-size: 1.05rem;
+    line-height: 2;
+  }
+  main img {
+    width: 82%;
+    margin: 2.5rem auto 1.5rem;
+  }
+  section div {
+    margin: 1.25rem 0;
+  }
+  section div:last-of-type p:last-of-type {
+    margin-top: 1.5rem;
+  }
 }
 
 @media (max-width: 572px) {
-  /* header and nav */
-  .desktop-nav-items {
-    display: none;
-  }
-  .mobile-nav-items {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    font-size: 1.3rem;
-    font-weight: 500;
-    line-height: 3.5rem;
-    width: 98%;
-  }
-  .mobile-nav-items li {
-    padding: 2px 5px;
-    border-radius: 20px;
-  }
-  .mobile-banner-image {
-    width: 240px;
-  }
   /* main */
   section div:last-of-type p:last-of-type {
-    margin-top: 0;
-  }
-  section img {
-    width: 80%;
+    margin-top: 1.25rem;
   }
   /* typography */
   h1 {
-    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    line-height: 1.1;
+    margin: 1.75rem 0;
   }
   h5 {
     font-size: 1rem;

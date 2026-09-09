@@ -543,51 +543,52 @@ footer a.language:hover {
 }
 
 @media (max-width: 572px) {
-  /* header and nav */
-  .desktop-nav-items {
+  /* tighten the wide-column rhythm for phones */
+  .intro {
+    margin: 1.5rem auto;
+  }
+  h2 {
+    margin-top: 3rem;
+  }
+  h2:first-of-type {
+    margin-top: 1.5rem;
+  }
+  /* second nav — two clean pills, matching the header nav */
+  .secondary-nav {
+    margin-top: 0.5rem;
+  }
+  .secondary-nav::after {
     display: none;
   }
-  .mobile-nav-items {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    font-size: 1.3rem;
-    font-weight: 500;
-    line-height: 3.5rem;
-    width: 98%;
-  }
-  .mobile-nav-items li {
-    padding: 2px 5px;
-    border-radius: 20px;
-  }
-  .mobile-banner-image {
-    width: 320px;
-    outline: 1px solid white;
-    outline-offset: -1px;
-  }
-  /* second nav */
   .secondary-nav ul {
-    border-radius: 0;
-    justify-content: space-around;
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    gap: 0.5rem;
+    justify-content: center;
   }
-  .second-nav-items li {
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-    padding: 4px 14px;
-    box-shadow: -5px -5px #9a4f4a;
-  }
-  .secondary-nav a:hover,
-  .secondary-nav li:hover {
-    cursor: pointer;
-    background-color: #9a4f4a;
-    color: white;
+  .second-nav-items li,
+  .second-nav-items li.active {
     box-shadow: none;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+  }
+  .second-nav-items a {
+    display: block;
+    padding: 0.45rem 1.1rem;
+    border-radius: 999px;
+    background-color: #efe4e2;
+    color: #6b2e29;
+    font-weight: 600;
+  }
+  .second-nav-items li.active a {
+    background-color: #9a4f4a;
+    color: #fff;
   }
   /* typography */
   h1 {
     font-size: 2rem;
+    line-height: 1.15;
+    margin: 1rem 0 1.5rem;
   }
   h1::after {
     width: 200px;
