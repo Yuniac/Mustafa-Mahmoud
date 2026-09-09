@@ -1,95 +1,29 @@
-<!-- Copyright Yusuf Sabbag. Distributed under the MIT License respectively CC-BY NC License. -->
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import NoticeDiv from "../components/NoticeDiv.astro";
+import SocialCarousel from "../components/SocialCarousel.astro";
+import asideImg from "../assets/lifestory/aside-img.jpg";
+import img2 from "../assets/lifestory/img2.jpg";
+import img3 from "../assets/lifestory/img3.jpg";
+import img41 from "../assets/lifestory/img4-1.jpg";
+import img42 from "../assets/lifestory/img4-2.jpg";
+import img43 from "../assets/lifestory/img4-3.jpg";
+import img51 from "../assets/lifestory/img5-1.jpg";
+import img52 from "../assets/lifestory/img5-2.jpg";
+import img61 from "../assets/lifestory/img6-1.jpg";
+import "../styles/default.css";
+import "../styles/lifestory.css";
+---
 
-<!doctype html>
-<html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="ملخص قصة حياة الدكتور، من طفولته إلى وفاته"
-    />
-    <meta name="title" content="سيرة حياة مصطفى محمود — من الميلاد إلى الوفاة" />
-    <meta
-      name="keywords"
-      content="مصطفى محمود كتب مصطفى محمود قصة حياة مصطفى محمود بيوغرافي الدكتور مصطفى محمود"
-    />
-    <meta name="robots" content="index, follow" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="language" content="Arabic" />
-    <link rel="icon" href="img/Icons/icon.png" />
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="CSS/default-styles/default.css"
-    />
-    <link type="text/css" rel="stylesheet" href="CSS/lifestory.css" />
-    <title>سيرة حياة مصطفى محمود — من الميلاد إلى الوفاة</title>
-    <link rel="canonical" href="https://www.mustafamahmoud.net/lifestory.html" />
-    <link rel="preload" as="font" type="font/woff2" href="CSS/fonts/cairo.woff2" crossorigin>
-    <link rel="preload" as="font" type="font/woff2" href="CSS/fonts/arefBold.woff2" crossorigin>
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="مصطفى محمود" />
-    <meta property="og:locale" content="ar_EG" />
-    <meta property="og:url" content="https://www.mustafamahmoud.net/lifestory.html" />
-    <meta property="og:title" content="سيرة حياة مصطفى محمود — من الميلاد إلى الوفاة" />
-    <meta property="og:description" content="ملخص قصة حياة الدكتور، من طفولته إلى وفاته" />
-    <meta property="og:image" content="https://www.mustafamahmoud.net/img/Banner/footer-img.png" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="سيرة حياة مصطفى محمود — من الميلاد إلى الوفاة" />
-    <meta name="twitter:description" content="ملخص قصة حياة الدكتور، من طفولته إلى وفاته" />
-    <meta name="twitter:image" content="https://www.mustafamahmoud.net/img/Banner/footer-img.png" />
-
-  </head>
-
-  <body>
-    <header>
-      <div class="banner">
-        <!-- desktop nav -->
-        <div>
-          <picture>
-                    <source srcset="img/Banner/banner.avif" type="image/avif">
-                    <source srcset="img/Banner/banner.webp" type="image/webp">
-                    <img class="desktop-banner-image mobile-banner-image" src="img/Banner/banner.png"
-                        alt="صورة للدكتور" width="470" height="325" fetchpriority="high" decoding="async">
-                </picture>
-          <div>
-            <ul class="desktop-nav nav-items">
-              <li><a href="index.html">الرئيسيةَ</a></li>
-              <li><a href="books.html ">أعمال المَحمود</a></li>
-              <li class="active">
-                <a class="active" href="lifestory.html ">حياة المَحمود</a>
-              </li>
-              <li><a href="memorial.html ">في ذكرى المحَمود</a></li>
-            </ul>
-          </div>
-        </div>
-        <!-- mobile nav -->
-        <div class="mobile-banner">
-          <ul class="nav mobile-nav nav-items">
-            <li class="active current-page">
-              <a href="#" class="active current-page">حياة المَحمود</a>
-              <ul class="sub-nav-items" style="height: 0px">
-              <li><a href="index.html">الرئيسية</a></li>
-              <li><a href="books.html">أعمال المَحمود</a></li>
-              <li><a href="lifestory.html">حياة المَحمود</a></li>
-            </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </header>
-    <main>
-      <div class="notice-div" id="noticeDiv">
-        <img src="img/Icons/notice.png" class="no-border" alt="icon" />
-        <p>
-          المعلومات الواردة هنا هي مستوحاة من الدكتور نفسه و من كلامهِ و هي
-          بتصرف.
-        </p>
-        <div>
-          <button id="hideButton">x</button>
-        </div>
-      </div>
+<BaseLayout
+  path="/lifestory.html"
+  title="سيرة حياة مصطفى محمود — من الميلاد إلى الوفاة"
+  description="ملخص قصة حياة الدكتور، من طفولته إلى وفاته"
+  keywords="مصطفى محمود كتب مصطفى محمود قصة حياة مصطفى محمود بيوغرافي الدكتور مصطفى محمود"
+>
+  <main>
+    <NoticeDiv />
       <section class="section section-1">
         <div class="flex-container">
           <h1>البدايات:</h1>
@@ -119,10 +53,7 @@
           <div>
             <figure>
               <p>Mustafa Mahmoud</p>
-              <img
-                src="img/lifestory/aside-img.jpg"
-                alt="صورة للدكتور وهو شاب"
-              />
+              <Image src={asideImg} alt="صورة للدكتور وهو شاب" />
               <figcaption>مصطفى محمود</figcaption>
             </figure>
             <hr />
@@ -189,10 +120,7 @@
           </p>
         </div>
         <figure>
-          <img
-            src="img/lifestory/img2.jpg"
-            alt="صورة للدكتور وهو في عمر صغير"
-          />
+          <Image src={img2} alt="صورة للدكتور وهو في عمر صغير" />
           <figcaption>مصطفى محمود في صغره</figcaption>
         </figure>
       </section>
@@ -351,11 +279,7 @@
           </blockquote>
         </div>
         <figure>
-          <img
-            src="img/lifestory/img3.jpg"
-            alt="صورة للدكتور و هي في منتصف العمر أو ما شابه"
-            class="smaller-image"
-          />
+          <Image src={img3} alt="صورة للدكتور و هي في منتصف العمر أو ما شابه" class="smaller-image" />
         </figure>
       </section>
       <section class="section section-4 flex-container-dir">
@@ -436,7 +360,7 @@
               ></span
             >
             انتقادات واسعة، وهدأت الانتقادات بعدها فترة طويلة حتى صدور كتاب
-            <span><a href="books.html#Intercession">"الشفاعة"</a></span> سنة
+            <span><a href="books.html#intercession">"الشفاعة"</a></span> سنة
             2000م، فصدر 14 كتابًا للرد على هذا الكتاب منها كتاب محمد فؤاد شاكر
             أستاذ الشريعة الإسلامية. كما يرى البعض أنه غير متخصص في مجالات علوم
             الدين والفلسفة التي يؤلف فيها.
@@ -515,19 +439,15 @@
         </div>
         <div class="section-4-images">
           <figure class="large-size-images">
-            <img src="img/lifestory/img4-1.jpg" alt="صورة للدكتور" />
+            <Image src={img41} alt="صورة للدكتور" />
             <figcaption></figcaption>
           </figure>
           <figure>
-            <img
-              src="img/lifestory/img4-3.jpg"
-              alt=""
-              class="small-sized-images"
-            />
+            <Image src={img43} alt="" class="small-sized-images" />
             <figcaption>مصطفى مع الشعراوي رحمة الله عليهم</figcaption>
           </figure>
           <figure class="large-size-images">
-            <img src="img/lifestory/img4-2.jpg" alt="صورة للدكتور" />
+            <Image src={img42} alt="صورة للدكتور" />
             <figcaption></figcaption>
           </figure>
         </div>
@@ -593,14 +513,11 @@
         </div>
         <div class="section-5-images">
           <figure>
-            <img
-              src="img/lifestory/img5-1.jpg"
-              alt="الدكتور و التليسكوب الخاص به"
-            />
+            <Image src={img51} alt="الدكتور و التليسكوب الخاص به" />
             <figcaption>مصطفى و تيلسكوبهِ</figcaption>
           </figure>
           <figure>
-            <img src="img/lifestory/img5-2.jpg" alt="مسجد محمود" />
+            <Image src={img52} alt="مسجد محمود" />
             <figcaption>مسجد محمود</figcaption>
           </figure>
         </div>
@@ -658,7 +575,7 @@
           </p>
         </div>
         <figure>
-          <img src="img/lifestory/img6-1.jpg" alt="صورة للدكتور" />
+          <Image src={img61} alt="صورة للدكتور" />
         </figure>
       </section>
       <section class="section section-7 flex-container-dir">
@@ -692,32 +609,7 @@
           </p>
         </div>
       </section>
-      <section>
-        <div class="carousel">
-          <div>
-            <img
-              src="img/Icons/backward.png"
-              alt="icon"
-              class="carousel-icon backward-icon"
-            />
-          </div>
-          <div>
-            <img
-              src="img/lifestory/social-images/img1.jpg"
-              alt="صورة من المعرض"
-              id="carouselImg"
-              class="carousel-img"
-            />
-          </div>
-          <div>
-            <img
-              src="img/Icons/forward.png"
-              alt="icon"
-              class="carousel-icon forward-icon"
-            />
-          </div>
-        </div>
-      </section>
+      <SocialCarousel />
       <section class="section section-8 flex-container-dir">
         <div class="flex-container-column">
           <h2>النهايات:</h2>
@@ -769,93 +661,16 @@
           </p>
         </div>
         <button id="scrollToTopButton">
-          <img src="img/Icons/go-top.png" alt="icon" class="no-border" />
+          <img src="/img/Icons/go-top.png" alt="icon" class="no-border" />
         </button>
       </section>
-    </main>
-    <footer>
-      <div class="figure">
-        <figure>
-          <img src="img/Banner/footer-img.png" alt="صورة للدكتور مصطفى محمود" width="500" height="500" loading="lazy" decoding="async" />
-        </figure>
-        <p class="footer-text">مصطفى محمود</p>
-      </div>
-      <div class="footer-items">
-        <div>
-          <h2 class="footer-heading">المصادر المستخدمة:</h2>
-          <ul>
-            <li>
-              <a
-                href="https://ar.wikipedia.org/wiki/%D9%85%D8%B5%D8%B7%D9%81%D9%89_%D9%85%D8%AD%D9%85%D9%88%D8%AF"
-                >ويكيبيديا بالعربي</a
-              >
-            </li>
-            <li>
-              <a href="https://en.wikipedia.org/wiki/Mustafa_Mahmoud"
-                >ويكيبيديا بالإنجليزية</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://archive.org/details/science.faith/%D9%83%D8%AA%D8%A7%D8%A8%20%D8%A7%D8%B9%D8%AA%D8%B1%D8%A7%D9%81%D8%A7%D8%AA%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D9%85%D8%AD%D9%85%D9%88%D8%AF "
-                >مصطفى محمود - الأعمال الكاملة</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.youtube.com/results?search_query=%D9%85%D8%B5%D8%B7%D9%81%D9%89+%D9%85%D8%AD%D9%85%D9%88%D8%AF "
-                >اليوتيوب</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h2 class="footer-heading">جِد الدكتور من خلال:</h2>
-          <ul>
-            <li>
-              <a href="https://www.youtube.com/user/DrMostafaMahmud "
-                >القناة الرسمية على اليوتيوب</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.facebook.com/Science.Faith?refid=7&_ft_=qid.6061565986845148325%3Amf_story_key.-6295907305872139573 "
-                >صفحته على الفيسبوك</a
-              >
-            </li>
-            <li>
-              <a href="https://dmostafamahmoud.blogspot.com/ "
-                >بلوغ خاص بالدكتور</a
-              >
-            </li>
-            <li>
-              <a href="https://www.mustafamahmoud.net">الموقع هذا</a>
-            </li>
-            <li class="copy-notice copy-notice-visibility"></li>
-            <span id="link"
-              >https://yuniac.github.io/Mustafa-Mahmoud.github.io/</span
-            >
-          </ul>
-        </div>
-        <div>
-          <h2 class="footer-heading">عن مصمم الموقع:</h2>
-          <ul>
-            <li>
-              <a href="https://github.com/Yuniac ">غيتهب (Github)</a>
-            </li>
-            <li>
-              <a href="https://www.twitter.com/YMsabbag ">تويتر (Twitter)</a>
-            </li>
-            <li>
-              <button type="button" class="language">AR | EN</button>
-              <p class="language-description lginfo-visibility">
-                SOON | قريباً
-              </p>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-    <script src="JS/script_lifestory.js" async></script>
-  </body>
-</html>
+  </main>
+
+  <script>
+    document
+      .getElementById("scrollToTopButton")
+      ?.addEventListener("click", () => {
+        document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
+      });
+  </script>
+</BaseLayout>

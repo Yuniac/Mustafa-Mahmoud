@@ -1,0 +1,24 @@
+---
+// Dismissible disclaimer at the top of the biography.
+---
+
+<div class="notice-div" id="noticeDiv">
+  <img src="/img/Icons/notice.png" class="no-border" alt="icon" />
+  <p>
+    المعلومات الواردة هنا هي مستوحاة من الدكتور نفسه و من كلامهِ و هي
+    بتصرف.
+  </p>
+  <div>
+    <button id="hideButton">x</button>
+  </div>
+</div>
+
+<script>
+  const btn = document.querySelector<HTMLElement>("#hideButton");
+  const div = document.querySelector<HTMLElement>("#noticeDiv");
+  btn?.addEventListener("click", () => {
+    if (!div) return;
+    div.style.visibility = "hidden";
+    div.style.display = "none";
+  });
+</script>

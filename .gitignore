@@ -21,3 +21,6 @@ pnpm-debug.log*
 
 # macOS
 .DS_Store
+
+# never yarn — this project uses npm
+yarn.lock
