@@ -40,4 +40,18 @@ const books = defineCollection({
   }),
 });
 
-export const collections = { books };
+const interviews = defineCollection({
+  loader: file("src/data/interviews.json"),
+  schema: z.object({
+    id: z.number(),
+    heading: z.string(),
+    youtube: z.string(),
+    /** Filename under src/assets/interviews/, e.g. "interview1.jpg". */
+    thumb: z.string(),
+    thumbAlt: z.string(),
+    description: z.string(),
+    linkTitle: z.string().optional(),
+  }),
+});
+
+export const collections = { books, interviews };
