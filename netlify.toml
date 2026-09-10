@@ -1,6 +1,6 @@
 # Astro static build. Netlify runs the build and serves dist/.
 [build]
-  command = "npm run build"
+  command = "yarn run build"
   publish = "dist"
 
 [build.environment]
