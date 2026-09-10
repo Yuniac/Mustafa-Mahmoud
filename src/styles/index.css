@@ -370,6 +370,14 @@ a:hover {
   .main-content section {
     width: 90%;
     margin: 0 auto;
+    /* width:100% + horizontal padding would otherwise overrun the column */
+    box-sizing: border-box;
+  }
+  /* the quote strip is ~3.3:1 — a fixed height + cover crops it to the centre
+     on a narrow column. Let it lay out at its natural ratio instead. */
+  .intro-image {
+    height: auto;
+    object-fit: contain;
   }
   .main-content section:first-of-type {
     border-right: 2px solid #9a4f4a;
