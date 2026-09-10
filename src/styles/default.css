@@ -1,0 +1,403 @@
+@font-face {
+  font-family: "Aref Ruqaa";
+  src: url("/CSS/fonts/arefBold.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("/CSS/fonts/cairo.woff2") format("woff2");
+  font-display: swap;
+}
+
+/*  */
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* width/height attrs on <img> reserve space for CLS; keep the rendered box on
+   the natural ratio unless a rule sets an explicit height (e.g. .intro-image). */
+img {
+  height: auto;
+}
+
+/* Never allow a horizontal scrollbar — a few stray px of overflow on narrow
+   screens shouldn't let the whole page slide sideways. `clip` doesn't create a
+   scroll container (so it won't break position: sticky) the way `hidden` would. */
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+/* Reserve the scrollbar gutter on desktop so navigating between a short page
+   (memorial) and a scrolling one doesn't shift centred content sideways.
+   Scoped away from mobile: phones use overlay scrollbars (no jump), and in an
+   RTL document `stable` would otherwise inset every page by the gutter width. */
+@media (min-width: 573px) {
+  html {
+    scrollbar-gutter: stable;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  color: black;
+  font-family: "Cairo", system-ui, "Segoe UI", Tahoma, Arial, sans-serif;
+  background-color: #bda7a3;
+  width: 100%;
+  height: 100%;
+}
+
+/*  */
+
+header {
+  margin-top: 1rem;
+}
+
+/* the banner images */
+
+.desktop-banner-image {
+  background-color: transparent;
+  mix-blend-mode: multiply;
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+/* nav */
+
+.desktop-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  font-size: 1.3rem;
+  margin-top: 2rem;
+}
+
+.nav-items li {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  cursor: pointer;
+  box-shadow: -5px -5px #9a4f4a;
+}
+
+.nav-items li:hover,
+.nav-items a:hover {
+  cursor: pointer;
+  background-color: #9a4f4a;
+  color: white;
+  box-shadow: none;
+}
+.nav-items a {
+  padding: 5px 15px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+/* active page class */
+
+li.active {
+  padding: 5px 15px;
+  background-color: #9a4f4a;
+  box-shadow: -7px -7px black;
+  color: white;
+}
+
+li.active:hover,
+li.active:hover > a {
+  background-color: #ab8d87;
+  color: black;
+}
+
+li.active:hover {
+  box-shadow: -7px -7px #9a4f4a;
+}
+
+/* nav on mobile — a simple always-visible row (no toggle) */
+
+.mobile-banner {
+  display: none;
+}
+
+/* header END */
+
+@media (max-width: 1000px) {
+  .nav-items {
+    font-size: 1.1rem;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px;
+  }
+}
+
+@media (max-width: 572px) {
+  /* header and nav */
+  .desktop-nav {
+    display: none;
+  }
+  .mobile-banner {
+    display: block;
+    width: 100%;
+    margin: 0.25rem auto 0;
+  }
+  .mobile-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.45rem;
+    padding: 0 0.5rem;
+  }
+  .mobile-nav li,
+  .mobile-nav li.active {
+    display: flex;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    color: inherit;
+  }
+  .mobile-nav a {
+    display: block;
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    background-color: #efe4e2;
+    color: #6b2e29;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  .mobile-nav a.active {
+    background-color: #9a4f4a;
+    color: #fff;
+  }
+  .mobile-banner-image {
+    width: 220px;
+  }
+}
+
+/* re-adujusting the header on certain sizes*/
+
+@media (min-width: 573px) and (max-width: 621px) {
+  .desktop-nav {
+    justify-content: space-evenly;
+    font-size: 1.1rem;
+  }
+}
+
+/* footer */
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  background-color: #bda7a3;
+  border-top: 1px solid #9a4f4a;
+}
+footer ul {
+  margin-right: 1.5rem;
+}
+footer li {
+  padding: 0.4rem 0.2rem;
+  list-style-type: arabic-indic;
+}
+
+footer ul a:hover {
+  color: #9a4f4a;
+  cursor: pointer;
+}
+
+footer img {
+  width: 262px;
+  background-color: transparent;
+}
+
+footer figure {
+  margin: 0;
+  z-index: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-items {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  padding: 1rem 0.5rem 0rem;
+}
+
+.footer-items > div {
+  margin-left: auto;
+}
+
+.footer-items div:nth-of-type(2) ul {
+  position: relative;
+}
+
+.footer-text {
+  margin: 0;
+  display: none;
+}
+
+footer .language {
+  color: #333;
+  margin-right: 15px;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: help;
+}
+
+footer .language:hover {
+  cursor: help;
+  text-decoration: none;
+  color: #333;
+}
+
+/* footer column headings — shared so the 3-column footer looks the same on every page */
+.footer-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 0.8rem;
+  padding: 5px 0;
+  position: static;
+}
+@media (max-width: 900px) {
+  .footer-heading {
+    padding: 0;
+    margin: 0 0 1.5rem;
+  }
+}
+@media (max-width: 572px) {
+  .footer-heading {
+    font-size: 1rem;
+    border-bottom: 1px ridge #9a4f4a;
+    width: 50%;
+  }
+}
+
+.language-description {
+  color: black;
+  background-color: #ab8d87;
+  border-radius: 5px;
+  max-width: 90px;
+  margin-top: 0.3rem;
+  direction: rtl;
+  position: relative;
+  opacity: 1;
+  text-align: center;
+}
+
+.copy-notice {
+  background-color: #ab8d87;
+  border-radius: 5px;
+  padding: 8px;
+  margin-top: 0.3rem;
+  direction: rtl;
+  opacity: 1;
+  text-align: center;
+  position: absolute;
+  bottom: 41px;
+  left: -25px;
+}
+
+#link {
+  display: none;
+}
+
+.lginfo-visibility,
+.copy-notice-visibility {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.language-description::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -10px;
+  right: 15px;
+  border-style: solid;
+  border-width: 0px 10px 20px 10px;
+  border-color: transparent transparent #ab8d87 transparent;
+}
+@media (max-width: 900px) {
+  /* footer */
+  footer li {
+    padding: 0.4rem 0.2rem;
+  }
+  .figure img {
+    width: 175px;
+    height: auto;
+  }
+  .footer-items {
+    line-height: 1rem;
+    width: 100%;
+  }
+  footer img {
+    display: none;
+  }
+}
+
+@media (max-width: 572px) {
+  .footer-items > div {
+    margin: 0;
+  }
+  footer ul {
+    margin: 0;
+    padding: 0;
+  }
+  footer {
+    font-size: 1.1rem;
+    flex-direction: column-reverse;
+    width: 95%;
+  }
+  .footer-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px 5px;
+    margin: 0;
+    line-height: 2rem;
+  }
+  .footer-items div {
+    margin: 0.5rem 1rem;
+  }
+  footer figure img {
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+  .footer-text {
+    display: block;
+    align-self: flex-end;
+    margin-right: 1.5rem;
+    margin-top: 1rem;
+    font-size: 11vw;
+    font-family: "Aref Ruqaa";
+    color: #9a4f4a;
+  }
+  .figure {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-flow: row-reverse nowrap;
+  }
+  .copy-notice {
+    left: 105px;
+  }
+  .language-description {
+    font-size: 0.9rem;
+  }
+  footer .language {
+    margin-right: 0;
+  }
+}

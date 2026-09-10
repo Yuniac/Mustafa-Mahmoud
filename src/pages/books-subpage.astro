@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BookGallery from "../components/BookGallery.astro";
+import "../styles/books-subpage.css";
+import "../styles/default.css";
+---
+
+<BaseLayout
+  path="/books-subpage.html"
+  title="كتب مصطفى محمود — قصص وروايات ومسرحيات"
+  description="ألف مصطفى محمود حوالي 89 كتابًا، نستطلع هنا القصص القصيرة ،الروايات، المسرحيات و أدب الرحلات"
+  keywords="مصطفى محمود, كتب مصطفى محمود, قصص, مسرحيات"
+>
+  <main>
+    <section class="intro">
+      <h1>الكتابة النثرية:</h1>
+      <p>
+        كتب مصطفى محمود أيضاً في الفن، الدراما و الإثارة التي هي هادفة أكثر ما أن
+        تكون مسلية، أذكر هنا بعضاً من مقالتهِ، مسرحياته و طبعاً، روايته التي ذاع
+        صيتها و لا تزال تقرأ إلى يومنا هذا:
+      </p>
+    </section>
+    <div class="secondary-nav" id="books-2">
+      <ul class="second-nav-items">
+        <li><a href="/books.html#books">كَتب</a></li>
+        <li class="active">
+          <a href="/books-subpage.html#books-2">قصص و مسرحيات</a>
+        </li>
+      </ul>
+    </div>
+
+    <BookGallery page="subpage" />
+  </main>
+  <script>
+    import "../scripts/books.ts";
+  </script>
+</BaseLayout>

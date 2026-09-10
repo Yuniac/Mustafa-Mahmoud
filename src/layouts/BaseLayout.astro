@@ -1,0 +1,79 @@
+---
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  /** <title>, og:title, twitter:title. */
+  title: string;
+  /** meta description, og:description, twitter:description. */
+  description: string;
+  /** Canonical path, e.g. "/" or "/books.html". Drives canonical + og:url + nav active state. */
+  path: string;
+  keywords?: string;
+  /** Absolute URL. Defaults to the site's shared footer portrait. */
+  ogImage?: string;
+  /** JSON-LD object(s) to embed (homepage only). */
+  jsonLd?: object | object[];
+  /** Emit the Search Console verification meta (homepage only). */
+  googleSiteVerification?: boolean;
+}
+
+const {
+  title,
+  description,
+  path,
+  keywords = "مصطفى محمود, الدكتور مصطفى محمود, كتب مصطفى محمود, حياة مصطفى محمود",
+  ogImage = "https://www.mustafamahmoud.net/img/Banner/footer-img.png",
+  jsonLd,
+  googleSiteVerification = false,
+} = Astro.props;
+
+const canonical = new URL(path, Astro.site).href;
+---
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Yusuf Sabbag" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Arabic" />
+    {
+      googleSiteVerification && (
+        <meta
+          name="google-site-verification"
+          content="qDGVyCzA06fEEdeyhijpemF4ovUCTZvYJxwdBhdGs5E"
+        />
+      )
+    }
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/img/Icons/icon.png" />
+    <link rel="preload" as="font" type="font/woff2" href="/CSS/fonts/cairo.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/CSS/fonts/arefBold.woff2" crossorigin />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="مصطفى محمود" />
+    <meta property="og:locale" content="ar_EG" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    {jsonLd && <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />}
+  </head>
+  <body>
+    <Nav currentPath={path} />
+    <slot />
+    <Footer />
+    <script>
+      import "../scripts/nav.ts";
+    </script>
+  </body>
+</html>

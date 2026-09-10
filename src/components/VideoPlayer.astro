@@ -1,0 +1,111 @@
+---
+// Custom player for the "science and faith" intro title sequence.
+// The clip has no captions of its own to add (it carries burnt-in text), but
+// it does have audio — the theme music fades in after a quiet ~15s opening.
+---
+
+<div class="intro-video">
+  <div class="intro-video-frame">
+    <video src="/videos/science-and-faith-intro.mp4" preload="metadata"></video>
+    <div class="controls">
+      <div class="controls-buttons">
+        <button id="play" aria-label="play pause toggle"></button>
+        <button id="replay" aria-label="replay"></button>
+
+        <div id="timer" class="timer">
+          <div class="timer-bar" id="timer-bar"></div>
+          <span aria-label="timer" id="timer-numbers">00:00</span>
+        </div>
+      </div>
+      <input
+        type="range"
+        name="volume"
+        id="volume"
+        min="0"
+        max="10"
+        step="0.5"
+        value="7"
+        aria-label="مستوى الصوت"
+      />
+    </div>
+    <img
+      src="/img/Icons/play.png"
+      alt="play icon"
+      class="play-overlay"
+      id="play-overlay"
+      width="100"
+      height="100"
+    />
+  </div>
+  <p>تتر برنامج العلم و الإيمان</p>
+</div>
+
+<script>
+  const playIcon =
+    '<svg xmlns="http://www.w3.org/2000/svg" height="42px" viewBox="0 0 24 24" width="42px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M10 8.64L15.27 12 10 15.36V8.64M8 5v14l11-7L8 5z"/></svg>';
+  const pauseIcon =
+    '<svg xmlns="http://www.w3.org/2000/svg" height="42px" viewBox="0 0 24 24" width="42px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
+  const replayIcon =
+    '<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="36px" viewBox="0 0 24 24" width="36px" fill="#000000"><g><rect fill="none" height="24" width="24"/><rect fill="none" height="24" width="24"/><rect fill="none" height="24" width="24"/></g><g><g/><path d="M12,5V1L7,6l5,5V7c3.31,0,6,2.69,6,6s-2.69,6-6,6s-6-2.69-6-6H4c0,4.42,3.58,8,8,8s8-3.58,8-8S16.42,5,12,5z"/></g></svg>';
+
+  const root = document.querySelector<HTMLElement>(".intro-video");
+  if (root) {
+    const video = root.querySelector("video")!;
+    const playButton = root.querySelector<HTMLElement>("#play")!;
+    const replayButton = root.querySelector<HTMLElement>("#replay")!;
+    const timerWrapper = root.querySelector<HTMLElement>("#timer")!;
+    const timerBar = root.querySelector<HTMLElement>("#timer-bar")!;
+    const timerNumbers = root.querySelector<HTMLElement>("#timer-numbers")!;
+    const volumeSlider = root.querySelector<HTMLInputElement>("#volume")!;
+    const playButtonAsOverlay = root.querySelector<HTMLElement>("#play-overlay")!;
+
+    playButton.innerHTML = playIcon;
+    replayButton.innerHTML = replayIcon;
+
+    playButton.addEventListener("click", () => {
+      if (video.paused) {
+        video.play();
+        playButton.innerHTML = pauseIcon;
+      } else {
+        video.pause();
+        playButton.innerHTML = playIcon;
+      }
+    });
+
+    replayButton.addEventListener("click", () => {
+      if (video.currentTime > 0) {
+        video.pause();
+        video.currentTime = 0;
+        video.play();
+        playButton.innerHTML = pauseIcon;
+      }
+    });
+
+    playButtonAsOverlay.addEventListener("click", () => {
+      video.play();
+      playButtonAsOverlay.style.display = "none";
+      playButton.innerHTML = pauseIcon;
+    });
+
+    timerWrapper.addEventListener("click", (e) => {
+      video.currentTime =
+        (e.offsetX * video.duration) / timerWrapper.clientWidth;
+    });
+
+    const applyVolume = () => {
+      video.volume = Number(volumeSlider.value) / 10;
+    };
+    volumeSlider.addEventListener("input", applyVolume);
+    applyVolume();
+
+    video.addEventListener("timeupdate", () => {
+      const minutes = Math.floor(video.currentTime / 60);
+      const seconds = Math.floor(video.currentTime - minutes * 60);
+      const mm = minutes < 10 ? "0" + minutes : String(minutes);
+      const ss = seconds < 10 ? "0" + seconds : String(seconds);
+      timerNumbers.textContent = mm + ":" + ss;
+      timerBar.style.width =
+        timerWrapper.clientWidth * (video.currentTime / video.duration) + "px";
+    });
+  }
+</script>

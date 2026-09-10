@@ -1,0 +1,91 @@
+---
+interface Props {
+  /** Canonical path of the current page, e.g. "/" or "/books.html". */
+  currentPath: string;
+}
+const { currentPath } = Astro.props;
+const current = currentPath === "/" ? "/index.html" : currentPath;
+
+const links = [
+  { href: "/index.html", label: "الرئيسيةَ" },
+  { href: "/books.html", label: "أعمال المَحمود" },
+  { href: "/lifestory.html", label: "حياة المَحمود" },
+  { href: "/memorial.html", label: "في ذكرى المحَمود" },
+];
+
+// Sub-pages that live under a top-level nav section, so the section tab still
+// highlights (e.g. books-subpage belongs to "أعمال المَحمود").
+const sectionOf: Record<string, string> = {
+  "/books-subpage.html": "/books.html",
+};
+const section = sectionOf[current] ?? current;
+
+const isCurrent = (href: string) => href === section;
+const isExact = (href: string) => href === current;
+---
+
+<header>
+  <div class="banner">
+    <!-- desktop nav -->
+    <div>
+      <picture>
+        <source srcset="/img/Banner/banner.avif" type="image/avif" />
+        <source srcset="/img/Banner/banner.webp" type="image/webp" />
+        <img
+          class="desktop-banner-image mobile-banner-image"
+          src="/img/Banner/banner.png"
+          alt="صورة للدكتور"
+          width="470"
+          height="325"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </picture>
+      <div>
+        <ul class="desktop-nav nav-items">
+          {
+            links.map((l) =>
+              isCurrent(l.href) ? (
+                <li class="active">
+                  <a class="active" href={isExact(l.href) ? "#" : l.href}>
+                    {l.label}
+                  </a>
+                </li>
+              ) : (
+                <li>
+                  <a href={l.href}>{l.label}</a>
+                </li>
+              ),
+            )
+          }
+        </ul>
+      </div>
+    </div>
+    <!-- mobile nav — a simple always-visible row, no toggle -->
+    <div class="mobile-banner">
+      <nav class="mobile-nav" aria-label="التنقّل">
+        <ul>
+          {
+            links.map((l) =>
+              isCurrent(l.href) ? (
+                <li class="active">
+                  <a
+                    class="active"
+                    aria-current="page"
+                    href={isExact(l.href) ? "#" : l.href}
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              ) : (
+                <li>
+                  <a href={l.href}>{l.label}</a>
+                </li>
+              ),
+            )
+          }
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,14 @@
+# Astro static build. Netlify runs the build and serves dist/.
+[build]
+  command = "yarn run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Redirect the apex domain to www (matches the CNAME + sitemap canonical host).
+[[redirects]]
+  from = "https://mustafamahmoud.net/*"
+  to = "https://www.mustafamahmoud.net/:splat"
+  status = 301
+  force = true

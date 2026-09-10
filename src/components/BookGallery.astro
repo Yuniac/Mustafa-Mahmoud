@@ -1,0 +1,48 @@
+---
+import { getCollection } from "astro:content";
+import BookCard from "./BookCard.astro";
+
+interface Props {
+  page: "main" | "subpage";
+}
+const { page } = Astro.props;
+
+const books = (await getCollection("books"))
+  .map((e) => e.data)
+  .filter((b) => b.page === page)
+  .sort((a, b) => a.order - b.order);
+
+const groups = [
+  { key: "prose", label: "مقالات و نثر" },
+  { key: "short-stories", label: "قصص قصيرة" },
+  { key: "novels", label: "روايات - قصص طويلة" },
+  { key: "plays", label: "مسرحيات" },
+  { key: "travel-literature", label: "مؤلفات السفر" },
+] as const;
+---
+
+{
+  page === "main" && (
+    <section class="gallery">
+      {books.map((book) => (
+        <BookCard book={book} />
+      ))}
+    </section>
+  )
+}
+
+{
+  page === "subpage" &&
+    groups.map((g) => (
+      <Fragment>
+        <h2>{g.label}</h2>
+        <div class="gallery">
+          {books
+            .filter((b) => b.group === g.key)
+            .map((book) => (
+              <BookCard book={book} />
+            ))}
+        </div>
+      </Fragment>
+    ))
+}
