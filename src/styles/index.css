@@ -365,7 +365,7 @@ a:hover {
   /* main */
   .main-content {
     flex-direction: column;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
   }
   .main-content section {
     width: 90%;
@@ -384,14 +384,26 @@ a:hover {
     margin-top: 2rem;
   }
   h2 {
-    padding-top: 1.4rem;
+    padding-top: 1rem;
   }
+  /* accordion header: chevron pinned to the start (right), heading fills the
+     rest; the whole row is the tap target */
   .interview-title {
     width: 100%;
-    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 0;
+    cursor: pointer;
   }
-  .interview-title img {
+  .interview-title .accordion-heading {
+    flex: 1;
+    padding: 0;
+  }
+  .interview-title .expand-icon {
+    order: -1;
     margin: 0;
+    flex: 0 0 auto;
+    align-self: center;
   }
   .interview-body {
     padding: 0.5rem 0;
@@ -399,7 +411,7 @@ a:hover {
   /* typography */
   h1 {
     font-size: 3.5rem;
-    line-height: 1.1;
+    line-height: 1.2;
     margin: 1.5rem 0;
   }
   h5 {
@@ -414,17 +426,22 @@ a:hover {
   /* main */
   .main-content section {
     width: 100%;
-    padding: 1rem 1.1rem;
+    padding: 0.75rem 1.1rem;
   }
   h1 {
-    font-size: 3rem;
+    font-size: 2.9rem;
+    line-height: 1.25;
     margin: 1.25rem 0;
   }
   .intro-image {
     width: 82%;
   }
   .interview-section {
-    margin: 0 auto 2rem;
+    margin: 0 auto 0.85rem;
+  }
+  .interviews-accordion .expand-icon {
+    width: 34px;
+    max-width: 34px;
   }
   h5 {
     font-size: 1rem;

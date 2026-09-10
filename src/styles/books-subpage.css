@@ -83,51 +83,7 @@ p {
   margin: 0 auto 1rem;
 }
 
-/* nav */
-
-.desktop-nav-items {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 100%;
-  font-size: 1.3rem;
-  margin-top: 2rem;
-}
-
-.desktop-nav-items li {
-  padding: 5px 15px;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
-  cursor: pointer;
-  box-shadow: -5px -5px #9a4f4a;
-}
-
-.desktop-nav-items a:hover,
-.desktop-nav-items li:hover {
-  cursor: pointer;
-  background-color: #9a4f4a;
-  color: white;
-  box-shadow: none;
-}
-
-/* class for active */
-
-.desktop-nav-items li.active {
-  padding: 5px 15px;
-  background-color: #9a4f4a;
-  box-shadow: -7px -7px black;
-  color: white;
-}
-
-.desktop-nav-items li.active:hover,
-li.active:hover > a {
-  background-color: #ab8d87;
-  color: black;
-}
-
-.desktop-nav-items li.active:hover {
-  box-shadow: -7px -7px #9a4f4a;
-}
+/* top nav is owned by Nav.astro + default.css */
 
 /* second nav */
 
@@ -189,37 +145,6 @@ li.active:hover > a {
 
 .second-nav-items li.active:hover {
   box-shadow: -5px -5px #9a4f4a;
-}
-
-/* nav on mobile */
-
-.mobile-nav-list {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.mobile-banner nav {
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-  margin: 1rem auto 0;
-}
-
-.mobile-banner nav button {
-  height: 3rem;
-  background-color: transparent;
-  border: none;
-  outline: none;
-}
-
-.mobile-banner h5 {
-  align-self: center;
-}
-
-.mobile-nav-items {
-  display: none;
 }
 
 /* main */
@@ -474,14 +399,6 @@ footer a.language:hover {
         media qs
        ============ */
 
-/* anything but mobile screens */
-
-@media (min-width: 573px) {
-  .mobile-banner {
-    display: none;
-  }
-}
-
 @media (max-width: 1400px) {
   .gallery {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -489,23 +406,9 @@ footer a.language:hover {
   }
 }
 
-@media (max-width: 1100px) {
-  .nav-items {
-    font-size: 1.1rem;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0px 5px;
-  }
-}
-
 /* mobile and small screens */
 
 @media (max-width: 900px) {
-  /* nav */
-  .desktop-nav-items li {
-    padding: 0;
-    font-size: 0.9rem;
-  }
   /* main */
   .gallery {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -604,30 +507,56 @@ footer a.language:hover {
   .margin-fixer {
     margin-top: 0;
   }
-  /* layout */
+  /* layout — two smaller cards per row on phones */
   .intro {
     flex-direction: column-reverse;
   }
   .gallery {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .gallery {
-    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem 0.7rem;
+    width: 94%;
+    margin: 1.25rem auto 1rem;
   }
   .book-card {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+  }
+  .book-card > div {
+    padding: 0.5rem 0.4rem 0;
   }
   .book-card img {
-    height: 300px;
+    width: 100%;
+    height: 150px;
     object-fit: contain;
   }
+  .book-card p {
+    font-size: 0.82rem;
+    margin: 0.5rem 0.2rem;
+  }
+  .book-bio {
+    flex-direction: column;
+    padding: 0.4rem 0.3rem;
+    font-size: 0.72rem;
+  }
+  .book-bio p:first-of-type {
+    border-bottom: 1px solid #000;
+    border-left: none;
+    padding: 0 0 0.2rem;
+  }
+  .book-links {
+    width: 72%;
+    padding: 0.35rem 0;
+  }
+  .book-links a,
+  .book-source a {
+    font-size: 0.8rem;
+  }
   .book-links img {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
   }
   /* footer */
   h5 {
@@ -698,23 +627,10 @@ footer a.language:hover {
   }
 }
 
-/* re-adujusting the header on certain sizes*/
+/* one book card per row only on the very narrowest phones */
 
-@media (min-width: 573px) and (max-width: 621px) {
-  .desktop-nav-items {
-    justify-content: space-evenly;
-    font-size: 1.1rem;
-  }
-}
-
-/* one book card per row on smallest smart phones */
-
-@media (max-width: 413px) and (min-width: 360px) {
+@media (max-width: 340px) {
   .gallery {
-    flex-direction: column;
-    align-content: center;
-  }
-  .book-card {
-    width: 90%;
+    grid-template-columns: 1fr;
   }
 }

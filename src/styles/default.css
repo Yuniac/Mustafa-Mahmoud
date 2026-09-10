@@ -142,39 +142,53 @@ li.active:hover {
   .mobile-banner {
     display: block;
     width: 100%;
-    margin: 0.25rem auto 0;
+    margin: 0.25rem auto 2rem;
   }
+  /* neutralise any stale `.mobile-banner nav` rules from the per-page sheets */
+  .mobile-banner .mobile-nav {
+    display: block;
+    width: auto;
+    margin: 0;
+  }
+  /* fixed 2x2 grid — identical on every page, never re-wraps */
   .mobile-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.45rem;
-    padding: 0 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+    width: min(320px, 90%);
+    margin: 0 auto;
+    padding: 0;
   }
   .mobile-nav li,
   .mobile-nav li.active {
     display: flex;
     padding: 0;
+    margin: 0;
     background: none;
     box-shadow: none;
     color: inherit;
   }
   .mobile-nav a {
-    display: block;
-    padding: 0.45rem 0.85rem;
-    border-radius: 999px;
-    background-color: #efe4e2;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 2rem;
+    padding: 0.3rem 0.4rem;
+    border-radius: 8px;
+    background-color: #eaddd9;
     color: #6b2e29;
-    font-size: 1rem;
+    font-size: 0.86rem;
     font-weight: 600;
-    line-height: 1.25;
+    line-height: 1.2;
   }
   .mobile-nav a.active {
     background-color: #9a4f4a;
     color: #fff;
   }
   .mobile-banner-image {
-    width: 220px;
+    width: 190px;
   }
 }
 

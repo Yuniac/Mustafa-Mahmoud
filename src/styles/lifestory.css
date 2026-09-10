@@ -503,15 +503,6 @@ footer a.language:hover {
 media qs
 ============ */
 
-/* anything but mobile screens */
-
-@media (min-width: 573px) {
-  .mobile-navbar,
-  .mobile-banner,
-  .mobile-banner button {
-    display: none;
-  }
-}
 
 /* starting from thhe widest screen size */
 
@@ -534,15 +525,6 @@ media qs
   }
   .section-3 figure img {
     width: 300px;
-  }
-}
-
-@media (max-width: 1000px) {
-  .nav-items {
-    font-size: 1.1rem;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0px 5px;
   }
 }
 
@@ -647,17 +629,18 @@ media qs
 /* mobile */
 
 @media (max-width: 572px) {
-  /* typography — the biography was laid out for a wide column; tighten it */
+  /* typography — the biography was laid out for a wide column; tighten it.
+     Aref Ruqaa has tall flourishes, so keep line-height generous. */
   h1,
   h2 {
-    font-size: 2.1rem;
-    line-height: 1.15;
-    margin: 1.5rem 0 0.9rem;
+    font-size: 1.95rem;
+    line-height: 1.45;
+    margin: 1.25rem 0 0.75rem;
   }
   h3 {
-    font-size: 1.6rem;
-    line-height: 1.2;
-    margin: 1.4rem 0 0.7rem;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    margin: 1.25rem 0 0.6rem;
   }
   h5 {
     font-size: 1.2rem;
@@ -750,14 +733,3 @@ media qs
   }
 }
 
-/* re-adujusting the header on certain sizes*/
-
-@media (min-width: 573px) and (max-width: 821px) {
-  .desktop-nav-items {
-    justify-content: space-evenly;
-    font-size: 1.1rem;
-  }
-  .desktop-nav-items a {
-    padding: 0;
-  }
-}

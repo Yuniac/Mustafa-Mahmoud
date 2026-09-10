@@ -56,10 +56,11 @@ const interviews = (await getCollection("interviews"))
   document
     .querySelectorAll<HTMLElement>(".interviews-accordion .interview-section")
     .forEach((section) => {
+      const header = section.querySelector<HTMLElement>(".interview-title");
       const icon = section.querySelector<HTMLElement>(".expand-icon");
       const body = section.querySelector<HTMLElement>(".interview-body");
-      if (!icon || !body) return;
-      icon.addEventListener("click", () => {
+      if (!header || !icon || !body) return;
+      header.addEventListener("click", () => {
         if (body.style.visibility === "visible") {
           body.style.visibility = "hidden";
           body.style.maxHeight = "0px";

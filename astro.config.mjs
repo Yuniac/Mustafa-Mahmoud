@@ -12,7 +12,9 @@ export default defineConfig({
     // Emit `books.astro` -> `dist/books.html`, served at exactly `/books.html`.
     // Keeps the current live URLs (which have organic search traffic) with zero redirects.
     format: 'file',
-    inlineStylesheets: 'auto',
+    // Inline every stylesheet. Per-page CSS is only a few KB; inlining removes the
+    // flash-of-unstyled-content and layout jump when navigating between pages.
+    inlineStylesheets: 'always',
   },
   integrations: [
     mdx(),
