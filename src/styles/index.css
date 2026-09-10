@@ -180,6 +180,13 @@ a:hover {
   line-height: 1.5;
 }
 
+.intro-video #volume {
+  flex: 0 0 auto;
+  width: 74px;
+  accent-color: #e08b83;
+  cursor: pointer;
+}
+
 .intro-video .play-overlay {
   position: absolute;
   left: 50%;

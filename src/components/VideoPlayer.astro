@@ -1,11 +1,12 @@
 ---
 // Custom player for the "science and faith" intro title sequence.
-// It's a silent title card — no volume control, no captions.
+// The clip has no captions of its own to add (it carries burnt-in text), but
+// it does have audio — the theme music fades in after a quiet ~15s opening.
 ---
 
 <div class="intro-video">
   <div class="intro-video-frame">
-    <video src="/videos/science-and-faith-intro.mp4" preload="metadata" muted></video>
+    <video src="/videos/science-and-faith-intro.mp4" preload="metadata"></video>
     <div class="controls">
       <div class="controls-buttons">
         <button id="play" aria-label="play pause toggle"></button>
@@ -16,6 +17,16 @@
           <span aria-label="timer" id="timer-numbers">00:00</span>
         </div>
       </div>
+      <input
+        type="range"
+        name="volume"
+        id="volume"
+        min="0"
+        max="10"
+        step="0.5"
+        value="7"
+        aria-label="مستوى الصوت"
+      />
     </div>
     <img
       src="/img/Icons/play.png"
@@ -45,6 +56,7 @@
     const timerWrapper = root.querySelector<HTMLElement>("#timer")!;
     const timerBar = root.querySelector<HTMLElement>("#timer-bar")!;
     const timerNumbers = root.querySelector<HTMLElement>("#timer-numbers")!;
+    const volumeSlider = root.querySelector<HTMLInputElement>("#volume")!;
     const playButtonAsOverlay = root.querySelector<HTMLElement>("#play-overlay")!;
 
     playButton.innerHTML = playIcon;
@@ -79,6 +91,12 @@
       video.currentTime =
         (e.offsetX * video.duration) / timerWrapper.clientWidth;
     });
+
+    const applyVolume = () => {
+      video.volume = Number(volumeSlider.value) / 10;
+    };
+    volumeSlider.addEventListener("input", applyVolume);
+    applyVolume();
 
     video.addEventListener("timeupdate", () => {
       const minutes = Math.floor(video.currentTime / 60);
